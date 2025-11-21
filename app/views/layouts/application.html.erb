@@ -1,45 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= content_for(:title) || "Foundational" %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= yield :head %>
+<head>
+  <title><%= content_for(:title) || "Foundational" %></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
-    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+  <%= yield :head %>
 
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
+  <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+  <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
 
-    <%= stylesheet_link_tag "css-zero/reset", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "css-zero/variables", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "css-zero/utilities", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+  <link rel="icon" href="/icon.png" type="image/png">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/icon.png">
 
-  <body class="header-layout">
-    <header id="header">
-      <div class="container">
-        <h1 class="font-bold text-2xl">Foundational</h1>
-      </div>
-    </header>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
 
-    <main id="main">
-      <% if notice.present? %>
-      <div popover="manual" class="flash" style="--flash-position: 5rem" data-controller="flash" data-action="animationend->flash#hide" role="alert">
-          <div class="flash__content"><%= notice %></div>
-        </div>
-      <% end %>
-      <div class="container">
-        <%= yield %>
-      </div>
-    </main>
-  </body>
+<body class="header-layout">
+  <%= render "header" %>
+
+
+  <main id="main">
+    <%= render "flash" %>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </main>
+</body>
+
 </html>

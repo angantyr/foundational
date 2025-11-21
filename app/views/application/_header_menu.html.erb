@@ -1,0 +1,25 @@
+<div class="header-menu">
+  <div class="header-brand  flex-item-no-shrink">
+    <%= image_tag "brandmark.svg", size: 64, alt: "Foundational Logo" %>
+    <%= link_to "/" do %>
+    <% end %>
+  </div>
+
+  <nav class="show@md flex flex-1 justify-start pi-6">
+    <div class="top_nav max-i-2xl flex flex-item-grow items-center justify-between font-semibold font-title tracking-wider">
+      <%= link_to "Solutions", "#", class: "" %>
+      <%= link_to "Modules", "#", class: " active" %>
+      <%= link_to "Features", "#", class: "" %>
+      <%= link_to "Platform", "#", class: "" %>
+      <%= link_to "Services", "#", class: "" %>
+    </div>
+  </nav>
+
+  <div class="header-actions flex items-center gap">
+    <%= link_to "Sign In", "#", class: "btn btn--ghost btn--rounded show@md" %>
+    <%= link_to "Get Started", "#", class: "btn btn--primary btn--rounded" %>
+    <button class="mobile-menu-toggle hide@md">
+      <%= image_tag "icons/menu.svg", size: 48, alt: "Menu" %>
+    </button>
+  </div>
+</div>

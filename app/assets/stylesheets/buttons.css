@@ -1,0 +1,58 @@
+/*
+ * Button Customizations
+ * Overrides and extends css_zero/button.css
+ */
+
+/* All buttons should show pointer cursor */
+.btn {
+  cursor: pointer;
+}
+
+/* Ghost button - transparent with border on hover */
+.btn--ghost {
+  --btn-background: transparent;
+  --btn-border-color: transparent;
+  --btn-box-shadow: none;
+  --btn-color: var(--color-text-subtle);
+  --btn-font-size: var(--text-base);
+  --btn-font-weight: var(--font-semibold);
+  --btn-padding: 0.5rem 1.25rem;
+  --btn-hover-color: transparent;
+  flex-shrink: 1;
+  /* Allow shrinking under pressure */
+  min-inline-size: 0;
+  /* Allow button to shrink below content size */
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.btn--ghost:hover {
+  --btn-color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+/* Override show@md to allow shrinking before disappearing */
+/* .btn--ghost.show\@md {
+  display: inline-flex !important;
+}
+
+@media (width < 48rem) {
+  .btn--ghost.show\@md {
+    display: none !important;
+  }
+} */
+
+/* Rounded button - fully rounded corners */
+.btn--rounded {
+  --btn-radius: var(--rounded-full);
+}
+
+/* Primary button - very dark gray that turns black on hover */
+.btn--primary {
+  --btn-background: var(--color-primary);
+  --btn-border-color: transparent;
+  --btn-font-size: var(--text-base);
+  --btn-font-weight: var(--font-semibold);
+  --btn-padding: 0.5rem 1.25rem;
+  --btn-hover-color: var(--color-text);
+}
