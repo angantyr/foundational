@@ -114,3 +114,11 @@
   max-height: 500px; /* Large enough for content */
   padding: var(--size-4);
 }
+
+/* Hide mobile menu at desktop sizes, even if checkbox is checked */
+@media (width >= 48rem) {
+  .mobile-menu__content {
+    max-height: 0 !important;
+    padding: 0 !important;
+  }
+}
