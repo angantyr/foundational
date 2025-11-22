@@ -13,7 +13,7 @@
 
 /* Optional - uncomment as needed */
 @import url('css-zero/effects.css');
-/* @import url('css-zero/animations.css'); */
-/* @import url('css-zero/transforms.css'); */
+@import url('css-zero/animations.css');
+@import url('css-zero/transforms.css');
 @import url('css-zero/transitions.css');
 /* @import url('css-zero/filters.css'); */

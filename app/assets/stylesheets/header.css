@@ -63,12 +63,19 @@
 }
 
 .mobile-menu__content {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: var(--size-2);
-  padding: var(--size-4);
+  padding: 0 var(--size-4);
   background-color: var(--color-bg);
   border-block-start: 1px solid var(--color-border);
+
+  /* Animation using max-height trick */
+  max-height: 0;
+  overflow: hidden;
+  transition-property: max-height, padding;
+  transition-duration: var(--time-300);
+  transition-timing-function: var(--ease-3);
 
   a {
     padding: var(--size-3);
@@ -96,5 +103,6 @@
 
 /* Show menu when checkbox is checked */
 .mobile-menu-checkbox:checked ~ .mobile-menu__content {
-  display: flex;
+  max-height: 500px; /* Large enough for content */
+  padding: var(--size-4);
 }
