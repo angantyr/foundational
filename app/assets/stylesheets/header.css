@@ -50,18 +50,51 @@
   }
 } */
 
-/* Mobile Menu Toggle */
+/* Mobile Menu - Checkbox Hack (Pure CSS) */
 .mobile-menu-toggle {
   cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: none;
   padding: 0;
   opacity: 0.7;
   transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
-.mobile-menu-toggle:hover {
-  opacity: 1;
+.mobile-menu__content {
+  display: none;
+  flex-direction: column;
+  gap: var(--size-2);
+  padding: var(--size-4);
+  background-color: var(--color-bg);
+  border-block-start: 1px solid var(--color-border);
+
+  a {
+    padding: var(--size-3);
+    color: var(--color-text);
+    text-decoration: none;
+    border-radius: var(--rounded-md);
+    font-weight: var(--font-semibold);
+    font-family: "Mona Sans", sans-serif;
+    letter-spacing: var(--tracking-wide);
+
+    &:hover {
+      background-color: var(--color-border-light);
+    }
+
+    &.active {
+      background-color: var(--color-selected);
+    }
+  }
+
+  .btn {
+    inline-size: 100%;
+    justify-content: center;
+  }
+}
+
+/* Show menu when checkbox is checked */
+.mobile-menu-checkbox:checked ~ .mobile-menu__content {
+  display: flex;
 }

@@ -8,6 +8,9 @@
  * 3. Base CSS-Zero components - Framework defaults
  * 4. Custom component styles - Our overrides and additions
  * 5. CSS-Zero utilities - Utility classes (highest priority)
+ *
+ * IMPORTANT: Always add new @imports BEFORE the utilities import!
+ * Utilities must load LAST to ensure they can override component styles.
  */
 
 /* Fonts */
@@ -16,10 +19,10 @@
 /* CSS-Zero Foundation */
 @import url('css-zero/reset.css');
 @import url('variables.css');
-@import url('css-zero/utilities.css');
 
 /* CSS-Zero Components (generated into app, customize as needed) */
 @import url('css_zero/button.css');
+@import url('css_zero/accordion.css');
 
 /* Custom Theme & Base Styles */
 @import url('base.css');
@@ -30,6 +33,9 @@
 /* Custom Components */
 @import url('header.css');
 
+/* CSS-Zero Utilities - Load LAST for highest specificity */
+@import url('css-zero/utilities.css');
+
 /* Custom Utility/Helper Classes */
 .font-title {
   font-family: "Mona Sans", sans-serif;
@@ -39,30 +45,96 @@
 }
 
 /* Max inline-size utilities (missing from css-zero) */
-.max-i-3xs { max-inline-size: var(--max-i-3xs); }
-.max-i-2xs { max-inline-size: var(--max-i-2xs); }
-.max-i-xs { max-inline-size: var(--max-i-xs); }
-.max-i-sm { max-inline-size: var(--max-i-sm); }
-.max-i-md { max-inline-size: var(--max-i-md); }
-.max-i-lg { max-inline-size: var(--max-i-lg); }
-.max-i-xl { max-inline-size: var(--max-i-xl); }
-.max-i-2xl { max-inline-size: var(--max-i-2xl); }
-.max-i-3xl { max-inline-size: var(--max-i-3xl); }
-.max-i-4xl { max-inline-size: var(--max-i-4xl); }
-.max-i-5xl { max-inline-size: var(--max-i-5xl); }
-.max-i-6xl { max-inline-size: var(--max-i-6xl); }
-.max-i-7xl { max-inline-size: var(--max-i-7xl); }
+.max-i-3xs {
+  max-inline-size: var(--max-i-3xs);
+}
+
+.max-i-2xs {
+  max-inline-size: var(--max-i-2xs);
+}
+
+.max-i-xs {
+  max-inline-size: var(--max-i-xs);
+}
+
+.max-i-sm {
+  max-inline-size: var(--max-i-sm);
+}
+
+.max-i-md {
+  max-inline-size: var(--max-i-md);
+}
+
+.max-i-lg {
+  max-inline-size: var(--max-i-lg);
+}
+
+.max-i-xl {
+  max-inline-size: var(--max-i-xl);
+}
+
+.max-i-2xl {
+  max-inline-size: var(--max-i-2xl);
+}
+
+.max-i-3xl {
+  max-inline-size: var(--max-i-3xl);
+}
+
+.max-i-4xl {
+  max-inline-size: var(--max-i-4xl);
+}
+
+.max-i-5xl {
+  max-inline-size: var(--max-i-5xl);
+}
+
+.max-i-6xl {
+  max-inline-size: var(--max-i-6xl);
+}
+
+.max-i-7xl {
+  max-inline-size: var(--max-i-7xl);
+}
 
 /* Leading/line-height utilities (missing from css-zero) */
-.leading-snug { line-height: var(--leading-snug); }
-.leading-normal { line-height: var(--leading-normal); }
-.leading-relaxed { line-height: var(--leading-relaxed); }
-.leading-loose { line-height: var(--leading-loose); }
+.leading-snug {
+  line-height: var(--leading-snug);
+}
+
+.leading-normal {
+  line-height: var(--leading-normal);
+}
+
+.leading-relaxed {
+  line-height: var(--leading-relaxed);
+}
+
+.leading-loose {
+  line-height: var(--leading-loose);
+}
 
 /* Tracking/letter-spacing utilities (missing from css-zero) */
-.tracking-tighter { letter-spacing: var(--tracking-tighter); }
-.tracking-tight { letter-spacing: var(--tracking-tight); }
-.tracking-normal { letter-spacing: var(--tracking-normal); }
-.tracking-wide { letter-spacing: var(--tracking-wide); }
-.tracking-wider { letter-spacing: var(--tracking-wider); }
-.tracking-widest { letter-spacing: var(--tracking-widest); }
+.tracking-tighter {
+  letter-spacing: var(--tracking-tighter);
+}
+
+.tracking-tight {
+  letter-spacing: var(--tracking-tight);
+}
+
+.tracking-normal {
+  letter-spacing: var(--tracking-normal);
+}
+
+.tracking-wide {
+  letter-spacing: var(--tracking-wide);
+}
+
+.tracking-wider {
+  letter-spacing: var(--tracking-wider);
+}
+
+.tracking-widest {
+  letter-spacing: var(--tracking-widest);
+}

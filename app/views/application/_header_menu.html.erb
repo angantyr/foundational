@@ -1,5 +1,5 @@
 <div class="header-menu">
-  <div class="header-brand  flex-item-no-shrink">
+  <div class="header-brand flex-item-no-shrink">
     <%= image_tag "brandmark.svg", size: 64, alt: "Foundational Logo" %>
     <%= link_to "/" do %>
     <% end %>
@@ -15,11 +15,22 @@
     </div>
   </nav>
 
-  <div class="header-actions flex items-center gap">
-    <%= link_to "Sign In", "#", class: "btn btn--ghost btn--rounded show@md" %>
+  <div class="header-actions flex items-center gap flex-item-no-shrink">
+    <%#= link_to "Sign In", "#", class: "btn btn--ghost btn--rounded show@md" %>
     <%= link_to "Get Started", "#", class: "btn btn--primary btn--rounded" %>
-    <button class="mobile-menu-toggle hide@md">
+    <label for="mobile-menu-toggle" class="mobile-menu-toggle hide@md flex items-center justify-center">
       <%= image_tag "icons/menu.svg", size: 48, alt: "Menu" %>
-    </button>
+    </label>
   </div>
 </div>
+
+<input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-checkbox" hidden>
+
+<nav class="mobile-menu__content">
+  <%= link_to "Solutions", "#" %>
+  <%= link_to "Modules", "#", class: "active" %>
+  <%= link_to "Features", "#" %>
+  <%= link_to "Platform", "#" %>
+  <%= link_to "Services", "#" %>
+  <%= link_to "Sign In", "#", class: "btn btn--ghost btn--rounded" %>
+</nav>
