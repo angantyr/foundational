@@ -23,6 +23,8 @@
 /* CSS-Zero Components (generated into app, customize as needed) */
 @import url('css_zero/button.css');
 @import url('css_zero/accordion.css');
+@import url('css_zero/menu.css');
+@import url('css_zero/popover.css');
 
 /* Custom Theme & Base Styles */
 @import url('base.css');
