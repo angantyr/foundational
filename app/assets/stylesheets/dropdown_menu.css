@@ -1,0 +1,88 @@
+/* Dropdown Menu Customizations */
+
+/* Hide the menu header */
+.menu__header {
+  display: none;
+}
+
+/* Hide the top separator */
+.menu__separator:first-of-type {
+  display: none;
+}
+
+/* Add top border to popover to mimic nav link underline */
+.popover {
+  border-block-start: 2px solid var(--color-text);
+  border-start-start-radius: 0;
+  border-start-end-radius: 0;
+}
+
+/* Menu item styling - needs higher specificity than .top_nav a */
+.top_nav .menu__item,
+.menu__item {
+  justify-content: space-between;
+  gap: var(--size-2);
+  border-radius: 0;
+  border-block-end: 2px solid var(--color-bg) !important;
+
+  /* Override button hover styles */
+  &:hover {
+    --btn-background: var(--color-border-light);
+    --btn-color: var(--color-text);
+    border-block-end-color: var(--color-bg) !important;
+  }
+}
+
+/* Menu item icons */
+.menu__item .icon {
+  flex-shrink: 0;
+}
+
+/* Menu item text */
+.menu__item > span:not(.icon):not(.menu__item-key) {
+  flex-grow: 1;
+  text-align: start;
+}
+
+/* Menu item chevron/arrow on right */
+.menu__item-key {
+  flex-shrink: 0;
+  margin-inline-start: auto;
+}
+
+/* Top nav - remove gap so buttons can touch */
+.top_nav {
+  gap: 0;
+}
+
+/* Top nav dropdown buttons - remove button styling */
+.top_nav .btn {
+  --btn-background: transparent;
+  --btn-border-color: transparent;
+  --btn-box-shadow: none;
+  --btn-padding: var(--size-3) var(--size-4);
+  --btn-hover-color: transparent;
+  border-radius: 0;
+
+  /* Chevron styling */
+  .icon {
+    display: flex;
+    align-items: center;
+    opacity: 0.7;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &:hover {
+    --btn-background: transparent;
+    --btn-border-color: transparent;
+    --btn-hover-color: transparent;
+
+    .icon {
+      opacity: 1;
+    }
+  }
+}
