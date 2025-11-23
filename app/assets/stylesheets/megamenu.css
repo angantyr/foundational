@@ -1,0 +1,95 @@
+/* Megamenu Styles */
+
+/* Full-width popover for megamenu */
+.popover--mega {
+  --popover-size: 100vw;
+  left: 0 !important;
+  right: 0 !important;
+  margin: 0;
+  max-inline-size: none;
+  border-block-start: 1px solid var(--color-border-light);
+}
+
+/* Megamenu container */
+.megamenu {
+  /* No max-width constraint - let it fill available space like top nav */
+}
+
+/* Grid layout - 4 columns */
+.megamenu__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--size-8);
+  padding: var(--size-10) var(--size-12);
+  padding-block-end: var(--size-8);
+}
+
+/* Card styling - needs higher specificity than .top_nav a */
+.top_nav .megamenu__card,
+.megamenu__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-2);
+  padding: var(--size-5);
+  text-decoration: none;
+  color: var(--color-text);
+  border-radius: 0;
+  border-block-end: 2px solid var(--color-bg) !important;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--color-border-light);
+    color: var(--color-text);
+    border-block-end-color: var(--color-bg) !important;
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+    color: var(--color-text);
+  }
+}
+
+.megamenu__title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  margin: 0;
+}
+
+.megamenu__description {
+  font-size: var(--text-xs);
+  color: var(--color-text);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-normal);
+  margin: 0;
+}
+
+/* Footer links - flush left, right, and bottom */
+.megamenu__footer {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--size-4);
+  padding: var(--size-6) var(--size-12);
+  background-color: var(--color-border-light);
+}
+
+.megamenu__footer-link {
+  display: flex;
+  align-items: center;
+  gap: var(--size-2);
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  border-block-end: 2px solid transparent !important;
+
+  &:hover {
+    color: var(--color-text-subtle);
+    border-block-end-color: transparent !important;
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+  }
+}
