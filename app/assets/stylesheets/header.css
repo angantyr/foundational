@@ -71,52 +71,45 @@
 }
 
 .mobile-menu__content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--size-2);
-  padding: 0 var(--size-4);
+  padding: 0;
   background-color: var(--color-bg);
-  border-block-start: 1px solid var(--color-border);
+  /* border-block-start: 1px solid var(--color-border); */
+  border-block-end: 1px solid var(--color-border);
 
   /* Animation using max-height trick */
   max-height: 0;
   overflow: hidden;
-  transition-property: max-height, padding;
+  transition-property: max-height;
   transition-duration: var(--time-300);
   transition-timing-function: var(--ease-3);
 
-  a {
-    padding: var(--size-3);
-    color: var(--color-text);
-    text-decoration: none;
-    border-radius: var(--rounded-md);
-    font-weight: var(--font-semibold);
-    font-family: "Mona Sans", sans-serif;
-    letter-spacing: var(--tracking-wide);
-
-    &:hover {
-      background-color: var(--color-border-light);
-    }
-
-    &.active {
-      background-color: var(--color-selected);
-    }
+  /* Make menu items touch-friendly */
+  .menu__item {
+    padding-block: var(--size-3);
+    padding-inline: var(--size-6);
+    font-size: var(--text-2xl);
   }
+}
+
+.mobile-menu__footer {
+  display: flex;
+  gap: var(--size-3);
+  padding: var(--size-4);
+  background-color: var(--color-border-light);
 
   .btn {
-    inline-size: 100%;
-    justify-content: center;
+    flex: 1;
   }
 }
 
 /* Show menu when checkbox is checked */
-.mobile-menu-checkbox:checked ~ .mobile-menu__content {
-  max-height: 500px; /* Large enough for content */
-  padding: var(--size-4);
+.mobile-menu-checkbox:checked~.mobile-menu__content {
+  max-height: 500px;
+  /* Large enough for content */
 }
 
 /* Hide mobile menu at desktop sizes, even if checkbox is checked */
-@media (width >= 48rem) {
+@media (width >=48rem) {
   .mobile-menu__content {
     max-height: 0 !important;
     padding: 0 !important;

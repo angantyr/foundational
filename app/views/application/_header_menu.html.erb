@@ -27,10 +27,43 @@
 <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-checkbox" hidden>
 
 <nav class="mobile-menu__content">
-  <%= link_to "Solutions", "#" %>
-  <%= link_to "Modules", "#", class: "active" %>
-  <%= link_to "Features", "#" %>
-  <%= link_to "Platform", "#" %>
-  <%= link_to "Services", "#" %>
-  <%= link_to "Sign In", "#", class: "btn btn--ghost btn--rounded" %>
+  <div class="menu">
+    <div class="menu__group" role="group">
+      <a class="btn menu__item" role="menuitem" href="#">
+        <span>Solutions</span>
+        <span class="menu__item-key">
+          <%= image_tag "icons/chevron-right.svg", size: 16, alt: "" %>
+        </span>
+      </a>
+      <a class="btn menu__item active" role="menuitem" href="#">
+        <span>Modules</span>
+        <span class="menu__item-key">
+          <%= image_tag "icons/chevron-right.svg", size: 16, alt: "" %>
+        </span>
+      </a>
+      <a class="btn menu__item" role="menuitem" href="#">
+        <span>Features</span>
+        <span class="menu__item-key">
+          <%= image_tag "icons/chevron-right.svg", size: 16, alt: "" %>
+        </span>
+      </a>
+      <a class="btn menu__item" role="menuitem" href="#">
+        <span>Platform</span>
+        <span class="menu__item-key">
+          <%= image_tag "icons/chevron-right.svg", size: 16, alt: "" %>
+        </span>
+      </a>
+      <a class="btn menu__item" role="menuitem" href="#">
+        <span>Services</span>
+        <span class="menu__item-key">
+          <%= image_tag "icons/chevron-right.svg", size: 16, alt: "" %>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <div class="mobile-menu__footer">
+    <%= link_to "Contact Us", "#", class: "btn btn--outline" %>
+    <%= link_to "Sign In", "#", class: "btn btn--outline" %>
+  </div>
 </nav>
