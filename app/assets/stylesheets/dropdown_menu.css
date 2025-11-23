@@ -55,6 +55,11 @@
   gap: 0;
 }
 
+/* Top nav popover wrappers - grow to fill space equally */
+.top_nav > div[data-controller="popover"] {
+  flex: 1;
+}
+
 /* Top nav dropdown buttons - remove button styling */
 .top_nav .btn {
   --btn-background: transparent;
@@ -62,6 +67,8 @@
   --btn-box-shadow: none;
   --btn-padding: var(--size-3) var(--size-4);
   --btn-hover-color: transparent;
+  --btn-inline-size: 100%;
+  --btn-justify-content: start;
   border-radius: 0;
 
   /* Chevron styling */
