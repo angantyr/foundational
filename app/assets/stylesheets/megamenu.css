@@ -8,6 +8,33 @@
   margin: 0;
   max-inline-size: none;
   border-block-start: 1px solid var(--color-border-light);
+
+  /* Remove scale transform - just use fade */
+  transform: none !important;
+
+  /* Smooth fade in/out transitions */
+  transition: opacity var(--time-300) ease;
+  transition-behavior: allow-discrete;
+
+  /* Exit state */
+  opacity: 0;
+
+  /* On stage */
+  &:popover-open {
+    opacity: 1;
+  }
+
+  /* Enter state */
+  @starting-style {
+    &:popover-open {
+      opacity: 0;
+    }
+  }
+
+  /* Closing state - manually trigger fade-out */
+  &.popover--closing {
+    opacity: 0;
+  }
 }
 
 /* Megamenu container */
