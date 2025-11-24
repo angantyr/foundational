@@ -1,0 +1,44 @@
+<header id="header">
+  <div class="header-menu">
+    <% if brand? %>
+      <div class="header-brand flex-item-no-shrink">
+        <%= brand %>
+      </div>
+    <% end %>
+
+    <nav class="show@md flex flex-1 justify-start pi-6">
+      <div class="top_nav max-i-6xl flex flex-item-grow items-center justify-between font-semibold font-title tracking-wider">
+        <% nav_items.each do |item| %>
+          <%= item %>
+        <% end %>
+      </div>
+    </nav>
+
+    <div class="header-actions flex items-center gap flex-item-no-shrink">
+      <% desktop_actions.each do |action| %>
+        <%= action %>
+      <% end %>
+
+      <div class="hide@md" data-controller="popover" data-popover-placement-value="bottom-end">
+        <button type="button" class="btn btn--icon" data-popover-target="trigger" popovertarget="mobile-menu-popover" aria-haspopup="true">
+          <%= image_tag "icons/menu.svg", size: 48, alt: "Menu" %>
+        </button>
+        <div popover id="mobile-menu-popover" class="popover popover--mobile-menu" data-popover-target="content" role="menu" aria-label="Mobile Menu">
+          <div class="accordion">
+            <% nav_items.each do |item| %>
+              <%= item %>
+            <% end %>
+          </div>
+
+          <% if mobile_actions.any? %>
+            <div class="mobile-menu__footer">
+              <% mobile_actions.each do |action| %>
+                <%= action %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

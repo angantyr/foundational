@@ -42,6 +42,7 @@
 @import url('components/design/navigation/shared/nav_item_component.css');
 @import url('components/design/navigation/shared/menu_item_component.css');
 @import url('components/design/navigation/shared/hamburger_component.css');
+@import url('components/design/navigation/dropdown_menu/dropdown_item_component.css');
 
 /* CSS-Zero Utilities - Load LAST for highest specificity */
 @import url('css-zero/utilities.css');

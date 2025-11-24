@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 
 class Design::Navigation::Shared::MenuItemComponent < ViewComponent::Base
-  def initialize(label:, href: nil, icon: nil, description: nil, show_icon: true, show_chevron: false, variant: :default)
+  def initialize(label:, href: nil, icon: nil, description: nil, show_icon: true, show_chevron: false, chevron_icon: "chevron-right", variant: :default)
     @label = label
     @href = href
     @icon = icon
     @description = description
     @show_icon = show_icon
     @show_chevron = show_chevron
+    @chevron_icon = chevron_icon
     @variant = variant
   end
 

@@ -1,0 +1,12 @@
+/* Dropdown Item Component */
+.icon--chevron-down {
+  flex-shrink: 0;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon--chevron-down img {
+  width: 16px !important;
+  height: 16px !important;
+  flex-shrink: 0;
+}
