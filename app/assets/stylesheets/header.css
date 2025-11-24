@@ -239,4 +239,51 @@
       }
     }
   }
+
+  /* Horizontal scrolling megamenu cards */
+  .megamenu-mobile-scroll {
+    display: flex;
+    gap: var(--size-4);
+    overflow-x: auto;
+    padding-block: var(--size-4);
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+
+  .megamenu-mobile-card {
+    flex: 0 0 auto;
+    min-width: 240px;
+    max-width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-2);
+    padding: var(--size-4);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--rounded-lg);
+    text-decoration: none;
+    color: var(--color-text);
+    scroll-snap-align: start;
+
+    .icon {
+      display: flex;
+      color: var(--color-text);
+    }
+  }
+
+  .megamenu-mobile-card:first-child {
+    margin-inline-start: var(--size-6);
+  }
+
+  .megamenu-mobile-card__title {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    margin: 0;
+  }
+
+  .megamenu-mobile-card__description {
+    font-size: var(--text-sm);
+    color: var(--color-text-subtle);
+    margin: 0;
+  }
 }
