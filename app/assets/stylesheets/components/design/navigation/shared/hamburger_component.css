@@ -6,6 +6,7 @@
   transition: opacity var(--time-150) ease;
   border: none;
   --btn-border-color: transparent;
+  position: relative;
 }
 
 .hamburger-component:hover {
@@ -14,4 +15,52 @@
 
 .hamburger-component:active {
   transform: scale(0.95);
+}
+
+/* Mobile menu toggle (label for checkbox variant) */
+.mobile-menu-toggle {
+  position: relative;
+}
+
+/* Hamburger icon stacking - overlay both icons in same space */
+.hamburger-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity var(--time-200) ease;
+}
+
+.hamburger-icon--close {
+  position: absolute;
+  inset: 0;
+}
+
+/* Default state: menu icon visible, close icon hidden */
+.hamburger-icon--menu {
+  opacity: 1;
+}
+
+.hamburger-icon--close {
+  opacity: 0;
+}
+
+/* Checkbox variant: Toggle icons when checkbox is checked
+   Note: Since checkbox comes AFTER the label in DOM, we use :has() pseudo-class
+   to check if the parent header has a checked checkbox */
+#header:has(.mobile-menu-checkbox:checked) .hamburger-icon--menu {
+  opacity: 0;
+}
+
+#header:has(.mobile-menu-checkbox:checked) .hamburger-icon--close {
+  opacity: 1;
+}
+
+/* Popover variant: Toggle icons when popover is open
+   Check if parent div has an open popover child */
+[data-controller="popover"]:has([popover]:popover-open) .hamburger-icon--menu {
+  opacity: 0;
+}
+
+[data-controller="popover"]:has([popover]:popover-open) .hamburger-icon--close {
+  opacity: 1;
 }
