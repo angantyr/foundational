@@ -152,6 +152,8 @@
 /* Popover-based mobile menu */
 .popover--mobile-menu {
   --popover-size: 100vw;
+  position: fixed !important;
+  top: calc(var(--size-6) * 2 + 64px) !important; /* Header height */
   left: 0 !important;
   right: 0 !important;
   margin: 0;
