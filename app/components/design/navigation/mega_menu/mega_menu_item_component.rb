@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class Design::Navigation::MegaMenu::MegaMenuItemComponent < ViewComponent::Base
-  renders_one :megamenu_content
+  renders_one :header
+  renders_one :links
+  renders_one :footer
   renders_one :mobile_content
 
   def initialize(label:, popover_id:, trigger_actions: nil)

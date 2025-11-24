@@ -28,52 +28,59 @@
         popover_id: "#{nav_label.downcase}-megapopover",
         trigger_actions: trigger == :hover ? "mouseenter->popover#debouncedShow mouseleave->popover#debouncedHide" : nil
       ) do |mega| %>
-        <%= mega.with_megamenu_content do %>
-          <div class="megamenu">
-            <div class="megamenu__grid">
-              <% modules.each do |mod| %>
-                <%= render Design::Navigation::Shared::MenuItemComponent.new(
-                  label: mod[:label],
-                  href: "/modules/#{mod[:label].downcase}",
-                  icon: mod[:icon],
-                  description: mod[:description],
-                  variant: :card
-                ) %>
-              <% end %>
-            </div>
+        <%= mega.with_header do %>
+          <div class="megamenu__header">
+            <h2 class="megamenu__header-title">Build your website one brick at a time</h2>
+            <p class="megamenu__header-summary">Start small and add modules to address business needs as they emerge</p>
+          </div>
+        <% end %>
 
-            <div class="megamenu__footer">
-              <a href="#" class="megamenu__footer-link">
-                <span class="icon" aria-hidden="true">
-                  <%= image_tag "icons/sparkles.svg", size: 16, alt: "" %>
-                </span>
-                <span>Learn about your private AI</span>
-              </a>
+        <%= mega.with_links do %>
+          <div class="megamenu__grid">
+            <% modules.each do |mod| %>
+              <%= render Design::Navigation::Shared::MenuItemComponent.new(
+                label: mod[:label],
+                href: "/modules/#{mod[:label].downcase}",
+                icon: mod[:icon],
+                description: mod[:description],
+                variant: :card
+              ) %>
+            <% end %>
+          </div>
+        <% end %>
 
-              <a href="#" class="megamenu__footer-link">
-                <span class="icon" aria-hidden="true">
-                  <%= image_tag "icons/handshake.svg", size: 16, alt: "" %>
-                </span>
-                <span>Request a meeting</span>
-              </a>
+        <%= mega.with_footer do %>
+          <div class="megamenu__footer">
+            <a href="#" class="megamenu__footer-link">
+              <span class="icon" aria-hidden="true">
+                <%= image_tag "icons/sparkles.svg", size: 16, alt: "" %>
+              </span>
+              <span>Learn about your private AI</span>
+            </a>
 
-              <a href="#" class="megamenu__footer-link">
-                <span class="icon" aria-hidden="true">
-                  <%= image_tag "icons/phone.svg", size: 16, alt: "" %>
-                </span>
-                <span>Contact sales</span>
-              </a>
+            <a href="#" class="megamenu__footer-link">
+              <span class="icon" aria-hidden="true">
+                <%= image_tag "icons/handshake.svg", size: 16, alt: "" %>
+              </span>
+              <span>Request a meeting</span>
+            </a>
 
-              <a href="/modules" class="megamenu__footer-link">
-                <span class="icon" aria-hidden="true">
-                  <%= image_tag "icons/layout-dashboard.svg", size: 16, alt: "" %>
-                </span>
-                <span>View all modules</span>
-                <span class="icon" aria-hidden="true">
-                  <%= image_tag "icons/arrow-long-right.svg", size: 16, alt: "" %>
-                </span>
-              </a>
-            </div>
+            <a href="#" class="megamenu__footer-link">
+              <span class="icon" aria-hidden="true">
+                <%= image_tag "icons/phone.svg", size: 16, alt: "" %>
+              </span>
+              <span>Contact sales</span>
+            </a>
+
+            <a href="/modules" class="megamenu__footer-link">
+              <span class="icon" aria-hidden="true">
+                <%= image_tag "icons/layout-dashboard.svg", size: 16, alt: "" %>
+              </span>
+              <span>View all modules</span>
+              <span class="icon" aria-hidden="true">
+                <%= image_tag "icons/arrow-long-right.svg", size: 16, alt: "" %>
+              </span>
+            </a>
           </div>
         <% end %>
 

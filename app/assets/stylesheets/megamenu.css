@@ -42,6 +42,27 @@
   /* No max-width constraint - let it fill available space like top nav */
 }
 
+/* Megamenu header section */
+.megamenu__header {
+  padding: var(--size-10) var(--size-12);
+  padding-block-end: var(--size-8);
+}
+
+.megamenu__header-title {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  margin: 0;
+  margin-block-end: var(--size-3);
+  color: var(--color-text);
+}
+
+.megamenu__header-summary {
+  font-size: var(--text-lg);
+  color: var(--color-text-subtle);
+  margin: 0;
+  line-height: var(--leading-relaxed);
+}
+
 /* Grid layout - 4 columns */
 .megamenu__grid {
   display: grid;
@@ -49,6 +70,11 @@
   gap: var(--size-8);
   padding: var(--size-10) var(--size-12);
   padding-block-end: var(--size-8);
+}
+
+/* Remove top padding from grid when header is present */
+.megamenu__header + .megamenu__grid {
+  padding-block-start: 0;
 }
 
 /* Card styling - needs higher specificity than .top_nav a */

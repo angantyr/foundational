@@ -6,11 +6,18 @@
     </span>
   </button>
   <div popover id="<%= @popover_id %>" class="popover popover--mega" data-popover-target="content" role="menu" aria-label="<%= @label %> Menu">
-    <%= megamenu_content %>
+    <div class="megamenu">
+      <%= header if header? %>
+      <%= links %>
+      <%= footer if footer? %>
+    </div>
   </div>
 </div>
 
 <details class="hide@md">
   <summary><%= @label %></summary>
-  <%= mobile_content || megamenu_content %>
+  <div class="megamenu">
+    <%= header if header? %>
+    <%= mobile_content || links %>
+  </div>
 </details>
