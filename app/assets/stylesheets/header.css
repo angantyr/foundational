@@ -158,6 +158,9 @@
   right: 0 !important;
   margin: 0;
   max-inline-size: none;
+  max-height: calc(100vh - var(--size-6) * 2 - 64px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
 
   /* Accordion styling for mobile menu */
   .accordion {
