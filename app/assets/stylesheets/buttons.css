@@ -14,7 +14,7 @@
   --btn-border-color: transparent;
   --btn-box-shadow: none;
   --btn-color: var(--color-text-subtle);
-  --btn-font-size: var(--text-base);
+  --btn-font-size: var(--text-sm);
   --btn-font-weight: var(--font-semibold);
   --btn-padding: 0.5rem 1.25rem;
   --btn-hover-color: transparent;
@@ -51,7 +51,7 @@
 .btn--primary {
   --btn-background: var(--color-primary);
   --btn-border-color: transparent;
-  --btn-font-size: var(--text-base);
+  --btn-font-size: var(--text-sm);
   --btn-font-weight: var(--font-semibold);
   --btn-padding: 0.5rem 1.25rem;
   --btn-hover-color: var(--color-text);
