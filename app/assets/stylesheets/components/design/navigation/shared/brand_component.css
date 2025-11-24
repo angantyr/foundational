@@ -1,0 +1,27 @@
+/* Brand Component */
+.brand-component {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity var(--time-150) ease, transform var(--time-200) var(--ease-3);
+}
+
+.brand-component:hover {
+  opacity: 0.8;
+}
+
+/* Animated variant with scale transform */
+.brand-component--animate:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.brand-component--animate:active {
+  transform: scale(0.98);
+}
+
+/* Ensure SVG inherits proper sizing */
+.brand-component svg,
+.brand-component img {
+  display: block;
+}

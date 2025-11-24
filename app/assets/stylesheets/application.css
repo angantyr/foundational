@@ -37,6 +37,12 @@
 @import url('dropdown_menu.css');
 @import url('megamenu.css');
 
+/* ViewComponent Stylesheets */
+@import url('components/design/navigation/shared/brand_component.css');
+@import url('components/design/navigation/shared/nav_item_component.css');
+@import url('components/design/navigation/shared/menu_item_component.css');
+@import url('components/design/navigation/shared/hamburger_component.css');
+
 /* CSS-Zero Utilities - Load LAST for highest specificity */
 @import url('css-zero/utilities.css');
 

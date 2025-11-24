@@ -1,0 +1,17 @@
+/* Hamburger Component - mimics .mobile-menu-toggle */
+.hamburger-component {
+  cursor: pointer;
+  padding: 0;
+  opacity: 0.7;
+  transition: opacity var(--time-150) ease;
+  border: none;
+  --btn-border-color: transparent;
+}
+
+.hamburger-component:hover {
+  opacity: 1;
+}
+
+.hamburger-component:active {
+  transform: scale(0.95);
+}

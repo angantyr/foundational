@@ -1,0 +1,8 @@
+<a href="<%= @href %>" class="<%= css_classes %>">
+  <% if show_icon? %>
+    <span class="nav-item-component__icon">
+      <%= image_tag "icons/#{@icon}.svg", size: 24, alt: "" %>
+    </span>
+  <% end %>
+  <span class="nav-item-component__label"><%= @label %></span>
+</a>

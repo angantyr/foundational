@@ -1,0 +1,34 @@
+<% if @href %>
+<a href="<%= @href %>" class="<%= css_classes %>">
+  <% if show_icon? %>
+  <span class="menu-item-component__icon">
+    <%= image_tag "icons/#{@icon}.svg", size: (card_variant? ? 24 : 16), alt: "" %>
+  </span>
+  <% end %>
+  <span class="menu-item-component__content">
+    <span class="menu-item-component__label"><%= @label %></span>
+    <% if has_description? %>
+    <span class="menu-item-component__description"><%= @description %></span>
+    <% end %>
+  </span>
+  <% if @show_chevron %>
+  <span class="menu-item-component__chevron">
+    <%= image_tag "icons/chevron-right.svg", size: 20, alt: "" %>
+  </span>
+  <% end %>
+</a>
+<% else %>
+<span class="<%= css_classes %> menu-item-component--static">
+  <% if show_icon? %>
+  <span class="menu-item-component__icon">
+    <%= image_tag "icons/#{@icon}.svg", size: (card_variant? ? 24 : 16), alt: "" %>
+  </span>
+  <% end %>
+  <span class="menu-item-component__content">
+    <span class="menu-item-component__label"><%= @label %></span>
+    <% if has_description? %>
+    <span class="menu-item-component__description"><%= @description %></span>
+    <% end %>
+  </span>
+</span>
+<% end %>

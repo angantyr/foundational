@@ -1,0 +1,32 @@
+/* Nav Item Component - mimics .top_nav a styling */
+.nav-item-component {
+  color: var(--color-text-subtle);
+  text-decoration: none;
+  padding-block-start: var(--size-1);
+  padding-block-end: var(--size-0_5);
+  padding-inline: var(--size-1);
+  border-block-end: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--size-2);
+}
+
+.nav-item-component:hover {
+  color: var(--color-text);
+  border-block-end-color: var(--color-text);
+}
+
+.nav-item-component--active {
+  color: var(--color-text);
+  border-block-end-color: var(--color-text);
+}
+
+.nav-item-component__icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-item-component__label {
+  font-weight: var(--font-medium);
+}
