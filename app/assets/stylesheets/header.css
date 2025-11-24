@@ -148,3 +148,62 @@
     padding: 0 !important;
   }
 }
+
+/* Popover-based mobile menu */
+.popover--mobile-menu {
+  --popover-size: 100vw;
+  left: 0 !important;
+  right: 0 !important;
+  margin: 0;
+  max-inline-size: none;
+
+  /* Accordion styling for mobile menu */
+  .accordion {
+    details {
+      border: none;
+
+      /* Hide native marker */
+      summary {
+        list-style: none;
+        &::-webkit-details-marker {
+          display: none;
+        }
+      }
+
+      /* Large touch-friendly accordion headers */
+      summary {
+        padding-block: var(--size-3);
+        padding-inline: var(--size-6);
+        font-size: var(--text-2xl);
+        font-weight: var(--font-semibold);
+
+        &:hover {
+          text-decoration: none;
+          background-color: var(--color-border-light);
+        }
+
+        /* Chevron on right side */
+        &::after {
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+        }
+      }
+
+      /* Smaller submenu items */
+      .menu__item {
+        padding-block: var(--size-2);
+        padding-inline: var(--size-6);
+        padding-inline-start: var(--size-8);
+        font-size: var(--text-lg);
+      }
+
+      /* Hide the separator and last menu group (footer link) */
+      .menu__separator {
+        display: none;
+      }
+
+      .menu__group:last-child {
+        display: none;
+      }
+    }
+  }
+}
