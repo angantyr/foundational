@@ -5,7 +5,8 @@
       "Bash(bundle show:*)",
       "Bash(bin/rails runner:*)",
       "WebFetch(domain:github.com)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git checkout:*)"
     ],
     "deny": [],
     "ask": []
