@@ -1,3 +1,9 @@
-<button type="button" popovertarget="<%= @target %>" class="text-primary hamburger-component btn btn--icon hide@md" aria-label="<%= @aria_label %>">
-  <%= image_tag "icons/menu.svg", size: 48, alt: "Menu" %>
-</button>
+<% if checkbox_variant? %>
+  <label for="<%= @target %>" class="mobile-menu-toggle hide@md flex items-center justify-center">
+    <%= image_tag "icons/menu.svg", size: 48, alt: "Menu" %>
+  </label>
+<% else %>
+  <button type="button" popovertarget="<%= @target %>" class="hamburger-component btn btn--icon hide@md" aria-label="<%= @aria_label %>">
+    <%= image_tag "icons/menu.svg", size: 48, alt: "Menu" %>
+  </button>
+<% end %>

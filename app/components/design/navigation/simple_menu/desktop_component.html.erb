@@ -1,0 +1,19 @@
+<% if brand? %>
+  <div class="header-brand flex-item-no-shrink">
+    <%= brand %>
+  </div>
+<% end %>
+
+<nav class="show@md flex flex-1 justify-start pi-6">
+  <div class="top_nav max-i-2xl flex flex-item-grow items-center justify-between font-semibold font-title tracking-wider">
+    <% nav_items.each do |item| %>
+      <%= item %>
+    <% end %>
+  </div>
+</nav>
+
+<div class="header-actions flex items-center gap flex-item-no-shrink">
+  <% actions.each do |action| %>
+    <%= action %>
+  <% end %>
+</div>

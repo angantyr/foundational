@@ -1,0 +1,47 @@
+<header id="header">
+  <div class="header-menu">
+    <% if brand? %>
+      <div class="header-brand flex-item-no-shrink">
+        <%= brand %>
+      </div>
+    <% end %>
+
+    <nav class="show@md flex flex-1 justify-start pi-6">
+      <div class="top_nav max-i-2xl flex flex-item-grow items-center justify-between font-semibold font-title tracking-wider">
+        <% nav_items.each do |item| %>
+          <%= item %>
+        <% end %>
+      </div>
+    </nav>
+
+    <div class="header-actions flex items-center gap flex-item-no-shrink">
+      <% desktop_actions.each do |action| %>
+        <%= action %>
+      <% end %>
+      <%= render Design::Navigation::Shared::HamburgerComponent.new(
+        target: "mobile-menu-toggle",
+        variant: :checkbox
+      ) %>
+    </div>
+  </div>
+
+  <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-checkbox" hidden>
+
+  <nav class="mobile-menu__content">
+    <div class="menu">
+      <div class="menu__group" role="group">
+        <% nav_items.each do |item| %>
+          <%= item %>
+        <% end %>
+      </div>
+    </div>
+
+    <% if mobile_actions.any? %>
+      <div class="mobile-menu__footer">
+        <% mobile_actions.each do |action| %>
+          <%= action %>
+        <% end %>
+      </div>
+    <% end %>
+  </nav>
+</header>

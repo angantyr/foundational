@@ -81,6 +81,17 @@
   margin-inline-start: auto;
 }
 
+/* Mobile menu styling - larger touch-friendly items */
+.mobile-menu__content .menu-item-component {
+  padding-block: var(--size-3);
+  padding-inline: var(--size-6);
+  font-size: var(--text-2xl);
+}
+
+.mobile-menu__content .menu-item-component__label {
+  font-size: var(--text-2xl);
+}
+
 /* Card variant - mimics .megamenu__card */
 .menu-item-component--card {
   display: flex;
