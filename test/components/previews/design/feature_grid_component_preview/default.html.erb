@@ -1,0 +1,37 @@
+<%
+  modules = [
+    { label: "Corporate", icon: "hotel", description: "Manage companies, subsidiaries, offices, and people. Define reporting structures, organizational charts, departments, and teams." },
+    { label: "Business", icon: "briefcase-business", description: "A set of defaults for managing solutions, products, and services. Onboard partners." },
+    { label: "Catalog", icon: "book-open-text", description: "Build product pages on best practices for key features, benefits, detailed specs, related products and collateral." },
+    { label: "Web", icon: "globe", description: "Managed multiple websites under multiple domains. Define information architecture, navigation, site, accessibility constraints." },
+    { label: "Collateral", icon: "book-image", description: "types, protected, downloads, versioning." },
+    { label: "Broadcast", icon: "radio-tower", description: "Anim auto id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat." },
+    { label: "Store", icon: "shopping-cart", description: "Anim auto id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat." },
+    { label: "Media", icon: "image", description: "Anim auto id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat." }
+  ]
+%>
+
+<div style="max-width: 1200px; margin: 0 auto; padding: var(--size-12);">
+  <%= render Design::SectionHeaderComponent.new(
+    title: "Powerful Features",
+    summary: "All modules share a set of powerful features that keeps you moving"
+  ) %>
+
+  <%= render Design::FeatureGridComponent.new do |grid| %>
+    <% modules.each do |mod| %>
+      <%= grid.with_feature do %>
+        <%= render Design::FeatureItemComponent.new(
+          title: mod[:label],
+          description: mod[:description],
+          icon: mod[:icon],
+          href: "/modules/#{mod[:label].downcase}",
+          border: true
+        ) %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <div style="display: flex; justify-content: center; margin-block-start: var(--size-12);">
+    <%= link_to "Learn more", "#", class: "btn btn--outline btn--large btn--rounded" %>
+  </div>
+</div>

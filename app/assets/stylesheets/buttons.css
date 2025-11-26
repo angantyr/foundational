@@ -56,3 +56,26 @@
   --btn-padding: 0.5rem 1.25rem;
   --btn-hover-color: var(--color-text);
 }
+
+/* Outline button - border with transparent background */
+.btn--outline {
+  --btn-background: transparent;
+  --btn-border-color: var(--color-border);
+  --btn-color: var(--color-text);
+  --btn-font-size: var(--text-base);
+  --btn-font-weight: var(--font-semibold);
+  --btn-padding: 0.75rem 2rem;
+  border-width: 2px;
+  transition: all 0.2s ease;
+}
+
+.btn--outline:hover {
+  --btn-background: var(--color-bg);
+  --btn-border-color: var(--color-text);
+}
+
+/* Large button variant */
+.btn--large {
+  --btn-font-size: var(--text-lg);
+  --btn-padding: 1rem 2.5rem;
+}
