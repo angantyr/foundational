@@ -1,7 +1,8 @@
 <div style="max-width: 800px; margin: 0 auto; padding: var(--size-12);">
-  <%= render Design::Navigation::TabsComponent.new(variant: :vertical) do |c| %>
+  <%= render Design::Navigation::Tabs::WidgetComponent.new(variant: :vertical) do |widget| %>
     <% tabs.each do |tab| %>
-      <% c.with_tab(label: tab.header, summary: tab.summary) %>
+      <% widget.with_button do %><%= tab.header %><% end %>
+      <% widget.with_panel do %><p class="text-base m-0"><%= tab.summary %></p><% end %>
     <% end %>
   <% end %>
 </div>

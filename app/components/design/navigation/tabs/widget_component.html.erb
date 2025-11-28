@@ -1,0 +1,27 @@
+<% if variant == :responsive %>
+  <div class="<%= tabs_class %>" data-controller="tabs">
+    <div class="tabs__tabs" data-action="keydown.left->tabs#prev keydown.right->tabs#next" role="tablist">
+      <% buttons.each do |button| %>
+        <%= button %>
+      <% end %>
+    </div>
+
+    <div class="tabs__panels">
+      <% panels.each do |panel| %>
+        <%= panel %>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <div class="<%= tabs_class %>" data-controller="tabs">
+    <div class="tabs__list" data-action="keydown.left->tabs#prev keydown.right->tabs#next" role="tablist">
+      <% buttons.each do |button| %>
+        <%= button %>
+      <% end %>
+    </div>
+
+    <% panels.each do |panel| %>
+      <%= panel %>
+    <% end %>
+  </div>
+<% end %>
