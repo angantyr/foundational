@@ -1,8 +1,17 @@
 <div style="max-width: 600px; margin: 0 auto; padding: var(--size-12);">
   <%= render Design::Navigation::Tabs::WidgetComponent.new do |widget| %>
+    <%# First loop: render all the buttons %>
     <% tabs.each do |tab| %>
-      <% widget.with_button do %><%= tab.header %><% end %>
-      <% widget.with_panel do %><p class="text-base m-0"><%= tab.summary %></p><% end %>
+      <% widget.with_button do %>
+        <%= tab.header %>
+      <% end %>
+    <% end %>
+
+    <%# Second loop: render all the panels %>
+    <% tabs.each do |tab| %>
+      <% widget.with_panel do %>
+        <p class="text-base m-0"><%= tab.summary %></p>
+      <% end %>
     <% end %>
   <% end %>
 </div>

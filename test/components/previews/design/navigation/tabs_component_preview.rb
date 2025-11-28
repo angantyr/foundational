@@ -14,6 +14,11 @@ class Design::Navigation::TabsComponentPreview < Lookbook::Preview
     render_with_template(locals: { tabs: sample_tabs })
   end
 
+  # @label With Images (Complex)
+  def with_images
+    render_with_template(locals: { tabs: sample_tabs })
+  end
+
   private
 
   def sample_tabs

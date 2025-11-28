@@ -7,10 +7,14 @@
       <% end %>
     <% end %>
 
-    <%# Second loop: render all the panels %>
+    <%# Second loop: render all the panels with rich content %>
     <% tabs.each do |tab| %>
       <% widget.with_panel do %>
-        <p class="text-base m-0"><%= tab.summary %></p>
+        <div class="feature-content">
+          <%= image_tag tab.preview.src, alt: tab.preview.caption, class: "w-full rounded-md" %>
+          <p class="text-sm text-subtle mt-2"><%= tab.preview.caption %></p>
+          <p class="text-base mt-4 m-0"><%= tab.summary %></p>
+        </div>
       <% end %>
     <% end %>
   <% end %>
