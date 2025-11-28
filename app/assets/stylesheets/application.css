@@ -25,6 +25,9 @@
 @import url('css_zero/accordion.css');
 @import url('css_zero/menu.css');
 @import url('css_zero/popover.css');
+@import url('css_zero/card.css');
+@import url('css_zero/tabs.css');
+@import url('css_zero/carousel.css');
 
 /* Custom Theme & Base Styles */
 @import url('base.css');
@@ -49,6 +52,7 @@
 @import url('components/design/section_header_component.css');
 @import url('components/design/feature_item_component.css');
 @import url('components/design/feature_grid_component.css');
+@import url('components/design/tabs_component.css');
 
 /* CSS-Zero Utilities - Load LAST for highest specificity */
 @import url('css-zero/utilities.css');

@@ -1,0 +1,6 @@
+<div style="max-width: 400px; margin: 0 auto; padding: var(--size-12);">
+  <%= render Design::TabsComponent.new do |c| %>
+    <% c.with_tab(label: "Account") %>
+    <% c.with_tab(label: "Password") %>
+  <% end %>
+</div>
