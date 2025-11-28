@@ -1,30 +1,64 @@
 <%= content %>
-<div class="<%= tabs_class %>" data-controller="tabs">
-  <div class="tabs__list" data-action="keydown.left->tabs#prev keydown.right->tabs#next" role="tablist">
-    <% tabs.each_with_index do |tab, index| %>
-      <button type="button"
-              id="trigger_<%= index %>"
-              class="btn tabs__button"
-              data-tabs-target="button"
-              data-action="tabs#select"
-              role="tab"
-              aria-controls="tab_<%= index %>">
-        <%= tab[:label] %>
-      </button>
-    <% end %>
-  </div>
-
-  <% tabs.each_with_index do |tab, index| %>
-    <div hidden
-         id="tab_<%= index %>"
-         data-tabs-target="tab"
-         role="tabpanel"
-         aria-labelledby="trigger_<%= index %>">
-      <% if tab[:summary] %>
-        <p class="text-base m-0"><%= tab[:summary] %></p>
-      <% else %>
-        Tab panel content for <%= tab[:label] %> goes here.
+<% if variant == :responsive %>
+  <div class="<%= tabs_class %>" data-controller="tabs">
+    <div class="tabs__tabs" data-action="keydown.left->tabs#prev keydown.right->tabs#next" role="tablist">
+      <% tabs.each_with_index do |tab, index| %>
+        <button type="button"
+                id="trigger_<%= index %>"
+                class="btn tabs__button"
+                data-tabs-target="button"
+                data-action="tabs#select"
+                role="tab"
+                aria-controls="tab_<%= index %>">
+          <%= tab[:label] %>
+        </button>
       <% end %>
     </div>
-  <% end %>
-</div>
+
+    <div class="tabs__panels">
+      <% tabs.each_with_index do |tab, index| %>
+        <div hidden
+             id="tab_<%= index %>"
+             data-tabs-target="tab"
+             role="tabpanel"
+             aria-labelledby="trigger_<%= index %>">
+          <% if tab[:summary] %>
+            <p class="text-base m-0"><%= tab[:summary] %></p>
+          <% else %>
+            Tab panel content for <%= tab[:label] %> goes here.
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <div class="<%= tabs_class %>" data-controller="tabs">
+    <div class="tabs__list" data-action="keydown.left->tabs#prev keydown.right->tabs#next" role="tablist">
+      <% tabs.each_with_index do |tab, index| %>
+        <button type="button"
+                id="trigger_<%= index %>"
+                class="btn tabs__button"
+                data-tabs-target="button"
+                data-action="tabs#select"
+                role="tab"
+                aria-controls="tab_<%= index %>">
+          <%= tab[:label] %>
+        </button>
+      <% end %>
+    </div>
+
+    <% tabs.each_with_index do |tab, index| %>
+      <div hidden
+           id="tab_<%= index %>"
+           data-tabs-target="tab"
+           role="tabpanel"
+           aria-labelledby="trigger_<%= index %>">
+        <% if tab[:summary] %>
+          <p class="text-base m-0"><%= tab[:summary] %></p>
+        <% else %>
+          Tab panel content for <%= tab[:label] %> goes here.
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

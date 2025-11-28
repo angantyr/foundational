@@ -8,3 +8,38 @@
   inline-size: auto;
   block-size: auto;
 }
+
+/* Responsive tabs variant */
+.tabs--responsive .tabs__tabs {
+  /* Replicate tabs__list styling */
+  background-color: var(--color-border-light);
+  border-radius: var(--rounded-md);
+  color: var(--color-text-subtle);
+  padding: var(--size-1);
+  display: flex;
+  overflow-x: auto;
+  gap: var(--size-2);
+}
+
+.tabs--responsive .tabs__panels {
+  margin-block-start: var(--size-6);
+}
+
+@media (min-width: 64rem) {
+  .tabs--responsive {
+    flex-direction: row;
+    gap: var(--size-8);
+  }
+
+  .tabs--responsive .tabs__tabs {
+    flex-direction: column;
+    flex-shrink: 0;
+    inline-size: 16rem;
+    overflow-x: visible;
+  }
+
+  .tabs--responsive .tabs__panels {
+    flex: 1;
+    margin-block-start: 0;
+  }
+}

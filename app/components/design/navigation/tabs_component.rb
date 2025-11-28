@@ -23,6 +23,7 @@ class Design::Navigation::TabsComponent < ViewComponent::Base
   def tabs_class
     classes = ["tabs"]
     classes << "tabs--vertical" if variant == :vertical
+    classes << "tabs--responsive" if variant == :responsive
     classes.join(" ")
   end
 end

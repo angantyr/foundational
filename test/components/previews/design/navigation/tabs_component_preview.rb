@@ -9,6 +9,11 @@ class Design::Navigation::TabsComponentPreview < Lookbook::Preview
     render_with_template(locals: { tabs: sample_tabs })
   end
 
+  # @label Responsive
+  def responsive
+    render_with_template(locals: { tabs: sample_tabs })
+  end
+
   private
 
   def sample_tabs
