@@ -1,0 +1,7 @@
+<div style="max-width: 600px; margin: 0 auto; padding: var(--size-12);">
+  <%= render Design::Navigation::TabsComponent.new do |c| %>
+    <% tabs.each do |tab| %>
+      <% c.with_tab(label: tab.header, summary: tab.summary) %>
+    <% end %>
+  <% end %>
+</div>

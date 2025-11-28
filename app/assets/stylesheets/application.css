@@ -52,7 +52,7 @@
 @import url('components/design/section_header_component.css');
 @import url('components/design/feature_item_component.css');
 @import url('components/design/feature_grid_component.css');
-@import url('components/design/tabs_component.css');
+@import url('components/design/navigation/tabs_component.css');
 
 /* CSS-Zero Utilities - Load LAST for highest specificity */
 @import url('css-zero/utilities.css');

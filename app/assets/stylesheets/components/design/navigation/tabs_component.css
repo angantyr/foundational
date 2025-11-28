@@ -1,0 +1,10 @@
+/* Vertical tabs variant */
+.tabs--vertical {
+  flex-direction: row;
+}
+
+.tabs--vertical .tabs__list {
+  flex-direction: column;
+  inline-size: auto;
+  block-size: auto;
+}
