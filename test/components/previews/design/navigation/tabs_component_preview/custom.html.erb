@@ -1,0 +1,23 @@
+<div style="max-width: 1200px; margin: 0 auto; padding: var(--size-12);">
+  <%= render Design::Navigation::Tabs::WidgetComponent.new(variant: :responsive) do |widget| %>
+    <%# First loop: render all the buttons with header + summary %>
+    <% tabs.each do |tab| %>
+      <% widget.with_button do %>
+        <div style="text-align: left; white-space: normal; pointer-events: none;">
+          <div class="font-semibold"><%= tab.header %></div>
+          <div class="show@md text-sm text-subtle mbs-1"><%= tab.summary %></div>
+        </div>
+      <% end %>
+    <% end %>
+
+    <%# Second loop: render all the panels with summary + image %>
+    <% tabs.each do |tab| %>
+      <% widget.with_panel do %>
+        <div>
+          <p class="hide@md text-base m-0 mbe-4"><%= tab.summary %></p>
+          <%= image_tag tab.preview.src, alt: tab.preview.caption, class: "w-full rounded-md" %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

@@ -19,6 +19,11 @@ class Design::Navigation::TabsComponentPreview < Lookbook::Preview
     render_with_template(locals: { tabs: sample_tabs })
   end
 
+  # @label Custom (Original Design)
+  def custom
+    render_with_template(locals: { tabs: sample_tabs })
+  end
+
   private
 
   def sample_tabs
@@ -28,7 +33,7 @@ class Design::Navigation::TabsComponentPreview < Lookbook::Preview
         summary: "Manage your account settings and preferences. Update your profile information, email address, and notification settings.",
         preview: OpenStruct.new(
           caption: "Account settings screenshot",
-          src: "https://via.placeholder.com/600x400/e2e8f0/64748b?text=Account+Settings"
+          src: "/lookbook/tabs/account.png"
         )
       ),
       OpenStruct.new(
@@ -36,7 +41,7 @@ class Design::Navigation::TabsComponentPreview < Lookbook::Preview
         summary: "Change your password and configure two-factor authentication. Keep your account secure with a strong password.",
         preview: OpenStruct.new(
           caption: "Password settings screenshot",
-          src: "https://via.placeholder.com/600x400/e2e8f0/64748b?text=Password+Settings"
+          src: "/lookbook/tabs/password.png"
         )
       ),
       OpenStruct.new(
@@ -44,7 +49,7 @@ class Design::Navigation::TabsComponentPreview < Lookbook::Preview
         summary: "Control how and when you receive notifications. Choose which events trigger email or push notifications.",
         preview: OpenStruct.new(
           caption: "Notification preferences screenshot",
-          src: "https://via.placeholder.com/600x400/e2e8f0/64748b?text=Notification+Settings"
+          src: "/lookbook/tabs/notifications.png"
         )
       )
     ]
