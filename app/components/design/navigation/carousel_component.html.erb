@@ -1,0 +1,11 @@
+<div class="carousel" data-controller="carousel">
+  <button type="button" class="btn" data-action="carousel#prev">‹</button>
+
+  <div class="carousel__content" data-carousel-target="content">
+    <% slides.each do |slide| %>
+      <%= slide %>
+    <% end %>
+  </div>
+
+  <button type="button" class="btn" data-action="carousel#next">›</button>
+</div>
