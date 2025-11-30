@@ -1,21 +1,11 @@
 <div style="max-width: 800px; margin: 0 auto; padding: var(--size-12);">
-  <%= render Design::Navigation::CarouselComponent.new do |carousel| %>
-    <% carousel.with_slide do %>
-      <div style="height: 300px; background: lightcoral; display: flex; align-items: center; justify-content: center; border-radius: var(--rounded-md);">
-        <h2 class="text-2xl">Slide 1</h2>
-      </div>
-    <% end %>
-
-    <% carousel.with_slide do %>
-      <div style="height: 300px; background: lightblue; display: flex; align-items: center; justify-content: center; border-radius: var(--rounded-md);">
-        <h2 class="text-2xl">Slide 2</h2>
-      </div>
-    <% end %>
-
-    <% carousel.with_slide do %>
-      <div style="height: 300px; background: lightgreen; display: flex; align-items: center; justify-content: center; border-radius: var(--rounded-md);">
-        <h2 class="text-2xl">Slide 3</h2>
-      </div>
+  <%= render Design::Navigation::Carousel::WidgetComponent.new do |widget| %>
+    <% features.each do |feature| %>
+      <% widget.with_slide do %>
+        <div style="padding: var(--size-8);">
+          <%= image_tag feature.preview.src, alt: feature.preview.caption, class: "w-full rounded-md" %>
+        </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>

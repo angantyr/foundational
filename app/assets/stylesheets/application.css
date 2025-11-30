@@ -29,6 +29,9 @@
 @import url('css_zero/tabs.css');
 @import url('css_zero/carousel.css');
 
+/* Third-party Libraries */
+@import url('swiper.css');
+
 /* Custom Theme & Base Styles */
 @import url('base.css');
 

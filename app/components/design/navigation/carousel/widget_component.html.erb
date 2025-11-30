@@ -1,0 +1,20 @@
+<div data-controller="carousel">
+  <div class="swiper" data-carousel-target="container">
+    <div class="swiper-wrapper">
+      <% slides.each do |slide| %>
+        <%= slide %>
+      <% end %>
+    </div>
+
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+
+  <% if paginations? %>
+    <div class="carousel__pagination">
+      <% paginations.each do |pagination| %>
+        <%= pagination %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
