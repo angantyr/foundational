@@ -1,0 +1,37 @@
+/* Feature Item Component */
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-3);
+}
+
+.feature-item__icon {
+  display: flex;
+  align-items: center;
+  color: var(--color-text);
+  margin-block-end: var(--size-1);
+}
+
+.feature-item__title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  margin: 0;
+  color: var(--color-text);
+}
+
+.feature-item__link {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.feature-item__link:hover {
+  color: var(--color-primary);
+}
+
+.feature-item__description {
+  font-size: var(--text-base);
+  color: var(--color-text);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
