@@ -1,0 +1,112 @@
+<%= render Design::Navigation::Menu::SimpleComponent.new do |menu| %>
+  <%= menu.with_brand do %>
+    <%= render Design::Navigation::Elements::BrandComponent.new(
+      logo: "brandmark.svg",
+      href: "/",
+      size: 64,
+      animate_on_hover: true
+    ) %>
+  <% end %>
+
+  <%= menu.with_nav_item do %>
+    <div class="show@md">
+      <%= render Design::Navigation::Elements::NavItemComponent.new(
+        label: "Solutions",
+        href: "#"
+      ) %>
+    </div>
+    <div class="hide@md">
+      <%= render Design::Navigation::Elements::MenuItemComponent.new(
+        label: "Solutions",
+        href: "#",
+        show_icon: false,
+        show_chevron: true
+      ) %>
+    </div>
+  <% end %>
+
+  <%= menu.with_nav_item do %>
+    <div class="show@md">
+      <%= render Design::Navigation::Elements::NavItemComponent.new(
+        label: "Modules",
+        href: "#",
+        active: true
+      ) %>
+    </div>
+    <div class="hide@md">
+      <%= render Design::Navigation::Elements::MenuItemComponent.new(
+        label: "Modules",
+        href: "#",
+        show_icon: false,
+        show_chevron: true
+      ) %>
+    </div>
+  <% end %>
+
+  <%= menu.with_nav_item do %>
+    <div class="show@md">
+      <%= render Design::Navigation::Elements::NavItemComponent.new(
+        label: "Features",
+        href: "#"
+      ) %>
+    </div>
+    <div class="hide@md">
+      <%= render Design::Navigation::Elements::MenuItemComponent.new(
+        label: "Features",
+        href: "#",
+        show_icon: false,
+        show_chevron: true
+      ) %>
+    </div>
+  <% end %>
+
+  <%= menu.with_nav_item do %>
+    <div class="show@md">
+      <%= render Design::Navigation::Elements::NavItemComponent.new(
+        label: "Platform",
+        href: "#"
+      ) %>
+    </div>
+    <div class="hide@md">
+      <%= render Design::Navigation::Elements::MenuItemComponent.new(
+        label: "Platform",
+        href: "#",
+        show_icon: false,
+        show_chevron: true
+      ) %>
+    </div>
+  <% end %>
+
+  <%= menu.with_nav_item do %>
+    <div class="show@md">
+      <%= render Design::Navigation::Elements::NavItemComponent.new(
+        label: "Services",
+        href: "#"
+      ) %>
+    </div>
+    <div class="hide@md">
+      <%= render Design::Navigation::Elements::MenuItemComponent.new(
+        label: "Services",
+        href: "#",
+        show_icon: false,
+        show_chevron: true
+      ) %>
+    </div>
+  <% end %>
+
+  <%= menu.with_desktop_action do %>
+    <%= link_to "Sign In", "#", class: "btn btn--ghost btn--rounded show@md" %>
+  <% end %>
+
+  <%= menu.with_desktop_action do %>
+    <%= link_to "Get Started", "#", class: "btn btn--primary btn--rounded" %>
+  <% end %>
+
+  <%= menu.with_mobile_action do %>
+    <%= link_to "Contact Us", "#", class: "btn btn--outline" %>
+  <% end %>
+
+  <%= menu.with_mobile_action do %>
+    <%= link_to "Sign In", "#", class: "btn btn--outline" %>
+  <% end %>
+<% end %>

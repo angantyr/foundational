@@ -47,11 +47,11 @@
 @import url('megamenu.css');
 
 /* ViewComponent Stylesheets */
-@import url('components/design/navigation/shared/brand_component.css');
-@import url('components/design/navigation/shared/nav_item_component.css');
-@import url('components/design/navigation/shared/menu_item_component.css');
-@import url('components/design/navigation/shared/hamburger_component.css');
-@import url('components/design/navigation/dropdown_menu/dropdown_item_component.css');
+@import url('components/design/navigation/elements/brand_component.css');
+@import url('components/design/navigation/elements/nav_item_component.css');
+@import url('components/design/navigation/elements/menu_item_component.css');
+@import url('components/design/navigation/elements/hamburger_component.css');
+@import url('components/design/navigation/menu/dropdown/item_component.css');
 @import url('components/design/section_header_component.css');
 @import url('components/design/feature_item_component.css');
 @import url('components/design/feature_grid_component.css');

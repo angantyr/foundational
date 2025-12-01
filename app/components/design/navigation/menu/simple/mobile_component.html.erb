@@ -1,0 +1,21 @@
+<%= render Design::Navigation::Elements::HamburgerComponent.new(target: "simple-mobile-menu") %>
+
+<input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-checkbox" hidden>
+
+<nav class="mobile-menu__content">
+  <div class="menu">
+    <div class="menu__group" role="group">
+      <% nav_items.each do |item| %>
+        <%= item %>
+      <% end %>
+    </div>
+  </div>
+
+  <% if actions.any? %>
+    <div class="mobile-menu__footer">
+      <% actions.each do |action| %>
+        <%= action %>
+      <% end %>
+    </div>
+  <% end %>
+</nav>
