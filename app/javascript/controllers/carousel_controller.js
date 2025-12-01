@@ -6,14 +6,6 @@ export default class extends Controller {
 
   connect() {
     this.swiper = new Swiper(this.containerTarget, {
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
       on: {
         slideChange: () => {
           this.updatePaginationButtons()
@@ -22,6 +14,18 @@ export default class extends Controller {
     })
 
     this.updatePaginationButtons()
+  }
+
+  prev() {
+    if (this.swiper) {
+      this.swiper.slidePrev()
+    }
+  }
+
+  next() {
+    if (this.swiper) {
+      this.swiper.slideNext()
+    }
   }
 
   disconnect() {
