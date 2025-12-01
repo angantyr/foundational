@@ -29,6 +29,7 @@ class Design::Navigation::TabsComponentPreview < Lookbook::Preview
   def sample_tabs
     [
       OpenStruct.new(
+        icon: "user",
         header: "Account",
         summary: "Manage your account settings and preferences. Update your profile information, email address, and notification settings.",
         preview: OpenStruct.new(
@@ -37,6 +38,7 @@ class Design::Navigation::TabsComponentPreview < Lookbook::Preview
         )
       ),
       OpenStruct.new(
+        icon: "lock",
         header: "Password",
         summary: "Change your password and configure two-factor authentication. Keep your account secure with a strong password.",
         preview: OpenStruct.new(
@@ -45,6 +47,7 @@ class Design::Navigation::TabsComponentPreview < Lookbook::Preview
         )
       ),
       OpenStruct.new(
+        icon: "bell",
         header: "Notifications",
         summary: "Control how and when you receive notifications. Choose which events trigger email or push notifications.",
         preview: OpenStruct.new(
