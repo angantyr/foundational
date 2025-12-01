@@ -1,4 +1,5 @@
 <div style="max-width: 1200px; margin: 0 auto; padding: var(--size-12);">
+  <!-- Desktop: Carousel with feature cards -->
   <div class="carousel-container">
     <%= render Design::Navigation::Carousel::WidgetComponent.new(pagination_position: :top) do |widget| %>
       <!-- Feature Cards as Pagination -->
@@ -41,6 +42,24 @@
           ›
         </button>
       <% end %>
+    <% end %>
+  </div>
+
+  <!-- Mobile: Stacked cards -->
+  <div class="mobile-stack">
+    <% features.each do |feature| %>
+      <div class="mobile-feature">
+        <div class="mobile-feature__card">
+          <div class="mobile-feature__icon">
+            <%= inline_svg_tag "icons/#{feature.icon}.svg", class: "icon" %>
+          </div>
+          <h3 class="mobile-feature__header"><%= feature.header %></h3>
+          <p class="mobile-feature__summary"><%= feature.summary %></p>
+        </div>
+        <div class="mobile-feature__image-container">
+          <%= image_tag feature.preview.src, alt: feature.preview.caption, class: "rounded-md" %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
@@ -152,5 +171,72 @@
 
   .carousel__nav--next {
     right: var(--size-4);
+  }
+
+  /* Responsive visibility */
+  @media (min-width: 768px) {
+    .mobile-stack {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .carousel-container {
+      display: none !important;
+    }
+  }
+
+  /* Mobile Stacked Layout */
+  .mobile-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-8);
+  }
+
+  .mobile-feature {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-6);
+  }
+
+  .mobile-feature__card {
+    background: white;
+    border-radius: var(--rounded-lg);
+    padding: var(--size-6);
+  }
+
+  .mobile-feature__icon {
+    inline-size: 20px;
+    block-size: 20px;
+    margin-block-end: var(--size-3);
+  }
+
+  .mobile-feature__icon .icon {
+    inline-size: 100%;
+    block-size: 100%;
+  }
+
+  .mobile-feature__header {
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    margin-block-end: var(--size-2);
+  }
+
+  .mobile-feature__summary {
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text-subtle);
+  }
+
+  .mobile-feature__image-container {
+    background: #f5f5f5;
+    border-radius: var(--rounded-lg);
+    padding: var(--size-6);
+  }
+
+  .mobile-feature__image-container img {
+    inline-size: 100%;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 </style>
