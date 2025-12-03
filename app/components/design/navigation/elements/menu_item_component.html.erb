@@ -2,7 +2,7 @@
 <a href="<%= @href %>" class="<%= css_classes %>">
   <% if show_icon? %>
   <span class="menu-item-component__icon">
-    <%= image_tag "icons/#{@icon}.svg", size: (card_variant? ? 24 : 16), alt: "" %>
+    <%= icon @icon, class: "icon", style: "width: #{card_variant? ? 24 : 16}px; height: #{card_variant? ? 24 : 16}px;" %>
   </span>
   <% end %>
   <span class="menu-item-component__content">
@@ -13,7 +13,7 @@
   </span>
   <% if @show_chevron %>
   <span class="menu-item-component__chevron">
-    <%= image_tag "icons/#{@chevron_icon}.svg", size: 16, alt: "" %>
+    <%= icon @chevron_icon, class: "icon", style: "width: 16px; height: 16px;" %>
   </span>
   <% end %>
 </a>
@@ -21,7 +21,7 @@
 <span class="<%= css_classes %> menu-item-component--static">
   <% if show_icon? %>
   <span class="menu-item-component__icon">
-    <%= image_tag "icons/#{@icon}.svg", size: (card_variant? ? 24 : 16), alt: "" %>
+    <%= icon @icon, class: "icon", style: "width: #{card_variant? ? 24 : 16}px; height: #{card_variant? ? 24 : 16}px;" %>
   </span>
   <% end %>
   <span class="menu-item-component__content">

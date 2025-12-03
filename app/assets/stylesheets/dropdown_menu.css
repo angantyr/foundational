@@ -92,4 +92,20 @@
       opacity: 1;
     }
   }
+
+  &.active {
+    color: var(--color-text);
+    font-weight: var(--font-semibold);
+
+    .icon {
+      opacity: 1;
+    }
+  }
+}
+
+/* Active state for mobile accordion */
+.accordion details.active > summary {
+  color: var(--color-text);
+  font-weight: var(--font-semibold);
+  background-color: var(--color-border-light);
 }
