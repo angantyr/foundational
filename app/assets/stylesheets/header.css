@@ -265,6 +265,11 @@
     color: var(--color-text);
     scroll-snap-align: start;
 
+    &.megamenu-mobile-card--active {
+      background-color: var(--color-border-light);
+      border-color: var(--color-text-subtle);
+    }
+
     .icon {
       display: flex;
       color: var(--color-text);

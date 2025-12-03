@@ -1,111 +1,87 @@
-<div class="header-menu">
-  <div class="header-brand flex-item-no-shrink">
-    <%= image_tag "brandmark.svg", size: 64, alt: "Foundational Logo" %>
-    <%= link_to "/" do %>
+<%= render Design::Navigation::Menu::MegaComponent.new(trigger: :hover) do |menu| %>
+  <%= menu.with_brand do %>
+    <%= render Design::Navigation::Elements::BrandComponent.new(
+      logo: "brandmark.svg",
+      href: "/",
+      size: 64,
+      animate_on_hover: true
+    ) %>
+  <% end %>
+
+  <% @topnav_pages.each do |page| %>
+    <%= menu.with_nav_item do %>
+      <%= render Design::Navigation::Menu::Mega::ItemComponent.new(
+        label: page.name,
+        popover_id: "#{page.permalink}-mega-popover",
+        trigger_actions: "mouseenter->popover#debouncedShow mouseleave->popover#debouncedHide",
+        active: @active_header == page.permalink
+      ) do |mega| %>
+        <%= mega.with_links do %>
+          <div class="megamenu__grid">
+            <% page.children.live.limit(8).each do |child| %>
+              <%= link_to child.href, class: "megamenu__card #{'megamenu__card--active' if current_page&.id == child.id}" do %>
+                <% if child.icon.present? %>
+                  <span class="icon" aria-hidden="true">
+                    <%= icon child.icon.name, style: "width: 24px; height: 24px;" %>
+                  </span>
+                <% end %>
+                <h3 class="megamenu__title"><%= child.name %></h3>
+                <% if child.summary.present? %>
+                  <p class="megamenu__description"><%= child.summary.to_plain_text %></p>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+
+        <%= mega.with_footer do %>
+          <div class="megamenu__footer">
+            <%= link_to page.href, class: "megamenu__footer-link" do %>
+              <span class="icon" aria-hidden="true">
+                <%= icon "layout-dashboard", style: "width: 16px; height: 16px;" %>
+              </span>
+              <span>View all <%= page.name.downcase %></span>
+              <span class="icon" aria-hidden="true">
+                <%= icon "move-right", style: "width: 16px; height: 16px;" %>
+              </span>
+            <% end %>
+          </div>
+        <% end %>
+
+        <%= mega.with_mobile_content do %>
+          <div class="megamenu-mobile-scroll">
+            <% page.children.live.each do |child| %>
+              <%= link_to child.href, class: "megamenu-mobile-card #{'megamenu-mobile-card--active' if current_page&.id == child.id}" do %>
+                <% if child.icon.present? %>
+                  <span class="icon" aria-hidden="true">
+                    <%= icon child.icon.name, style: "width: 24px; height: 24px;" %>
+                  </span>
+                <% end %>
+                <h3 class="megamenu-mobile-card__title"><%= child.name %></h3>
+                <% if child.summary.present? %>
+                  <p class="megamenu-mobile-card__description"><%= truncate(child.summary.to_plain_text, length: 80) %></p>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
     <% end %>
-  </div>
+  <% end %>
 
-  <nav class="show@md flex flex-1 justify-start pi-6">
-    <div class="top_nav max-i-5xl flex flex-item-grow items-center justify-between font-semibold font-title tracking-wider">
-      <div data-controller="popover" data-popover-placement-value="bottom-start" data-action="mouseenter->popover#debouncedShow mouseleave->popover#debouncedHide">
-        <button type="button" class="btn" data-popover-target="trigger" popovertarget="solutions-popover" aria-haspopup="true">
-          Solutions
-          <span class="icon icon--chevron-down" aria-hidden="true">
-            <%= image_tag "icons/chevron-down.svg", size: 16, alt: "" %>
-          </span>
-        </button>
-        <div popover id="solutions-popover" class="popover popover--mega" data-popover-target="content" role="menu" aria-label="Solutions Menu">
-          <%= render "home/modules_mega" %>
-        </div>
-      </div>
-
-      <div data-controller="popover" data-popover-placement-value="bottom-start" data-action="mouseenter->popover#debouncedShow mouseleave->popover#debouncedHide">
-        <button type="button" class="btn" data-popover-target="trigger" popovertarget="modules-popover" aria-haspopup="true">
-          Modules
-          <span class="icon icon--chevron-down" aria-hidden="true">
-            <%= image_tag "icons/chevron-down.svg", size: 16, alt: "" %>
-          </span>
-        </button>
-        <div popover id="modules-popover" class="popover popover--mega" data-popover-target="content" role="menu" aria-label="Modules Menu">
-          <%= render "home/modules_mega" %>
-        </div>
-      </div>
-
-      <div data-controller="popover" data-popover-placement-value="bottom-start" data-action="mouseenter->popover#debouncedShow mouseleave->popover#debouncedHide">
-        <button type="button" class="btn" data-popover-target="trigger" popovertarget="features-popover" aria-haspopup="true">
-          Features
-          <span class="icon icon--chevron-down" aria-hidden="true">
-            <%= image_tag "icons/chevron-down.svg", size: 16, alt: "" %>
-          </span>
-        </button>
-        <div popover id="features-popover" class="popover popover--mega" data-popover-target="content" role="menu" aria-label="Features Menu">
-          <%= render "home/modules_mega" %>
-        </div>
-      </div>
-
-      <div data-controller="popover" data-popover-placement-value="bottom-start" data-action="mouseenter->popover#debouncedShow mouseleave->popover#debouncedHide">
-        <button type="button" class="btn" data-popover-target="trigger" popovertarget="platform-popover" aria-haspopup="true">
-          Platform
-          <span class="icon icon--chevron-down" aria-hidden="true">
-            <%= image_tag "icons/chevron-down.svg", size: 16, alt: "" %>
-          </span>
-        </button>
-        <div popover id="platform-popover" class="popover popover--mega" data-popover-target="content" role="menu" aria-label="Platform Menu">
-          <%= render "home/modules_mega" %>
-        </div>
-      </div>
-
-      <div data-controller="popover" data-popover-placement-value="bottom-start" data-action="mouseenter->popover#debouncedShow mouseleave->popover#debouncedHide">
-        <button type="button" class="btn" data-popover-target="trigger" popovertarget="services-popover" aria-haspopup="true">
-          Services
-          <span class="icon icon--chevron-down" aria-hidden="true">
-            <%= image_tag "icons/chevron-down.svg", size: 16, alt: "" %>
-          </span>
-        </button>
-        <div popover id="services-popover" class="popover popover--mega" data-popover-target="content" role="menu" aria-label="Services Menu">
-          <%= render "home/modules_mega" %>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <div class="header-actions flex items-center gap flex-item-no-shrink">
+  <%= menu.with_desktop_action do %>
     <%= link_to "Sign In", "#", class: "btn btn--ghost btn--rounded show@md" %>
+  <% end %>
+
+  <%= menu.with_desktop_action do %>
     <%= link_to "Get Started", "#", class: "btn btn--primary btn--rounded" %>
+  <% end %>
 
-    <div class="hide@md" data-controller="popover" data-popover-placement-value="bottom-end">
-      <button type="button" class="btn btn--icon" data-popover-target="trigger" popovertarget="mobile-menu-mega-popover" aria-haspopup="true">
-        <%= image_tag "icons/menu.svg", size: 48, alt: "Menu" %>
-      </button>
-      <div popover id="mobile-menu-mega-popover" class="popover popover--mobile-menu" data-popover-target="content" role="menu" aria-label="Mobile Menu">
-        <div class="accordion">
-          <details>
-            <summary>Solutions</summary>
-            <%= render "home/modules_mega_mobile" %>
-          </details>
-          <details>
-            <summary>Modules</summary>
-            <%= render "home/modules_mega_mobile" %>
-          </details>
-          <details>
-            <summary>Features</summary>
-            <%= render "home/modules_mega_mobile" %>
-          </details>
-          <details>
-            <summary>Platform</summary>
-            <%= render "home/modules_mega_mobile" %>
-          </details>
-          <details>
-            <summary>Services</summary>
-            <%= render "home/modules_mega_mobile" %>
-          </details>
-        </div>
+  <%= menu.with_mobile_action do %>
+    <%= link_to "Contact Us", "#", class: "btn btn--outline" %>
+  <% end %>
 
-        <div class="mobile-menu__footer">
-          <%= link_to "Contact Us", "#", class: "btn btn--outline" %>
-          <%= link_to "Sign In", "#", class: "btn btn--outline" %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  <%= menu.with_mobile_action do %>
+    <%= link_to "Sign In", "#", class: "btn btn--outline" %>
+  <% end %>
+<% end %>

@@ -1,5 +1,5 @@
 <div class="show@md" <%= tag.attributes(controller_data) %>>
-  <button type="button" class="btn" data-popover-target="trigger" popovertarget="<%= @popover_id %>" aria-haspopup="true">
+  <button type="button" class="<%= button_classes %>" data-popover-target="trigger" popovertarget="<%= @popover_id %>" aria-haspopup="true">
     <%= @label %>
     <span class="icon icon--chevron-down" aria-hidden="true">
       <%= image_tag "icons/chevron-down.svg", size: 16, alt: "" %>
@@ -14,7 +14,7 @@
   </div>
 </div>
 
-<details class="hide@md">
+<details class="<%= details_classes %>" <%= "open" if @active %>>
   <summary><%= @label %></summary>
   <div class="megamenu">
     <%= header if header? %>

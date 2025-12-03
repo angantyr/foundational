@@ -96,6 +96,12 @@
     border-block-end-color: var(--color-bg) !important;
   }
 
+  &.megamenu__card--active {
+    background-color: var(--color-border-light);
+    color: var(--color-text);
+    border-block-end-color: var(--color-bg) !important;
+  }
+
   .icon {
     display: flex;
     align-items: center;
