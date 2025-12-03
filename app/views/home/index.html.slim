@@ -1,3 +1,14 @@
+/ .p-6 
+/   ul
+/   -@page.children.each do |child|
+/     li
+/       =icon child.icon.name
+
+/ .p-6 
+/   ul
+/   -@page.children.each do |child|
+/     li
+/       =inline_svg_tag "icons/lucide/outline/#{child.icon.name}.svg", class: "icon"
 .p-6
   .flex.flex-col.gap
     -10.times do |i|

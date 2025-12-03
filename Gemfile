@@ -61,6 +61,9 @@ group :test do
   gem "selenium-webdriver"
 end
 gem "managed", path: "~/code/engines/nobuild/managed_engine"
+gem "web", path: "~/code/engines/nobuild/managed_web"
+gem "design", path: "~/code/engines/nobuild/managed_design"
+
 gem "bcrypt", "~> 3.1.7"
 gem "acts-as-taggable-on", "~> 12.0"
 gem "acts_as_list", "~> 1.2"

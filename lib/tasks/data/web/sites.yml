@@ -1,0 +1,16 @@
+sites:
+  foundational:
+    name: "Foundational"
+    permalink: "foundational"
+    host: "foundational"
+    domains:
+      - environment: development
+        name: "www.foundational.local"
+      - environment: staging
+        name: "www.foundational.dev"
+        username: "me"
+        passphrase: "tirfing"
+        password_protected: true
+      - environment: production
+        name: "www.foundational.com"
+        password_protected: false

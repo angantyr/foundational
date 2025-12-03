@@ -1,0 +1,419 @@
+---
+sites:
+  foundational:
+    pages:
+      home:
+        name: Home
+        kicker:
+        header: Build a better business online
+        summary: We have evolved from providing digital marketing services to providing a digital business platform that helps our clients build a sustainable and profitable business online.
+        children:
+          solutions:
+            name: Solutions
+            kicker:
+            header: Solutions for your every business need
+            summary: Find your starting point to build and expand online.
+            children:
+              websites:
+                icon: globe
+                name: Web sites
+                header: Websites
+                summary: Your website is the foundation for your digital presence and carrier of your brand voice. Source of truth and fountain of information to be trusted.
+              ecommerce:
+                icon: circle-dollar-sign
+                name: ecommerce
+                header: E-Commerce
+                summary: Manage fund raising, sell online, tangilbe and digital goods. Consumer and enterprise sales. Client sales portal and manage order processing.
+              marketing:
+                icon: megaphone
+                name: marketing
+                header: Digital Marketing
+                summary: With a foundation in place, start supporting marketing, search, social, and campaign landing pages and prospecting online and via email.
+              mobile:
+                icon: tablet-smartphone
+                name: mobile
+                header: Mobile Apps
+                summary: Adding a companiion business app to your web presence has never been esier with out built-in support for mobile apps powered by your website.
+          modules:
+            name: Modules
+            header: Build your website one brick at a time
+            summary: Start small and add modules to address business needs as they emerge.
+            children:
+              web:
+                icon: globe
+                name: Web
+                kicker: Modules
+                header: Web
+                summary: Managed multiple websites under multiple domains.  Define information architecture, navigation, and set access controls.
+              corporate:
+                icon: building
+                name: Corporate
+                kicker: Modules
+                header: Corporate
+                summary: Manage companies, subsidiaries, offices, and people. Define reporting structures, organization hierarchies, departments, and teams.
+              business:
+                icon: briefcase-business
+                name: Business
+                kicker: Modules
+                header: Business
+                summary: A rich set of defaults for managing solutions, products, and services, across market segments. Including partners.
+              catalog:
+                icon: book-open-text
+                name: Catalog
+                kicker: Modules
+                header: Catalog
+                summary: Build product pages using best practices to highlight key features, benefits, detailed specs. Easily add related products and collateral.
+              news:
+                icon: newspaper
+                name: News
+                kicker: Modules
+                header: News
+                summary: Manage press releases, media appearances, news stories, reports and white papers, and publish daily updates to inform and build community
+              collateral:
+                icon: book-image
+                name: Collateral
+                kicker: Modules
+                header: Collateral
+                summary: Build and publish a library of marketing and support materials for your prospects and customers. Turn them into brand ambassadors that help sell your services.
+              broadcast:
+                icon: radio-tower
+                name: Broadcast
+                kicker: Modules
+                header: Broadcast
+                summary: Manage the subscriber lifecycle and multiple mailing lists for sending updates, alerts, and full newsletters via email. Unlock the power of the inbox.
+              store:
+                icon: shopping-cart
+                name: Store
+                kicker: Modules
+                header: Store
+                summary: Sell tangible and digital goods online. Offer recurring subscriptions. Consumer and enterprise sales. Client sales portal and manage order processing.
+              events:
+                icon: calendar-days
+                name: Events
+                kicker: Modules
+                header: Events
+                summary: From a simple calendar of events to managing large events with multiple sessions, speakers, and attendees and invitations.
+              faq:
+                icon: file-question-mark
+                name: FAQ
+                kicker: Modules
+                header: FAQ
+                summary: The always useful list of questions and answers with extra powers and enhancements to keep everybody in the know.
+              training:
+                icon: presentation
+                name: Training
+                kicker: Modules
+                header: Training
+                summary: If you are running training classes as part of your business, you can manage calendar, locations, trainers, and attendance, even certification.
+              media:
+                icon: images
+                name: Media
+                kicker: Modules
+                header: Media
+                summary: Build a library of all your digital assets in one location, and use them to build and train our private AI. Create and manage multiple variants and styles of your images.
+              chat:
+                icon: messages-square
+                name: Chat
+                kicker: Modules
+                header: Chat
+                summary: Bring live chats to your prospects and customer. Power it with your staff or enlist your private AI to do triage and routing to your sales team.
+              contact:
+                icon: circle-question-mark
+                name: Contact
+                kicker: Modules
+                header: Contact
+                summary: The simple contact form is never that simple, and this one hooks into your services and routes requests to your sales team. Includes spam protections.
+              marketing:
+                icon: megaphone
+                name: Marketing
+                kicker: Module
+                header: Marketing
+                summary: Build high conversion landing pages for selected products and services and publish under campaign urls.
+          features:
+            name: Features
+            header: Powerful Features
+            summary: All modules share a set of powerful features that keeps you moving.
+            children:
+              search:
+                icon: search
+                name: Search
+                header: Powerful Search
+                summary: Built-in full text search, with weighted, faceted results with an option to leverage vector based search for conversational search results.
+              ai:
+                icon: sparkles
+                name: AI
+                header: Private AI Assistance
+                summary: Develop content and provide support using a secure and private AI model using proprietary content and glossaries to create savvy support.
+              guides:
+                icon: life-buoy
+                name: Guides
+                header: Embedded Guides
+                summary: All content management modules come with style guides, authoring assistance, and quick tips to ensure speedy, powerful, and on-brand messaging.
+              translations:
+                icon: languages
+                name: Translations
+                header: Translations
+                summary: Connecting with your customers in their own language is sometimes required but always powerful way to establish cultural relevance.
+              tracking:
+                icon: clock-4
+                name: Tracking
+                header: Activity Tracking
+                summary: View detailed user activity across the entire system to track changes, monitor for key events, and notify others who need to know.
+              versioning:
+                icon: file-stack
+                name: Versioning
+                header: Content Versioning
+                summary: Content authoring and collaboration becomes easier with unlmited versioning and undos on saves.
+              access:
+                icon: key-round
+                name: Access
+                header: Access Controls
+                summary: Manage user access to the system based on roles for each module. Integrate with corporate SSO solutions and directory services.
+              optimization:
+                icon: waypoints
+                name: Optimization
+                header: Content Optimization
+                summary: Optimize your content for search engines and social media sharing. Define images, descriptions, and prompts separately from the site.
+              collaboration:
+                icon: messages-square
+                name: Collaboration
+                header: Team Collaboration
+                summary: Your team can discuss and collaborate on any of the content under management, including extracting and assigning tasks.
+              workflows:
+                icon: workflow
+                name: Workflows
+                header: Custom Workflows
+                summary: The system comes with built-in workflows for the most common scenarios, and modules add their own, but we can create custom ones for you.
+              notifications:
+                icon: bell-dot
+                name: notifications
+                header: Notifications
+                summary: You have complete control of what which events you get notfied and how, be it via email, SMS, or live notifications on desktop or mobile.
+          # features:
+          #   name: Features
+          #   kicker: Features
+          #   header: Powerful Features
+          #   summary: All modules share a set of powerful features that keeps you moving
+          #   eyebrow: Features
+          #   title: Powerful Features
+          #   abstract: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat. Anim aute id magna aliqua ad ad non deserunt sunt.
+          #   children:
+          #     search:
+          #       icon: search
+          #       name: Search
+          #       header: Powerful Search
+          #       summary: Built-in full text search, with weighted, faceted results with an option to leverage vector based search for conversational search results.
+          #     ai-assistance:
+          #       icon: sparkle
+          #       name: AI Assistance
+          #       header: AI Assistance
+          #       summary: Develop content and provide support using a secure and private AI model using proprietary content and glossaries to create savvy support.
+          #     embedded-guides:
+          #       icon: life-buoy
+          #       name: Embedded Guides
+          #       header: Embedded Guides
+          #       summary: All content management modules come with style guides, authoring assistance, and quick tips to ensure speedy, powerful, and on-brand messaging.
+          #     translations:
+          #       icon: language
+          #       name: Translations
+          #       header: Translations
+          #       summary: Connecting with your customers in their own language is sometimes required but always powerful way to establish cultural relevance.
+          #     activity-tracking:
+          #       icon: clock-4
+          #       name: Activity Tracking
+          #       header: Activity Tracking
+          #       summary: View detailed user activity across the entire system to track changes, monitor for key events, and notify others who need to know.
+          #     content-versioning:
+          #       icon: documents
+          #       name: Content Versioning
+          #       header: Content Versioning
+          #       summary: Content authoring and collaboration becomes easier with unlmited versioning and undos on saves.
+          #     access-controls:
+          #       icon: key-round
+          #       name: Access Controls
+          #       header: Access Controls
+          #       summary: Manage user access to the system based on roles for each module. Integrate with corporate SSO solutions and directory services.
+          #     content-optimization:
+          #       icon: path
+          #       name: Content Optimization
+          #       header: Content Optimization
+          #       summary: Optimize your content for search engines and social media sharing. Define images, descriptions, and prompts separately from the site.
+          #     team-collaboration:
+          #       icon: chat
+          #       name: Team Collaboration
+          #       header: Team Collaboration
+          #       summary: Your team can discuss and collaborate on any of the content under management, including extracting and assigning tasks.
+          #     custom-workflows:
+          #       icon: nodes
+          #       name: Custom Workflows
+          #       header: Custom Workflows
+          #       summary: The system comes with built-in workflows for the most common scenarios, and modules add their own, but we can create custom ones for you.
+          #     notifications:
+          #       icon: bell-dot
+          #       name: Notifications
+          #       header: Notifications
+          #       summary: You have complete control of what which events you get notfied and how, be it via email, SMS, or live notifications on desktop or mobile.
+          technology:
+            name: Technology
+            header: The All-in-One Platform
+            summary: The technology stack and infrastructure keeps you on the cutting edge, securely and safely.
+            children:
+              servers:
+                icon: server
+                name: Servers
+                header: Private Servers
+                summary: Virtual private servers in the cloud or on your own bare metal. Single servers or configured to scale with multple servers, containerized deployments.
+              security:
+                icon: shield-check
+                name: Security
+                header: Advanced Security
+                summary: Firewalls, vulnerability scanning, database backups, etc. Cloudflare.
+              speed:
+                icon: circle-gauge
+                name: Speed
+                header: High Speed
+                summary: No bloated javascript, lean no-build css, live updates in a reactive applications without react.
+              delivery:
+                icon: rocket
+                name: Delivery
+                header: Content Delivery
+                summary: Dedicated assets host, with dynamic images transformations,  optional content distribution networks, optimized private video streaming with access controls.
+              integrations:
+                icon: blocks
+                name: Integrations
+                header: Integrations
+                summary: Payment gateways, SSO authentication, dedicated AI servers, collaboration tools, and more.
+              monitoring:
+                icon: activity
+                name: Monitoring
+                header: Analytics and Monitoring
+                summary: The platform includes web performance analytics and infrastructure monitoring and other tools that can be easily extended.
+              code:
+                icon: git-merge
+                name: Code
+                header: Version Controlled
+                summary: You own the codebase.  Subscribe for continous support or use own developers. integrated test suite with integrated CI/CD pipeline.
+              open:
+                icon: code-xml
+                name: Open
+                header: Open Source
+                summary: You own the codebase.  Subscribe for continuous support or use own developers. integrated test suite with integrated CI/CD pipeline.
+          services:
+            name: Services
+            header: We are with you every step of the way
+            summary: We know business and we know marketing. All that knowledge will be put to work on your behalf.
+            children:
+              consulting:
+                icon: handshake
+                name: Consulting
+                header: Business Consulting
+                summary: We will work with your to understand your business goals and objectives, and the challenges your face. We partner with you long-term.
+              branding:
+                icon: shield-ellipsis
+                name: Branding
+                header: Branding
+                summary: Most of our clients have well-established brands, but if you create one or just need a refresh we have the experience to make it sing.
+              marketing:
+                icon: target
+                name: Marketing
+                header: Marketing
+                summary: We will develop smart solutions for raising brand awareness, driving prospects, and increasing conversions across all digital touch points.
+              design:
+                icon: pen-tool
+                name: Design
+                header: Experience Design
+                summary: During the onboarding process, we will develop information architecture, user experience design, and graphic design to make your website look great.
+              customization:
+                icon: wrench
+                name: Customization
+                header: Customization
+                summary: No businesses are alike, and all applications need to be adapted to your reality. This is not one size fits all proposition. Your needs are paramount.
+              integration:
+                icon: unplug
+                name: Integration
+                header: System Integration
+                summary: Modern websites are part of a complex online ecosystem of payment gateways, authentication systems, collaboration tools. We support them all.
+              training:
+                icon: presentation
+                name: Training
+                header: User Training
+                summary: As your digital presence grows, you need to bring your own team onboard. And they need to be trained. Training and help desk services to make it work.
+              support:
+                icon: life-buoy
+                name: Support
+                header: Application Support
+                summary: As you business evolve, we keep optimizing, extending, and enhancing the application. In addition to standard operational and and infrastructure support.
+          promise:
+            name: Promise
+            header: Our Promise
+            summary: In an era of abundant SaaS offerings with vendor lockins and proprietary data formats, we offer a refreshing proposition.
+            eyebrow: Our Promise
+            title: A revolutionary proposition.
+            abstract: In an age of SaaS lock-ins and scattered data, feel the freedom.
+            children:
+              data:
+                icon: database
+                name: Data
+                header: Your data
+                summary: Your proprietary data is stored in standard relational database. Export what you want or grab the full database.
+              server:
+                icon: hard-drive
+                name: Server
+                header: Your server
+                summary: Whether you are hosted in the cloud or on your hardware, you can take ownership of the hosting infrastructure at any time. No shared hosting setups.
+              code:
+                icon: code-xml
+                name: Code
+                header: Your code
+                summary: Non-exclusive, global license to use the website and extend it as long as you wish.
+          process:
+            name: Process
+            header: Our process
+            summary: We have encapsulated industry best practices and our own battle-tested methodologies into a a digitally driven process that quickly gets our clients online in a deliberate, flexible, and extensible manner.
+            eyebrow: Our process
+            title: Putting your business online first.
+            abstract: We have encapsulated industry best practices and our own battle-tested methodologies into a a digitally driven process that quickly gets our clients online in a deliberate, flexible, and extensible manner.
+            children:
+              analysis:
+                name: Analysis
+                header: Fit Analysis
+                summary: Introductions and and service overview to determine suitability of our services for your needs.
+              onboarding:
+                name: Onboarding
+                header: Onboarding
+                summary: We perform an audit collecting information about your company, the business you are in, your markets, and.
+              platforming:
+                name: Platforming
+                header: Platforming
+                summary: We provision your platform and start loading and migrating your content, and do any customization needed to address your unique needs.
+              fitting:
+                name: Fitting
+                header: Fitting
+                summary: In almost all cases, the platform needs to be adjusted to your business realities, it can be as simple as. Depending on your needs customization can take time
+              design:
+                name: Design
+                header: Design
+                summary: Branding and graphic design can be as simple as picking a template, but in most cases our clients demand more to make a greater impact.
+              Launch:
+                name: Launch
+                header: Launch
+                summary: When the website finally launches you and your team has already been working on it and
+          contact:
+            name: Contact
+            header: Contact Us
+            summary: We would love to hear from you.
+            eyebrow: Contact Us
+            title: Let’s build your business together.
+            abstract: We can’t wait to hear from you.  If you fill out the inquiry form first, we can get a head start on our conversation.
+          legal:
+            name: Legal
+            hidden: true
+            children:
+              privacy-policy:
+                name: Privacy Policy
+                title: Privacy Policy
+                abstract: Please read this privacy policy carefully before using Our Service.
+              terms-of-use:
+                name: Terms of Use
+                title: Terms and Conditions
+                abstract: Please read these terms and conditions carefully before using Our Service.

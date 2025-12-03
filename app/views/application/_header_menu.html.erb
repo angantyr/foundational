@@ -1,69 +1,47 @@
-<div class="header-menu">
-  <div class="header-brand flex-item-no-shrink">
-    <%= image_tag "brandmark.svg", size: 64, alt: "Foundational Logo" %>
-    <%= link_to "/" do %>
-    <% end %>
-  </div>
+<%= render Design::Navigation::Menu::SimpleComponent.new do |menu| %>
+  <%= menu.with_brand do %>
+    <%= render Design::Navigation::Elements::BrandComponent.new(
+      logo: "brandmark.svg",
+      href: "/",
+      size: 64,
+      animate_on_hover: true
+    ) %>
+  <% end %>
 
-  <nav class="show@md flex flex-1 justify-start pi-6">
-    <div class="top_nav max-i-2xl flex flex-item-grow items-center justify-between font-semibold font-title tracking-wider">
-      <%= link_to "Solutions", "#", class: "" %>
-      <%= link_to "Modules", "#", class: " active" %>
-      <%= link_to "Features", "#", class: "" %>
-      <%= link_to "Platform", "#", class: "" %>
-      <%= link_to "Services", "#", class: "" %>
-    </div>
-  </nav>
-
-  <div class="header-actions flex items-center gap flex-item-no-shrink">
-    <%= link_to "Sign In", "#", class: "btn btn--ghost btn--rounded show@md" %>
-    <%= link_to "Get Started", "#", class: "btn btn--primary btn--rounded" %>
-    <label for="mobile-menu-toggle" class="mobile-menu-toggle hide@md flex items-center justify-center">
-      <%= image_tag "icons/menu.svg", size: 48, alt: "Menu" %>
-    </label>
-  </div>
+<% @topnav_pages.each do |page| %>
+<%= menu.with_nav_item do %>
+<div class="show@md">
+  <%= render Design::Navigation::Elements::NavItemComponent.new(
+          label: page.name,
+          href: page.href,
+          active: @active_header == page.permalink
+        ) %>
 </div>
+<div class="hide@md">
+  <%= render Design::Navigation::Elements::MenuItemComponent.new(
+          label: page.name,
+          href: page.href,
+          show_icon: false,
+          show_chevron: true,
+          active: @active_header == page.permalink
+        ) %>
+</div>
+<% end %>
+<% end %>
 
-<input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-checkbox" hidden>
+<%= menu.with_desktop_action do %>
+<%= link_to "Sign In", "#", class: "btn btn--ghost btn--rounded show@md" %>
+<% end %>
 
-<nav class="mobile-menu__content">
-  <div class="menu">
-    <div class="menu__group" role="group">
-      <a class="btn menu__item" role="menuitem" href="#">
-        <span>Solutions</span>
-        <span class="menu__item-key">
-          <%= image_tag "icons/chevron-right.svg", size: 16, alt: "" %>
-        </span>
-      </a>
-      <a class="btn menu__item active" role="menuitem" href="#">
-        <span>Modules</span>
-        <span class="menu__item-key">
-          <%= image_tag "icons/chevron-right.svg", size: 16, alt: "" %>
-        </span>
-      </a>
-      <a class="btn menu__item" role="menuitem" href="#">
-        <span>Features</span>
-        <span class="menu__item-key">
-          <%= image_tag "icons/chevron-right.svg", size: 16, alt: "" %>
-        </span>
-      </a>
-      <a class="btn menu__item" role="menuitem" href="#">
-        <span>Platform</span>
-        <span class="menu__item-key">
-          <%= image_tag "icons/chevron-right.svg", size: 16, alt: "" %>
-        </span>
-      </a>
-      <a class="btn menu__item" role="menuitem" href="#">
-        <span>Services</span>
-        <span class="menu__item-key">
-          <%= image_tag "icons/chevron-right.svg", size: 16, alt: "" %>
-        </span>
-      </a>
-    </div>
-  </div>
+<%= menu.with_desktop_action do %>
+<%= link_to "Get Started", "#", class: "btn btn--primary btn--rounded" %>
+<% end %>
 
-  <div class="mobile-menu__footer">
-    <%= link_to "Contact Us", "#", class: "btn btn--outline" %>
-    <%= link_to "Sign In", "#", class: "btn btn--outline" %>
-  </div>
-</nav>
+<%= menu.with_mobile_action do %>
+<%= link_to "Contact Us", "#", class: "btn btn--outline" %>
+<% end %>
+
+<%= menu.with_mobile_action do %>
+<%= link_to "Sign In", "#", class: "btn btn--outline" %>
+<% end %>
+<% end %>

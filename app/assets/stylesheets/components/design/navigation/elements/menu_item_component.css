@@ -33,6 +33,12 @@
   outline-offset: 2px;
 }
 
+/* Active state */
+.menu-item-component.menu-item-component--active {
+  background-color: var(--color-border-light);
+  color: var(--color-text);
+}
+
 /* Static variant (no href) */
 .menu-item-component--static {
   cursor: default;

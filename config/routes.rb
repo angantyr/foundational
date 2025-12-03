@@ -1,3 +1,11 @@
+class PagePathConstraint
+  def matches?(request)
+    !request.path_parameters[:path].match(/^(rails|images|media|manage|admin|login|logout|register|auth)/)
+  end
+end
+
+
+
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   mount Lookbook::Engine, at: "/lookbook" if Rails.env.development?
@@ -11,4 +19,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "home#index"
+  # web engine tries to catch any uncaught paths
+  get '*path' => 'web/pages#show', constraints: PagePathConstraint.new
+
 end

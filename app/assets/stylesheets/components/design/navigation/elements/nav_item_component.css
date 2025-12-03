@@ -17,7 +17,7 @@
   border-block-end-color: var(--color-text);
 }
 
-.nav-item-component--active {
+.nav-item-component.nav-item-component--active {
   color: var(--color-text);
   border-block-end-color: var(--color-text);
 }
