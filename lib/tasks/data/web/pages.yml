@@ -51,6 +51,93 @@ sites:
                 kicker: Modules
                 header: Corporate
                 summary: Manage companies, subsidiaries, offices, and people. Define reporting structures, organization hierarchies, departments, and teams.
+                children:
+                  companies:
+                    icon:
+                    name: companies
+                    kicker: Corporate
+                    header: Manage your companies
+                    summary: Whether you run one company or many, we have you covered.
+                    children:
+                      information:
+                        icon:
+                        name: information
+                        header: Company Information
+                        summary: Name, branding, positioning and other display. Structure your website as you do your business
+                      structure:
+                        icon:
+                        name: structure
+                        header: Corporate Structure
+                        summary: Manage subsidiaries, partners, and affiliates. Nesting the companies. And even give separate website to each!
+                      hiearchy:
+                        icon:
+                        name: hiearchy
+                        header: Organizational Structure
+                        summary: Define divisions, departments, and the hiearchical chart of how your business is organized and managed.
+                      extras:
+                        icon:
+                        name: extras
+                        header: Company Extras
+                        summary: Corporate milestones, quotes, values, and benefits.
+                  locations:
+                    icon:
+                    name: locations
+                    kicker: Corporate
+                    header: Managing your locations
+                    summary: Whether you have one office or many, we have you covered.
+                    children:
+                      offices:
+                        icon: store
+                        name: offices
+                        header: Office Information
+                        summary: Name, descriptions, contact information and opening hours, along with flexible contact information options
+                      addresses:
+                        icon: map-pin
+                        name: Addresses
+                        header: Location mapping
+                        summary: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat.
+                      people:
+                        icon: users
+                        name: people
+                        header: Location staffing benefits described here
+                        summary: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat.
+                  people:
+                    icon:
+                    name: people
+                    kicker: Corporate
+                    header: Manage your people
+                    summary: Whether your are one team or have hundreds spread across the globe
+                    children:
+                      profile:
+                        icon:
+                        name: profile
+                        kicker: Profile
+                        header: Profile Information
+                        summary: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat.
+                      teams:
+                        icon:
+                        name: teams
+                        kicker: Teams
+                        header: Define and present your teams
+                        summary: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat.
+                      structure:
+                        icon:
+                        name: structure
+                        kicker: Structure
+                        header: Organizational hierarchy
+                        summary: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat.
+                      quotes:
+                        icon:
+                        name: quotes
+                        kicker: Quotes
+                        header: Give your people a voice
+                        summary: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat.
+                      integrations:
+                        icon:
+                        name: Integrations
+                        kicker: Integrations
+                        header: Order business cards
+                        summary: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat.
               business:
                 icon: briefcase-business
                 name: Business

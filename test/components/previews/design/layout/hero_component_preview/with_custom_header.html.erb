@@ -1,0 +1,10 @@
+<%= render Design::Layout::HeroComponent.new do |hero| %>
+  <%= hero.with_header do %>
+    <%= render Design::Typography::PageHeaderComponent.new(
+      prefix: "Custom",
+      title: "Fully Customized Hero Page",
+      abstract: "This hero uses a custom header slot for complete control over the typography component. You can pass any content or customize the PageHeaderComponent parameters.",
+      icon: "briefcase-business"
+    ) %>
+  <% end %>
+<% end %>

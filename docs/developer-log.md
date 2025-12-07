@@ -51,19 +51,7 @@ lib/tasks/helpers.rake
 lib/tasks/web.rake
 ```
 
-5. rebuild the website and pages data
-
-```
-rake foundational:web:rebuild
-```
-
-6. Fixed SQLite compatibility in rake helpers
-
-Updated `lib/tasks/helpers.rake` to make `truncate_action_text_tables` adapter-aware (SQLite doesn't support TRUNCATE syntax).
-
-7. Extended engine models with concerns
-
-Created `config/initializers/extend_engine_models.rb` to cleanly extend engine models without copying entire classes:
+5. Add other engine concerns to the web page model:
 
 ```ruby
 # config/initializers/extend_engine_models.rb
@@ -73,4 +61,8 @@ Rails.application.config.to_prepare do
 end
 ```
 
-This pattern allows extending engine models with application-specific concerns while keeping code DRY.
+6. rebuild the website and pages data
+
+```
+rake foundational:web:rebuild
+```

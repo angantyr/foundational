@@ -1,0 +1,53 @@
+<% if link? %>
+  <a href="<%= @href %>" class="<%= wrapper_classes %> text-inherit no-underline hover:bg-surface-secondary transition-colors">
+    <% if icon? %>
+      <%= icon %>
+    <% elsif @icon %>
+      <%= image_tag "icons/#{@icon}.svg", size: 32, alt: "", class: "mbe-2" %>
+    <% end %>
+
+    <% if header? %>
+      <%= header %>
+    <% elsif @header %>
+      <h3 class="text-xl font-semibold m-0 mbe-2 text-primary"><%= @header %></h3>
+    <% end %>
+
+    <% if body? %>
+      <%= body %>
+    <% elsif @summary %>
+      <p class="text-base text-primary m-0"><%= @summary %></p>
+    <% end %>
+
+    <% if footer? %>
+      <div class="mbs-4 pbs-2 border-bs">
+        <%= footer %>
+      </div>
+    <% end %>
+  </a>
+<% else %>
+  <div class="<%= wrapper_classes %>">
+    <% if icon? %>
+      <%= icon %>
+    <% elsif @icon %>
+      <%= image_tag "icons/#{@icon}.svg", size: 32, alt: "", class: "mbe-2" %>
+    <% end %>
+
+    <% if header? %>
+      <%= header %>
+    <% elsif @header %>
+      <h3 class="text-xl font-semibold m-0 mbe-2 text-primary"><%= @header %></h3>
+    <% end %>
+
+    <% if body? %>
+      <%= body %>
+    <% elsif @summary %>
+      <p class="text-base text-primary m-0"><%= @summary %></p>
+    <% end %>
+
+    <% if footer? %>
+      <div class="mbs-4 pbs-2 border-bs">
+        <%= footer %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

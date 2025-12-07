@@ -11,27 +11,23 @@
   ]
 %>
 
-<div style="max-width: 1200px; margin: 0 auto; padding: var(--size-12);">
-  <%= render Design::SectionHeaderComponent.new(
-    title: "Powerful Features",
-    summary: "All modules share a set of powerful features that keeps you moving"
-  ) %>
-
-  <%= render Design::FeatureGridComponent.new do |grid| %>
-    <% modules.each do |mod| %>
-      <%= grid.with_feature do %>
-        <%= render Design::FeatureItemComponent.new(
-          title: mod[:label],
-          description: mod[:description],
-          icon: mod[:icon],
-          href: "/modules/#{mod[:label].downcase}",
-          border: true
-        ) %>
+<%= render Design::Layout::SectionComponent.new(
+  header: "Powerful Features",
+  summary: "All modules share a set of powerful features that keeps you moving"
+) do |section| %>
+  <%= section.with_body do %>
+    <%= render Design::Layout::GridComponent.new(columns: 4) do |grid| %>
+      <% modules.each do |mod| %>
+        <%= grid.with_item do %>
+          <%= render Design::Element::CardComponent.new(
+            header: mod[:label],
+            summary: mod[:description],
+            icon: mod[:icon],
+            href: "/modules/#{mod[:label].downcase}",
+            border: true
+          ) %>
+        <% end %>
       <% end %>
     <% end %>
   <% end %>
-
-  <div style="display: flex; justify-content: center; margin-block-start: var(--size-12);">
-    <%= link_to "Learn more", "#", class: "btn btn--outline btn--large btn--rounded" %>
-  </div>
-</div>
+<% end %>

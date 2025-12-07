@@ -1,0 +1,14 @@
+<% if @prefix %>
+  <div class="text-xl font-bold text-subtle mbe-2" style="letter-spacing: var(--tracking-wide);"><%= @prefix %></div>
+<% end %>
+
+<div class="flex items-baseline mbe-8" style="gap: var(--size-4);">
+  <% if @icon %>
+    <%= image_tag "icons/#{@icon}.svg", size: 64, alt: "" %>
+  <% end %>
+  <h1 class="font-bold m-0 text-primary" style="font-size: var(--text-6xl); line-height: var(--leading-tight); letter-spacing: var(--tracking-wide);"><%= @title %></h1>
+</div>
+
+<% if @abstract %>
+  <p class="text-subtle m-0" style="font-size: var(--text-2xl); line-height: var(--leading-relaxed); max-width: 60ch;"><%= @abstract %></p>
+<% end %>

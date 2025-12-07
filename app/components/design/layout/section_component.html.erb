@@ -1,0 +1,13 @@
+<section class="container mbs-12">
+  <% if render_header? %>
+    <% if header? %>
+      <%= header %>
+    <% else %>
+      <%= render Design::Typography::SubHeaderComponent.new(header: @header, summary: @summary) %>
+    <% end %>
+  <% end %>
+
+  <% if body? %>
+    <%= body %>
+  <% end %>
+</section>

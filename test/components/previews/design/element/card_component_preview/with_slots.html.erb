@@ -1,0 +1,19 @@
+<%= render Design::Element::CardComponent.new(border: true) do |card| %>
+  <%= card.with_icon do %>
+    <%= image_tag "icons/globe.svg", size: 32, alt: "", class: "mbe-2" %>
+  <% end %>
+
+  <%= card.with_header do %>
+    <h3 class="text-xl font-semibold m-0 mbe-2 text-primary">Custom Header</h3>
+  <% end %>
+
+  <%= card.with_body do %>
+    <p class="text-base text-primary m-0">
+      This card uses slots for maximum flexibility. You can put any content in the header, body, and footer.
+    </p>
+  <% end %>
+
+  <%= card.with_footer do %>
+    <small class="text-subtle">Footer content here</small>
+  <% end %>
+<% end %>

@@ -1,0 +1,14 @@
+<div class="mbe-12">
+  <% if render_header? %>
+    <% if header? %>
+      <%= header %>
+    <% else %>
+      <%= render Design::Typography::PageHeaderComponent.new(
+        title: @title,
+        abstract: @abstract,
+        prefix: @prefix,
+        icon: @icon
+      ) %>
+    <% end %>
+  <% end %>
+</div>

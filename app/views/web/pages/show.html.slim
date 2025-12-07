@@ -1,0 +1,5 @@
+
+/ =render Web::Page::BreadcrumbsComponent.new(page: @page)
+=render Web::Page::HeaderComponent.new(page: @page)
+=render Web::Page::BodyComponent.new(page: @page)
+=render Web::Page::BlockComponent.with_collection(@page.children, theme: 'light')

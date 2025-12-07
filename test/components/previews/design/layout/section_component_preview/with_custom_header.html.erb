@@ -1,0 +1,12 @@
+<%= render Design::Layout::SectionComponent.new do |section| %>
+  <%= section.with_header do %>
+    <div class="text-center mbe-8">
+      <h2 class="text-3xl font-bold m-0 mbe-2">Custom Header</h2>
+      <p class="text-lg text-subtle m-0">This section uses a custom header slot for complete control.</p>
+    </div>
+  <% end %>
+
+  <%= section.with_body do %>
+    <p class="text-base">Section body content with custom header.</p>
+  <% end %>
+<% end %>
