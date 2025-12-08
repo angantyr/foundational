@@ -1,15 +1,24 @@
-/ .p-6 
-/   ul
-/   -@page.children.each do |child|
-/     li
-/       =icon child.icon.name
 
-/ .p-6 
-/   ul
-/   -@page.children.each do |child|
-/     li
-/       =inline_svg_tag "icons/lucide/outline/#{child.icon.name}.svg", class: "icon"
-.p-6
-  .flex.flex-col.gap
-    -10.times do |i|
-      <div class="rounded-lg bg-shade border" style="min-block-size: 6rem"></div>
+=render Design::Layout::HeroComponent.new( \
+  prefix: "Coming Soon", \
+  title: @home_page.header, \
+  abstract: @home_page.summary, \
+  icon: nil \
+)
+
+-@topnav_pages.each do |section_page|
+  =render Design::Layout::SectionComponent.new( \
+      header: section_page.header, \
+      summary: section_page.summary, \
+    ) do |section| 
+    =section.with_body do
+      =render Design::Layout::GridComponent.new(columns: 4) do |grid|
+        -section_page.children.each do |child_page|
+          =grid.with_item do
+            =render Design::Element::CardComponent.new( \
+                          header: child_page.header, \
+                          summary: child_page.summary, \
+                          icon: child_page.icon&.name, \
+                          href: child_page.href, \
+                          border: false \
+                        )
