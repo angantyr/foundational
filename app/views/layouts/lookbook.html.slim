@@ -22,7 +22,8 @@ html lang="en"
     =stylesheet_link_tag :application, "data-turbo-track": "reload"
     =javascript_importmap_tags
 
-  body.bg-gray-50.flex.min-h-full.flex-col data-turbo-prefetch="false"
-    main.w-full.flex-auto.px-6.py-8
-      =yield
+  body.flex.min-block-size-full.flex-col data-turbo-prefetch="false" style="background-color: var(--color-bg-muted, #f5f5f5);"
+    main.inline-size-full.flex-auto.pis-8.pie-8.pbs-8.pbe-8
+      div style="background-color: white; padding: var(--size-8);"
+        =yield
 

@@ -15,8 +15,10 @@ class Design::Element::CardComponent < ViewComponent::Base
   end
 
   def wrapper_classes
-    classes = ["flex", "flex-col"]
-    classes << "pis-6 pie-6 pbs-6 pbe-6 border border-main rounded-lg" if @border
+    classes = ["flex", "flex-col", "gap-2", "pis-6", "pie-6", "pbs-6", "pbe-6"]
+    if @border
+      classes << "border border-main rounded-lg"
+    end
     classes.join(" ")
   end
 

@@ -52,9 +52,6 @@
 @import url('components/design/navigation/elements/menu_item_component.css');
 @import url('components/design/navigation/elements/hamburger_component.css');
 @import url('components/design/navigation/menu/dropdown/item_component.css');
-@import url('components/design/section_header_component.css');
-@import url('components/design/feature_item_component.css');
-@import url('components/design/feature_grid_component.css');
 @import url('components/design/navigation/tabs_component.css');
 
 /* CSS-Zero Utilities - Load LAST for highest specificity */
