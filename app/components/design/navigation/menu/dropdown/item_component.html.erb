@@ -1,8 +1,8 @@
 <div class="show@md" <%= tag.attributes(controller_data) %>>
   <button type="button" class="<%= button_classes %>" data-popover-target="trigger" popovertarget="<%= @popover_id %>" aria-haspopup="true">
     <%= @label %>
-    <span class="icon icon--chevron-down" aria-hidden="true">
-      <%= image_tag "icons/chevron-down.svg", size: 16, alt: "" %>
+    <span style="width: 16px; height: 16px; display: inline-flex; align-items: center; margin-inline-start: 0.5rem;" aria-hidden="true">
+      <%= helpers.icon "chevron-down" %>
     </span>
   </button>
   <div popover id="<%= @popover_id %>" class="popover" style="--popover-size: <%= @popover_width %>;" data-popover-target="content" role="menu" aria-label="<%= @label %> Menu">

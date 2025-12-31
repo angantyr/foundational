@@ -1,8 +1,8 @@
 <% if @href %>
 <a href="<%= @href %>" class="<%= css_classes %>">
   <% if show_icon? %>
-  <span class="menu-item-component__icon">
-    <%= helpers.icon @icon, class: "icon", style: "width: #{card_variant? ? 24 : 16}px; height: #{card_variant? ? 24 : 16}px;" %>
+  <span class="menu-item-component__icon" style="width: #{card_variant? ? 24 : 16}px; height: #{card_variant? ? 24 : 16}px;">
+    <%= helpers.icon @icon %>
   </span>
   <% end %>
   <span class="menu-item-component__content">
@@ -12,16 +12,16 @@
     <% end %>
   </span>
   <% if @show_chevron %>
-  <span class="menu-item-component__chevron">
-    <%= helpers.icon @chevron_icon, class: "icon", style: "width: 16px; height: 16px;" %>
+  <span class="menu-item-component__chevron" style="width: 16px; height: 16px;">
+    <%= helpers.icon @chevron_icon %>
   </span>
   <% end %>
 </a>
 <% else %>
 <span class="<%= css_classes %> menu-item-component--static">
   <% if show_icon? %>
-  <span class="menu-item-component__icon">
-    <%= helpers.icon @icon, class: "icon", style: "width: #{card_variant? ? 24 : 16}px; height: #{card_variant? ? 24 : 16}px;" %>
+  <span class="menu-item-component__icon" style="width: #{card_variant? ? 24 : 16}px; height: #{card_variant? ? 24 : 16}px;">
+    <%= helpers.icon @icon %>
   </span>
   <% end %>
   <span class="menu-item-component__content">

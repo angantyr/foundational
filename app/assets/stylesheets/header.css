@@ -12,8 +12,10 @@
 .header-menu {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   inline-size: 100%;
+  max-inline-size: var(--container-2xl);
+  margin-inline: auto;
   padding-inline: var(--size-6);
   padding-block: var(--size-6);
   gap: clamp(var(--size-2), 2vw, var(--size-4));

@@ -21,8 +21,8 @@
             <% page.children.live.limit(8).each do |child| %>
               <%= link_to child.href, class: "megamenu__card #{'megamenu__card--active' if current_page&.id == child.id}" do %>
                 <% if child.icon.present? %>
-                  <span class="icon" aria-hidden="true">
-                    <%= icon child.icon.name, style: "width: 24px; height: 24px;" %>
+                  <span style="width: 24px; height: 24px; display: inline-flex; align-items: center;" aria-hidden="true">
+                    <%= icon child.icon.name %>
                   </span>
                 <% end %>
                 <h3 class="megamenu__title"><%= child.name %></h3>
@@ -37,12 +37,12 @@
         <%= mega.with_footer do %>
           <div class="megamenu__footer">
             <%= link_to page.href, class: "megamenu__footer-link" do %>
-              <span class="icon" aria-hidden="true">
-                <%= icon "layout-dashboard", style: "width: 16px; height: 16px;" %>
+              <span style="width: 16px; height: 16px; display: inline-flex; align-items: center;" aria-hidden="true">
+                <%= icon "layout-dashboard" %>
               </span>
               <span>View all <%= page.name.downcase %></span>
-              <span class="icon" aria-hidden="true">
-                <%= icon "move-right", style: "width: 16px; height: 16px;" %>
+              <span style="width: 16px; height: 16px; display: inline-flex; align-items: center;" aria-hidden="true">
+                <%= icon "move-right" %>
               </span>
             <% end %>
           </div>
@@ -53,8 +53,8 @@
             <% page.children.live.each do |child| %>
               <%= link_to child.href, class: "megamenu-mobile-card #{'megamenu-mobile-card--active' if current_page&.id == child.id}" do %>
                 <% if child.icon.present? %>
-                  <span class="icon" aria-hidden="true">
-                    <%= icon child.icon.name, style: "width: 24px; height: 24px;" %>
+                  <span style="width: 24px; height: 24px; display: inline-flex; align-items: center;" aria-hidden="true">
+                    <%= icon child.icon.name %>
                   </span>
                 <% end %>
                 <h3 class="megamenu-mobile-card__title"><%= child.name %></h3>

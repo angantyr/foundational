@@ -1,0 +1,109 @@
+/*
+ * Foundational Custom Utilities
+ *
+ * Custom utility classes specific to Foundational app.
+ * Loaded AFTER css_zero utilities to allow overrides.
+ */
+
+/* Custom Font Title Utility */
+.font-title {
+  font-family: "Mona Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+/* Max inline-size utilities (missing from css-zero) */
+.max-i-3xs {
+  max-inline-size: var(--max-i-3xs);
+}
+
+.max-i-2xs {
+  max-inline-size: var(--max-i-2xs);
+}
+
+.max-i-xs {
+  max-inline-size: var(--max-i-xs);
+}
+
+.max-i-sm {
+  max-inline-size: var(--max-i-sm);
+}
+
+.max-i-md {
+  max-inline-size: var(--max-i-md);
+}
+
+.max-i-lg {
+  max-inline-size: var(--max-i-lg);
+}
+
+.max-i-xl {
+  max-inline-size: var(--max-i-xl);
+}
+
+.max-i-2xl {
+  max-inline-size: var(--max-i-2xl);
+}
+
+.max-i-3xl {
+  max-inline-size: var(--max-i-3xl);
+}
+
+.max-i-4xl {
+  max-inline-size: var(--max-i-4xl);
+}
+
+.max-i-5xl {
+  max-inline-size: var(--max-i-5xl);
+}
+
+.max-i-6xl {
+  max-inline-size: var(--max-i-6xl);
+}
+
+.max-i-7xl {
+  max-inline-size: var(--max-i-7xl);
+}
+
+/* Leading/line-height utilities (missing from css-zero) */
+.leading-snug {
+  line-height: var(--leading-snug);
+}
+
+.leading-normal {
+  line-height: var(--leading-normal);
+}
+
+.leading-relaxed {
+  line-height: var(--leading-relaxed);
+}
+
+.leading-loose {
+  line-height: var(--leading-loose);
+}
+
+/* Tracking/letter-spacing utilities (missing from css-zero) */
+.tracking-tighter {
+  letter-spacing: var(--tracking-tighter);
+}
+
+.tracking-tight {
+  letter-spacing: var(--tracking-tight);
+}
+
+.tracking-normal {
+  letter-spacing: var(--tracking-normal);
+}
+
+.tracking-wide {
+  letter-spacing: var(--tracking-wide);
+}
+
+.tracking-wider {
+  letter-spacing: var(--tracking-wider);
+}
+
+.tracking-widest {
+  letter-spacing: var(--tracking-widest);
+}

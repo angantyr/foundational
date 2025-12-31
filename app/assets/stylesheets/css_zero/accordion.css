@@ -32,17 +32,17 @@
     }
 
     &::after {
-      background-color: currentColor;
+      background-image: url("chevron-down.svg");
+      background-size: cover;
       block-size: var(--size-4);
       content: "";
+      filter: var(--color-filter-text);
       inline-size: var(--size-4);
       margin-inline-start: auto;
-      mask-image: url("/chevron-down.svg");
-      mask-size: cover;
       transition: transform var(--time-200);
     }
 
-    details[open]>&::after {
+    details[open] > &::after {
       transform: var(--rotate-180);
     }
   }

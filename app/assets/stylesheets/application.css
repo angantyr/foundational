@@ -1,50 +1,33 @@
 /*
  * Application Stylesheet Manifest
  *
- * Load order matters! CSS loaded later overrides earlier styles.
+ * Load order:
+ * 1. CSS Zero Framework - Complete foundation
+ * 2. Foundational Overrides - Custom design tokens (colors, spacing, typography)
+ * 3. Custom Components - Foundational-specific components using override tokens
+ * 4. Foundational Utilities - Custom utilities LAST for highest priority
  *
- * 1. CSS Reset - Clean slate
- * 2. CSS Variables - Design tokens
- * 3. Base CSS-Zero components - Framework defaults
- * 4. Custom component styles - Our overrides and additions
- * 5. CSS-Zero utilities - Utility classes (highest priority)
- *
- * IMPORTANT: Always add new @imports BEFORE the utilities import!
- * Utilities must load LAST to ensure they can override component styles.
+ * IMPORTANT: All @import statements must come BEFORE any CSS rules!
  */
 
-/* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Sour+Gummy:wght@600&display=swap');
+/* 1. CSS Zero Framework - Complete foundation */
+@import url('css_zero/css_zero.css');
 
-/* CSS-Zero Foundation */
-@import url('css-zero/reset.css');
-@import url('variables.css');
+/* 2. Foundational Overrides - Custom design tokens that override css_zero */
+@import url('colors.css');
+@import url('spacing.css');
+@import url('typography.css');
 
-/* CSS-Zero Components (generated into app, customize as needed) */
-@import url('css_zero/button.css');
-@import url('css_zero/accordion.css');
-@import url('css_zero/menu.css');
-@import url('css_zero/popover.css');
-@import url('css_zero/card.css');
-@import url('css_zero/tabs.css');
-@import url('css_zero/carousel.css');
-
-/* Third-party Libraries */
-@import url('swiper.css');
-
-/* Custom Theme & Base Styles */
+/* 3. Custom Components - Foundational-specific primitives and components */
 @import url('base.css');
-
-/* Custom Utilities */
 @import url('grid.css');
-
-/* Custom Component Overrides */
 @import url('buttons.css');
-
-/* Custom Components */
 @import url('header.css');
 @import url('dropdown_menu.css');
 @import url('megamenu.css');
+
+/* Third-party Libraries */
+@import url('swiper.css');
 
 /* ViewComponent Stylesheets */
 @import url('components/design/navigation/elements/brand_component.css');
@@ -54,108 +37,11 @@
 @import url('components/design/navigation/menu/dropdown/item_component.css');
 @import url('components/design/navigation/tabs_component.css');
 
-/* CSS-Zero Utilities - Load LAST for highest specificity */
-@import url('css-zero/utilities.css');
+/* Utilities - Load LAST so they can override everything */
+@import url("css_zero/utilities.css");
 
-/* Custom Utility/Helper Classes */
-.font-title {
-  font-family: "Mona Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
-}
+/* 4. Foundational Custom Utilities - Load LAST for highest priority */
+@import url('foundational.css');
 
-/* Max inline-size utilities (missing from css-zero) */
-.max-i-3xs {
-  max-inline-size: var(--max-i-3xs);
-}
-
-.max-i-2xs {
-  max-inline-size: var(--max-i-2xs);
-}
-
-.max-i-xs {
-  max-inline-size: var(--max-i-xs);
-}
-
-.max-i-sm {
-  max-inline-size: var(--max-i-sm);
-}
-
-.max-i-md {
-  max-inline-size: var(--max-i-md);
-}
-
-.max-i-lg {
-  max-inline-size: var(--max-i-lg);
-}
-
-.max-i-xl {
-  max-inline-size: var(--max-i-xl);
-}
-
-.max-i-2xl {
-  max-inline-size: var(--max-i-2xl);
-}
-
-.max-i-3xl {
-  max-inline-size: var(--max-i-3xl);
-}
-
-.max-i-4xl {
-  max-inline-size: var(--max-i-4xl);
-}
-
-.max-i-5xl {
-  max-inline-size: var(--max-i-5xl);
-}
-
-.max-i-6xl {
-  max-inline-size: var(--max-i-6xl);
-}
-
-.max-i-7xl {
-  max-inline-size: var(--max-i-7xl);
-}
-
-/* Leading/line-height utilities (missing from css-zero) */
-.leading-snug {
-  line-height: var(--leading-snug);
-}
-
-.leading-normal {
-  line-height: var(--leading-normal);
-}
-
-.leading-relaxed {
-  line-height: var(--leading-relaxed);
-}
-
-.leading-loose {
-  line-height: var(--leading-loose);
-}
-
-/* Tracking/letter-spacing utilities (missing from css-zero) */
-.tracking-tighter {
-  letter-spacing: var(--tracking-tighter);
-}
-
-.tracking-tight {
-  letter-spacing: var(--tracking-tight);
-}
-
-.tracking-normal {
-  letter-spacing: var(--tracking-normal);
-}
-
-.tracking-wide {
-  letter-spacing: var(--tracking-wide);
-}
-
-.tracking-wider {
-  letter-spacing: var(--tracking-wider);
-}
-
-.tracking-widest {
-  letter-spacing: var(--tracking-widest);
-}
+/* 5. Headwind - Legacy Tailwind utilities for smoother transition */
+/* @import url('headwind.css'); */

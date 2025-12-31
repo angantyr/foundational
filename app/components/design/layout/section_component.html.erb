@@ -1,13 +1,15 @@
-<section class="mbs-12">
+<section class="pbs-12 pbe-12 py-10">
   <% if render_header? %>
+  <div class="mbe-8">
     <% if header? %>
-      <%= header %>
+    <%= header %>
     <% else %>
-      <%= render Design::Typography::SubHeaderComponent.new(header: @header, summary: @summary) %>
+    <%= render Design::Typography::SubHeaderComponent.new(header: @header, summary: @summary) %>
     <% end %>
+  </div>
   <% end %>
 
   <% if body? %>
-    <%= body %>
+  <%= body %>
   <% end %>
 </section>
