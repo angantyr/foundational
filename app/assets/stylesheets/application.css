@@ -36,6 +36,7 @@
 @import url('components/design/navigation/elements/hamburger_component.css');
 @import url('components/design/navigation/menu/dropdown/item_component.css');
 @import url('components/design/navigation/tabs_component.css');
+@import url('components/design/navigation/carousel_component.css');
 
 /* Utilities - Load LAST so they can override everything */
 @import url("css_zero/utilities.css");
@@ -44,4 +45,4 @@
 @import url('foundational.css');
 
 /* 5. Headwind - Legacy Tailwind utilities for smoother transition */
-/* @import url('headwind.css'); */
+@import url('headwind.css');
