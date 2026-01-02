@@ -12,7 +12,7 @@
       summary: section_page.summary, \
     ) do |section| 
     =section.with_body do
-      =render Design::Layout::GridComponent.new(columns: 4) do |grid|
+      =render Design::Layout::GridComponent.new(columns: 4, gap: 8) do |grid|
         -section_page.children.each do |child_page|
           =grid.with_item do
             =render Design::Element::CardComponent.new( \
