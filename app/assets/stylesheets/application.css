@@ -20,7 +20,6 @@
 
 /* 3. Custom Components - Foundational-specific primitives and components */
 @import url('base.css');
-@import url('grid.css');
 @import url('buttons.css');
 @import url('header.css');
 @import url('dropdown_menu.css');

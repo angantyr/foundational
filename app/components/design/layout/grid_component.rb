@@ -8,6 +8,6 @@ class Design::Layout::GridComponent < ViewComponent::Base
   end
 
   def grid_classes
-    "grid grid-cols-1 grid-cols-2@sm grid-cols-#{@columns}@lg gap-y-10 gap-x-12"
+    "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-#{@columns} gap-y-10 gap-x-12"
   end
 end
