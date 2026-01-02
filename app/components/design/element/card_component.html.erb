@@ -1,25 +1,57 @@
 <%= content_tag(wrapper_tag, **wrapper_attributes) do %>
-  <% if icon? %>
-    <%= icon %>
-  <% elsif @icon %>
-    <%= helpers.icon @icon %>
-  <% end %>
+  <% if has_image? %>
+    <figure>
+      <%= image_tag @image, alt: @header || "" %>
+    </figure>
 
-  <% if header? %>
-    <%= header %>
-  <% elsif @header %>
-    <h3 class="text-xl font-semibold m-0 mbe-2 text-primary"><%= @header %></h3>
-  <% end %>
+    <div class="p-6">
+      <% if icon? %>
+        <%= icon %>
+      <% elsif @icon %>
+        <%= helpers.icon @icon %>
+      <% end %>
 
-  <% if body? %>
-    <%= body %>
-  <% elsif @summary %>
-    <p class="text-base text-primary m-0"><%= @summary %></p>
-  <% end %>
+      <% if header? %>
+        <%= header %>
+      <% elsif @header %>
+        <h3 class="text-xl font-semibold m-0 mbe-2 text-primary"><%= @header %></h3>
+      <% end %>
 
-  <% if footer? %>
-    <div class="mbs-4 pbs-2 border-bs">
-      <%= footer %>
+      <% if body? %>
+        <%= body %>
+      <% elsif @summary %>
+        <p class="text-base text-primary m-0"><%= @summary %></p>
+      <% end %>
+
+      <% if footer? %>
+        <div class="mbs-4 pbs-2 border-bs">
+          <%= footer %>
+        </div>
+      <% end %>
     </div>
+  <% else %>
+    <% if icon? %>
+      <%= icon %>
+    <% elsif @icon %>
+      <%= helpers.icon @icon %>
+    <% end %>
+
+    <% if header? %>
+      <%= header %>
+    <% elsif @header %>
+      <h3 class="text-xl font-semibold m-0 mbe-2 text-primary"><%= @header %></h3>
+    <% end %>
+
+    <% if body? %>
+      <%= body %>
+    <% elsif @summary %>
+      <p class="text-base text-primary m-0"><%= @summary %></p>
+    <% end %>
+
+    <% if footer? %>
+      <div class="mbs-4 pbs-2 border-bs">
+        <%= footer %>
+      </div>
+    <% end %>
   <% end %>
 <% end %>

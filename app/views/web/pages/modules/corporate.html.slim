@@ -91,3 +91,27 @@
 
 
 
+-people_page = @page.children.third
+
+.py-12
+  =render Design::Typography::SubHeaderComponent.new( \
+    header: people_page.header, \
+    summary: people_page.summary, \
+  )
+
+.people-container
+  =render Design::Layout::GridComponent.new(columns: 3) do |grid|
+    -people_page.children.each do |feature|
+      -grid.with_item do 
+        =render Design::Element::CardComponent.new( \
+          image: feature.src,
+          header: feature.header, \
+          summary: feature.summary, \
+          border: true, \
+        )
+
+
+
+
+
+

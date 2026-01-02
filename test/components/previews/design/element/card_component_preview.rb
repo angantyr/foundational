@@ -26,4 +26,14 @@ class Design::Element::CardComponentPreview < ViewComponent::Preview
   def with_slots
     render_with_template
   end
+
+  # @label Card with Image
+  def with_image
+    render Design::Element::CardComponent.new(
+      image: "/lookbook/placeholder.jpg",
+      header: "Team Member",
+      summary: "John Doe is a senior software engineer with 10 years of experience in building scalable web applications.",
+      border: true
+    )
+  end
 end
