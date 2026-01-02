@@ -63,11 +63,8 @@
   line-height: var(--leading-relaxed);
 }
 
-/* Grid layout - 4 columns */
+/* Grid wrapper - padding only (grid layout handled by GridComponent) */
 .megamenu__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--size-8);
   padding: var(--size-10) var(--size-12);
   padding-block-end: var(--size-8);
 }

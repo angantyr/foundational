@@ -1,5 +1,7 @@
-<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--size-8); padding: var(--size-6); max-width: 1200px;">
+<%= render Design::Layout::GridComponent.new(columns: 4, gap: 8) do |grid| %>
   <% components.each do |component| %>
-    <%= render component %>
+    <% grid.with_item do %>
+      <%= render component %>
+    <% end %>
   <% end %>
-</div>
+<% end %>

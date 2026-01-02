@@ -18,16 +18,20 @@
       ) do |mega| %>
         <%= mega.with_links do %>
           <div class="megamenu__grid">
-            <% page.children.live.limit(8).each do |child| %>
-              <%= link_to child.href, class: "megamenu__card #{'megamenu__card--active' if current_page&.id == child.id}" do %>
-                <% if child.icon.present? %>
-                  <span style="width: 24px; height: 24px; display: inline-flex; align-items: center;" aria-hidden="true">
-                    <%= icon child.icon.name %>
-                  </span>
-                <% end %>
-                <h3 class="megamenu__title"><%= child.name %></h3>
-                <% if child.summary.present? %>
-                  <p class="megamenu__description"><%= child.summary.to_plain_text %></p>
+            <%= render Design::Layout::GridComponent.new(columns: 4, gap: 2) do |grid| %>
+              <% page.children.live.limit(8).each do |child| %>
+                <% grid.with_item do %>
+                  <%= link_to child.href, class: "megamenu__card #{'megamenu__card--active' if current_page&.id == child.id}" do %>
+                    <% if child.icon.present? %>
+                      <span style="width: 24px; height: 24px; display: inline-flex; align-items: center;" aria-hidden="true">
+                        <%= icon child.icon.name %>
+                      </span>
+                    <% end %>
+                    <h3 class="megamenu__title"><%= child.name %></h3>
+                    <% if child.summary.present? %>
+                      <p class="megamenu__description"><%= child.summary.to_plain_text %></p>
+                    <% end %>
+                  <% end %>
                 <% end %>
               <% end %>
             <% end %>
