@@ -1,0 +1,91 @@
+=render Design::Typography::PageHeaderComponent.new( \
+  prefix: @page.parent&.name, \
+  title: @page.header, \
+  abstract: @page.summary, \ 
+)
+
+-company_page = @page.children.first
+
+.py-12
+  =render Design::Typography::SubHeaderComponent.new( \
+    header: company_page.header, \
+    summary: company_page.summary, \
+  )
+
+
+=render Design::Navigation::Tabs::WidgetComponent.new(variant: :responsive) do |widget|
+    / First loop: render all the buttons with header + summary
+    -company_page.children.each do |tab|
+      -widget.with_button do
+        <div style="text-align: left; white-space: normal; pointer-events: none;">
+          <div class="font-semibold">
+            =tab.header
+          </div>
+          <div class="show@md text-sm text-subtle mbs-1">
+            =tab.summary
+          </div>
+        </div>
+    
+    / Second loop: render all the panels with summary + image
+    -company_page.children.each do |tab|
+      -widget.with_panel do
+        <div>
+          <p class="hide@md text-base m-0 mbe-4">
+            =tab.summary
+          </p>
+          =image_tag "/foo/bar.jpg", class: "w-full rounded-md"
+        </div>
+
+
+-locations_page = @page.children.second
+
+.py-12
+  =render Design::Typography::SubHeaderComponent.new( \
+    header: locations_page.header, \
+    summary: locations_page.summary, \
+  )
+
+
+.carousel-container
+  =render Design::Navigation::Carousel::WidgetComponent.new(pagination_position: :top) do |widget|
+    / Feature Cards as Pagination
+    -locations_page.children.each_with_index do |feature, index|
+      -widget.with_pagination do 
+        <button type="button" class="feature-card" data-carousel-target="pagination" data-action="carousel#goToSlide" data-index="#{index}" aria-label="">
+          <div class="feature-card__icon">
+            =inline_svg_tag "icons/#{feature.icon}.svg", class: "icon"
+          </div>
+          <h3 class="feature-card__header">
+            =feature.header
+          </h3>
+          <div class="feature-card__summary">
+            =feature.summary
+          </div>
+        </button>
+
+
+    / Slides
+    -locations_page.children.each do |feature|
+      -widget.with_slide do
+        =image_tag "/foo/bar.jpg", alt: "foo", class: "w-full rounded-md"
+        / =image_tag feature.preview.src, alt: feature.preview.caption, class: "w-full rounded-md"
+
+    / Navigation
+    -widget.with_navigation do
+      <button type="button" data-action="carousel#prev" class="carousel__nav carousel__nav--prev" aria-label="Previous slide"> ‹ </button>
+      <button type="button" data-action="carousel#next" class="carousel__nav carousel__nav--next" aria-label="Next slide"> › </button>
+
+
+  / Mobile: Stacked cards
+  .mobile-stack
+    -locations_page.children.each do |feature|
+      .mobile-feature
+        .mobile-feature__card
+          .mobile-feature__icon
+            =inline_svg_tag "icons/#{feature.icon}.svg", class: "icon"
+          h3.mobile-feature__header
+            =feature.header
+          .mobile-feature__summary
+            =feature.summary
+        .mobile-feature__image-container
+          / =image_tag feature.preview.src, alt: feature.preview.caption, class: "rounded-md"

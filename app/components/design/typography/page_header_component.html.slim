@@ -1,0 +1,13 @@
+-if @prefix
+  .text-sm.font-bold.text-subtle.mbe-2.uppercase
+    =@prefix
+
+.flex.items-baseline.mbe-4.gap
+  -if @icon
+    =icon "#{@icon}.svg", size: 64, alt: ""
+  h1.text-5xl.font-display.font-bold.m-0.text-primary
+    =@title
+
+-if @abstract
+  .text-2xl.text-subtle.m-0
+    =@abstract
