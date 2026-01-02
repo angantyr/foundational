@@ -50,18 +50,17 @@
   =render Design::Navigation::Carousel::WidgetComponent.new(pagination_position: :top) do |widget|
     / Feature Cards as Pagination
     -locations_page.children.each_with_index do |feature, index|
-      -widget.with_pagination do 
-        <button type="button" class="feature-card" data-carousel-target="pagination" data-action="carousel#goToSlide" data-index="#{index}" aria-label="">
-          <div class="feature-card__icon">
-            =inline_svg_tag "icons/#{feature.icon}.svg", class: "icon"
-          </div>
-          <h3 class="feature-card__header">
-            =feature.header
-          </h3>
-          <div class="feature-card__summary">
-            =feature.summary
-          </div>
-        </button>
+      -widget.with_pagination do
+        =render Design::Element::CardComponent.new( \
+          header: feature.header, \
+          summary: feature.summary, \
+          icon: feature.icon&.name, \
+          tag: :button, \
+          wrapper_class: "feature-card", \
+          data: { carousel_target: "pagination", action: "carousel#goToSlide", index: index }, \
+          type: "button", \
+          "aria-label": "View #{feature.header}" \
+        )
 
 
     / Slides
@@ -80,12 +79,11 @@
   .mobile-stack
     -locations_page.children.each do |feature|
       .mobile-feature
-        .mobile-feature__card
-          .mobile-feature__icon
-            =inline_svg_tag "icons/#{feature.icon}.svg", class: "icon"
-          h3.mobile-feature__header
-            =feature.header
-          .mobile-feature__summary
-            =feature.summary
+        =render Design::Element::CardComponent.new( \
+          header: feature.header, \
+          summary: feature.summary, \
+          icon: feature.icon&.name, \
+          wrapper_class: "mobile-feature__card" \
+        )
         .mobile-feature__image-container
           / =image_tag feature.preview.src, alt: feature.preview.caption, class: "rounded-md"

@@ -75,25 +75,22 @@
   opacity: 1;
 }
 
-.feature-card__icon {
+/* Icon styling - works with CardComponent's direct icon rendering */
+.feature-card svg {
   inline-size: 20px;
   block-size: 20px;
   margin-block-end: var(--size-3);
   transition: opacity 0.2s;
 }
 
-.feature-card__icon .icon {
-  inline-size: 100%;
-  block-size: 100%;
-}
-
-.feature-card__header {
+/* Header and summary styling - override CardComponent defaults */
+.feature-card h3 {
   font-size: var(--text-base);
   font-weight: var(--font-semibold);
   margin-block-end: var(--size-2);
 }
 
-.feature-card__summary {
+.feature-card p {
   font-size: var(--text-sm);
   line-height: var(--leading-relaxed);
 }
@@ -198,24 +195,21 @@
   padding: var(--size-6);
 }
 
-.mobile-feature__icon {
+/* Icon styling - works with CardComponent's direct icon rendering */
+.mobile-feature__card svg {
   inline-size: 20px;
   block-size: 20px;
   margin-block-end: var(--size-3);
 }
 
-.mobile-feature__icon .icon {
-  inline-size: 100%;
-  block-size: 100%;
-}
-
-.mobile-feature__header {
+/* Header and summary styling - override CardComponent defaults */
+.mobile-feature__card h3 {
   font-size: var(--text-base);
   font-weight: var(--font-semibold);
   margin-block-end: var(--size-2);
 }
 
-.mobile-feature__summary {
+.mobile-feature__card p {
   font-size: var(--text-sm);
   line-height: var(--leading-relaxed);
   color: var(--color-text-subtle);
