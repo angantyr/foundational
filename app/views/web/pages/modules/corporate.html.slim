@@ -33,7 +33,7 @@
           <p class="hide@md text-base m-0 mbe-4">
             =tab.summary
           </p>
-          =image_tag "/foo/bar.jpg", class: "w-full rounded-md"
+          =image_tag tab.src, class: "w-full rounded-md"
         </div>
 
 
@@ -66,7 +66,7 @@
     / Slides
     -locations_page.children.each do |feature|
       -widget.with_slide do
-        =image_tag "/foo/bar.jpg", alt: "foo", class: "w-full rounded-md"
+        =image_tag feature.src, alt: "foo", class: "w-full rounded-md"
         / =image_tag feature.preview.src, alt: feature.preview.caption, class: "w-full rounded-md"
 
     / Navigation
@@ -86,4 +86,8 @@
           wrapper_class: "mobile-feature__card" \
         )
         .mobile-feature__image-container
-          / =image_tag feature.preview.src, alt: feature.preview.caption, class: "rounded-md"
+          =image_tag feature.src, alt: "", class: "rounded-md"
+
+
+
+
