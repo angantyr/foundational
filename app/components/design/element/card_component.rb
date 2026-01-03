@@ -2,13 +2,15 @@
 
 class Design::Element::CardComponent < ViewComponent::Base
   renders_one :icon
+  renders_one :kicker
   renders_one :header
   renders_one :body
   renders_one :footer
 
-  def initialize(header: nil, summary: nil, icon: nil, image: nil, href: nil, border: false, tag: nil, wrapper_class: nil, data: {}, **html_options)
+  def initialize(header: nil, summary: nil, kicker: nil, icon: nil, image: nil, href: nil, border: false, tag: nil, wrapper_class: nil, data: {}, **html_options)
     @header = header
     @summary = summary
+    @kicker = kicker
     @icon = icon
     @image = image
     @href = href
