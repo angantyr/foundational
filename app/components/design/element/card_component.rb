@@ -7,14 +7,16 @@ class Design::Element::CardComponent < ViewComponent::Base
   renders_one :body
   renders_one :footer
 
-  def initialize(header: nil, summary: nil, kicker: nil, icon: nil, image: nil, href: nil, border: false, tag: nil, wrapper_class: nil, data: {}, **html_options)
+  def initialize(header: nil, summary: nil, kicker: nil, icon: nil, icon_size: nil, image: nil, href: nil, border: false, layout: :vertical, tag: nil, wrapper_class: nil, data: {}, **html_options)
     @header = header
     @summary = summary
     @kicker = kicker
     @icon = icon
+    @icon_size = icon_size
     @image = image
     @href = href
     @border = border
+    @layout = layout.to_sym
     @tag = tag
     @wrapper_class = wrapper_class
     @data = data
@@ -25,6 +27,22 @@ class Design::Element::CardComponent < ViewComponent::Base
     @image.present?
   end
 
+  def horizontal?
+    @layout == :horizontal
+  end
+
+  def icon_size_class
+    # Use explicit size if provided
+    return "w-#{@icon_size} h-#{@icon_size}" if @icon_size
+
+    # Smart defaults based on layout
+    if horizontal?
+      "w-12 h-12"  # Larger for horizontal banners
+    else
+      "w-8 h-8"    # Standard for vertical cards
+    end
+  end
+
   def wrapper_tag
     return @tag if @tag.present?
     link? ? :a : :div
@@ -33,7 +51,14 @@ class Design::Element::CardComponent < ViewComponent::Base
   def wrapper_classes
     return @wrapper_class if @wrapper_class.present?
 
-    classes = ["flex", "flex-col"]
+    classes = ["flex"]
+
+    # Layout direction - responsive for horizontal
+    if horizontal?
+      classes += ["flex-col", "md:flex-row", "md:items-center", "gap-8"]
+    else
+      classes << "flex-col"
+    end
 
     # Cards with images need different padding structure
     if has_image?

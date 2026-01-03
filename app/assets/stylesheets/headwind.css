@@ -157,6 +157,23 @@
 }
 
 /****************************************************************
+* Flex Utilities
+*****************************************************************/
+
+/* Base flex utilities */
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex-shrink {
+  flex-shrink: 1;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
+}
+
+/****************************************************************
 * Responsive Flex Utilities
 * Using Tailwind-style md: and lg: prefixes (Slim-friendly)
 *****************************************************************/
@@ -165,6 +182,10 @@
 @media (width >= 48rem) {
   .md\:flex {
     display: flex;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
   }
 
   .md\:flex-col {
@@ -198,6 +219,14 @@
   .md\:gap {
     column-gap: var(--column-gap, 0.5rem);
     row-gap: var(--row-gap, 1rem);
+  }
+
+  .md\:mbs-0 {
+    margin-block-start: 0;
+  }
+
+  .md\:mis-4 {
+    margin-inline-start: var(--size-4);
   }
 }
 

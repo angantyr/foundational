@@ -1,0 +1,61 @@
+<div style="padding: var(--size-8); background: var(--color-bg-subtle);">
+  <h4 style="margin-block-end: var(--size-4); font-weight: var(--font-semibold);">Horizontal Card (Banner Style)</h4>
+  <p style="margin-block-end: var(--size-6); color: var(--color-text-subtle); font-size: var(--text-sm);">
+    Responsive layout: vertical on mobile, horizontal on desktop (md breakpoint)
+  </p>
+
+  <!-- Example 1: With icon and button -->
+  <%= render Design::Element::CardComponent.new(
+    icon: "rocket",
+    header: "Get Started Today",
+    summary: "Join thousands of satisfied customers and take your business to the next level",
+    layout: :horizontal,
+    border: true
+  ) do |card| %>
+    <% card.with_footer do %>
+      <%= render Design::Element::ButtonComponent.new(
+        label: "Sign Up",
+        variant: :primary,
+        href: "#"
+      ) %>
+    <% end %>
+  <% end %>
+
+  <div style="block-size: var(--size-6);"></div>
+
+  <!-- Example 2: With kicker -->
+  <%= render Design::Element::CardComponent.new(
+    icon: "bell",
+    kicker: "New Feature",
+    header: "Notifications Are Here",
+    summary: "Stay updated with real-time notifications for all your important events",
+    layout: :horizontal,
+    border: true
+  ) do |card| %>
+    <% card.with_footer do %>
+      <%= render Design::Element::ButtonComponent.new(
+        label: "Learn More",
+        variant: :outline,
+        href: "#"
+      ) %>
+    <% end %>
+  <% end %>
+
+  <div style="block-size: var(--size-6);"></div>
+
+  <!-- Example 3: Without icon -->
+  <%= render Design::Element::CardComponent.new(
+    header: "Need Help?",
+    summary: "Our support team is available 24/7 to assist you with any questions",
+    layout: :horizontal,
+    border: true
+  ) do |card| %>
+    <% card.with_footer do %>
+      <%= render Design::Element::ButtonComponent.new(
+        label: "Contact Support",
+        variant: :secondary,
+        href: "#"
+      ) %>
+    <% end %>
+  <% end %>
+</div>

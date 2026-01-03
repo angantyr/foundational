@@ -6,17 +6,19 @@
     </figure>
   <% elsif icon? || @icon %>
     <!-- Visual area: Icon -->
-    <% if icon? %>
-      <%= icon %>
-    <% elsif @icon %>
-      <%= helpers.icon @icon, class: "w-8 h-8" %>
-    <% end %>
+    <div class="shrink-0">
+      <% if icon? %>
+        <%= icon %>
+      <% elsif @icon %>
+        <%= helpers.icon @icon, class: icon_size_class %>
+      <% end %>
+    </div>
   <% end %>
 
   <!-- Content area: always present, grows to fill space -->
-  <div class="<%= has_image? ? 'p-6' : '' %> h-full flex flex-col justify-between">
-    <!-- Content group: kicker, header, summary -->
-    <div>
+  <% if horizontal? %>
+    <!-- Horizontal layout: content grows in middle, footer beside it -->
+    <div class="<%= has_image? ? 'p-6' : '' %> flex-grow">
       <% if kicker? %>
         <%= kicker %>
       <% elsif @kicker %>
@@ -36,11 +38,42 @@
       <% end %>
     </div>
 
-    <!-- Footer: pushed to bottom by justify-between -->
+    <!-- Footer: positioned to right on desktop, below on mobile -->
     <% if footer? %>
-      <div class="mbs-4">
+      <div class="shrink-0">
         <%= footer %>
       </div>
     <% end %>
-  </div>
+  <% else %>
+    <!-- Vertical layout: footer pushed to bottom with justify-between -->
+    <div class="<%= has_image? ? 'p-6' : '' %> h-full flex flex-col justify-between">
+      <!-- Content group: kicker, header, summary -->
+      <div>
+        <% if kicker? %>
+          <%= kicker %>
+        <% elsif @kicker %>
+          <div class="text-xs text-subtle uppercase tracking-wide mbe-1"><%= @kicker %></div>
+        <% end %>
+
+        <% if header? %>
+          <%= header %>
+        <% elsif @header %>
+          <h3 class="text-xl font-semibold m-0 mbe-2 text-primary"><%= @header %></h3>
+        <% end %>
+
+        <% if body? %>
+          <%= body %>
+        <% elsif @summary %>
+          <p class="text-base text-primary m-0"><%= @summary %></p>
+        <% end %>
+      </div>
+
+      <!-- Footer: pushed to bottom by justify-between -->
+      <% if footer? %>
+        <div class="mbs-4">
+          <%= footer %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 <% end %>

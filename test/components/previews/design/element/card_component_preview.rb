@@ -36,4 +36,9 @@ class Design::Element::CardComponentPreview < ViewComponent::Preview
       border: true
     )
   end
+
+  # @label Horizontal Layout (Banner)
+  def horizontal_layout
+    render_with_template
+  end
 end
