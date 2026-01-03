@@ -4,6 +4,8 @@
   abstract: @page.summary, \ 
 )
 
+/ offering
+/ products / services / solutions
 -page = @page.children.first
 
 .py-12
@@ -12,50 +14,16 @@
     summary: page.summary, \
   )
 
-
-=render Design::Navigation::Tabs::WidgetComponent.new(variant: :responsive) do |widget|
-    / First loop: render all the buttons with header + summary
-    -page.children.each do |tab|
-      -widget.with_button do
-        <div style="text-align: left; white-space: normal; pointer-events: none;">
-          <div class="font-semibold">
-            =tab.header
-          </div>
-          <div class="show@md text-sm text-subtle mbs-1">
-            =tab.summary
-          </div>
-        </div>
-    
-    / Second loop: render all the panels with summary + image
-    -page.children.each do |tab|
-      -widget.with_panel do
-        <div>
-          <p class="hide@md text-base m-0 mbe-4">
-            =tab.summary
-          </p>
-          =image_tag tab.src, class: "w-full rounded-md"
-        </div>
-
-
--page = @page.children.second
-
-.py-12
-  =render Design::Typography::SubHeaderComponent.new( \
-    header: page.header, \
-    summary: page.summary, \
-  )
-
-
 .carousel-container
   =render Design::Navigation::Carousel::WidgetComponent.new(pagination_position: :top) do |widget|
     / Feature Cards as Pagination
     -page.children.each_with_index do |feature, index|
       -widget.with_pagination do
         =render Design::Element::CardComponent.new( \
+          icon: feature.icon&.name, \
           kicker: feature.kicker, \
           header: feature.header, \
           summary: feature.summary, \
-          icon: feature.icon&.name, \
           tag: :button, \
           wrapper_class: "feature-card", \
           data: { carousel_target: "pagination", action: "carousel#goToSlide", index: index }, \
@@ -91,8 +59,31 @@
           =image_tag feature.src, alt: "", class: "rounded-md"
 
 
+/ customization (single page)
+-page = @page.children.second
+
+.py-12
+  =render Design::Element::CardComponent.new( \
+    icon: "bell", \
+    header: page.header, \
+    summary: page.summary, \
+    layout: :horizontal, \
+    border: true \
+  ) do |card|
+    -card.with_footer do
+      =render Design::Element::ButtonComponent.new( \
+        label: "Learn more", \
+        variant: :outline, \
+        icon: "move-right", \
+        icon_position: :right, \
+        href: page.href \
+      )
 
 
+
+
+/ connections
+/ customers / testimonials / partners / affiliations / credentials
 -page = @page.children.third
 
 .py-12
@@ -102,7 +93,7 @@
   )
 
 .people-container
-  =render Design::Layout::GridComponent.new(pattern: [2,3], gap: 8) do |grid|
+  =render Design::Layout::GridComponent.new(pattern: [2,3], gap: 6) do |grid|
     -page.children.each do |feature|
       -grid.with_item do 
         =render Design::Element::CardComponent.new( \
@@ -114,8 +105,9 @@
         )
 
 
-/ brand
-/ values, benefits, milestones, quotes, integrations 
+/ expanding
+/ segments / geography
+
 -page = @page.children.fourth
 
 .py-12
@@ -125,7 +117,7 @@
   )
 
 .people-container
-  =render Design::Layout::GridComponent.new(pattern: [2,3], gap: 8) do |grid|
+  =render Design::Layout::GridComponent.new(columns: 2) do |grid|
     -page.children.each do |feature|
       -grid.with_item do 
         =render Design::Element::CardComponent.new( \
@@ -136,6 +128,36 @@
           border: true, \
         )
 
+/ powerups
+/ catalog / training / store
+
+-page = @page.children.fifth
+
+.py-12
+  =render Design::Typography::SubHeaderComponent.new( \
+    header: page.header, \
+    summary: page.summary, \
+  )
+
+.people-container
+  =render Design::Layout::GridComponent.new(columns: 3) do |grid|
+    -page.children.each do |feature|
+      -grid.with_item do 
+        =render Design::Element::CardComponent.new( \
+          icon: feature.icon, \
+          kicker: feature.kicker, \
+          header: feature.header, \
+          summary: feature.summary, \
+          border: true \
+        ) do |card|
+          -card.with_footer do
+            =render Design::Element::ButtonComponent.new( \
+              label: "Learn more", \
+              variant: :link, \
+              icon: "move-right", \
+              icon_position: :right, \
+              href: feature.href \
+            )
 
 
 

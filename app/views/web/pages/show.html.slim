@@ -1,5 +1,32 @@
 
 / =render Web::Page::BreadcrumbsComponent.new(page: @page)
-=render Web::Page::HeaderComponent.new(page: @page)
-=render Web::Page::BodyComponent.new(page: @page)
-=render Web::Page::BlockComponent.with_collection(@page.children, theme: 'light')
+/ =render Web::Page::HeaderComponent.new(page: @page)
+/ =render Web::Page::BodyComponent.new(page: @page)
+/ =render Web::Page::BlockComponent.with_collection(@page.children, theme: 'light')
+
+
+=render Design::Typography::PageHeaderComponent.new( \
+  prefix: @page.parent&.name, \
+  title: @page.header, \
+  abstract: @page.summary, \ 
+)
+
+-@page.children.each do |child_page|
+
+  .py-12
+    =render Design::Typography::SubHeaderComponent.new( \
+      header: child_page.header, \
+      summary: child_page.summary, \
+    )
+
+  .block
+    =render Design::Layout::GridComponent.new(pattern: [2,3], gap: 8) do |grid|
+      -child_page.children.each do |feature|
+        -grid.with_item do 
+          =render Design::Element::CardComponent.new( \
+            image: feature.src,
+            header: feature.header, \
+            summary: feature.summary, \
+            href: feature.href, \
+            border: true, \
+          )
