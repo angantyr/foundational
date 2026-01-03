@@ -14,6 +14,30 @@
   margin-inline: auto;
 }
 
+/* Height utilities */
+.h-full {
+  height: 100%;
+}
+
+/* Width and height sizing utilities */
+.w-3 { width: var(--size-3); }
+.w-4 { width: var(--size-4); }
+.w-5 { width: var(--size-5); }
+.w-6 { width: var(--size-6); }
+.w-7 { width: var(--size-7); }
+.w-8 { width: var(--size-8); }
+.w-10 { width: var(--size-10); }
+.w-12 { width: var(--size-12); }
+
+.h-3 { height: var(--size-3); }
+.h-4 { height: var(--size-4); }
+.h-5 { height: var(--size-5); }
+.h-6 { height: var(--size-6); }
+.h-7 { height: var(--size-7); }
+.h-8 { height: var(--size-8); }
+.h-10 { height: var(--size-10); }
+.h-12 { height: var(--size-12); }
+
 /* Max width utilities using container variables */
 .max-w-7xl {
   max-width: var(--container-7xl);
