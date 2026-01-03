@@ -79,3 +79,18 @@
   --btn-font-size: var(--text-lg);
   --btn-padding: 1rem 2.5rem;
 }
+
+/* Link button - looks like a text link */
+.btn--link {
+  --btn-background: transparent;
+  --btn-border-color: transparent;
+  --btn-box-shadow: none;
+  --btn-color: var(--color-text);
+  --btn-hover-color: transparent;
+  --btn-padding: 0;
+  text-decoration: none;
+}
+
+.btn--link:hover {
+  text-decoration: underline;
+}
