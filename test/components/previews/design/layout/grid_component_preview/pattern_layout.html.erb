@@ -1,0 +1,32 @@
+<%
+  items = [
+    { label: "Feature 1", description: "First large feature in 2-column row" },
+    { label: "Feature 2", description: "Second large feature in 2-column row" },
+    { label: "Feature 3", description: "Smaller card in 3-column row" },
+    { label: "Feature 4", description: "Smaller card in 3-column row" },
+    { label: "Feature 5", description: "Smaller card in 3-column row" },
+    { label: "Feature 6", description: "First card in next 2-column row" },
+    { label: "Feature 7", description: "Second card in next 2-column row" },
+    { label: "Feature 8", description: "Another card in 3-column row" }
+  ]
+%>
+
+<div style="padding: var(--size-8); background: var(--color-bg-subtle);">
+  <h4 style="margin-block-end: var(--size-4); font-weight: var(--font-semibold);">Pattern Layout: [2, 3]</h4>
+  <p style="margin-block-end: var(--size-6); color: var(--color-text-subtle); font-size: var(--text-sm);">
+    First 2 cards in 2 columns (larger), then 3 cards in 3 columns (smaller). Pattern repeats: 2 more, then 3 more...
+  </p>
+
+  <%= render Design::Layout::GridComponent.new(pattern: [2, 3], gap: 6) do |grid| %>
+    <% items.each do |item| %>
+      <%= grid.with_item do %>
+        <%= render Design::Element::CardComponent.new(
+          image: "/lookbook/placeholder.jpg",
+          header: item[:label],
+          summary: item[:description],
+          border: true
+        ) %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

@@ -15,4 +15,9 @@ class Design::Layout::GridComponentPreview < ViewComponent::Preview
   def two_columns
     render_with_template(template: "design/layout/grid_component_preview/two_columns")
   end
+
+  # @label Pattern Layout (2-3-3)
+  def pattern_layout
+    render_with_template(template: "design/layout/grid_component_preview/pattern_layout")
+  end
 end

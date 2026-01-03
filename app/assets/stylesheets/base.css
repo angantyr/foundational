@@ -44,3 +44,8 @@ body {
   background-color: var(--color-selected);
   color: var(--color-text);
 }
+
+/* Override container max width to use xl size (1280px) */
+.container {
+  max-inline-size: var(--container-xl);
+}
