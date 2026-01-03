@@ -138,12 +138,166 @@ sites:
                         kicker: Integrations
                         header: Order business cards
                         summary: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat.
+                  brand:
+                    icon:
+                    name: brand
+                    kicker: Corporate
+                    header: Manage your brand voice
+                    summary: Anim aute id magna aliqua ad ad non deserunt sunt
+                    children:
+                      values:
+                        icon:
+                        name: values
+                        kicker: Values
+                        header: Corporate Values
+                        summary: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat.
+                      benefits:
+                        icon:
+                        name: benefits
+                        kicker: Benefits
+                        header: Corporate Benefits
+                        summary: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat.
+                      milestones:
+                        icon:
+                        name: milestones
+                        kicker: Milstones
+                        header: Corporate History
+                        summary: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat.
+                      quotes:
+                        icon:
+                        name: quotes
+                        kicker: Quotes
+                        header: Give your people a voice
+                        summary: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat.
+                      integrations:
+                        icon:
+                        name: integrations
+                        kicker: Integrations
+                        header: Order Business Cards
+                        summary: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat.
               business:
                 icon: briefcase-business
                 name: Business
                 kicker: Modules
                 header: Business
                 summary: A rich set of defaults for managing solutions, products, and services, across market segments. Including partners.
+                children:
+                  offering:
+                    icon:
+                    name: offering
+                    kicker: Business
+                    header: Promote your business offering
+                    summary: No matter what you sell, you can present it in multiple ways.
+                    children:
+                      products:
+                        icon: package
+                        name: product
+                        kicker: Products
+                        header: Sell tangible or digital goods
+                        summary: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat.
+                      services:
+                        icon: handshake
+                        name: services
+                        kicker: services
+                        header: Sell your skills and knowledge
+                        summary: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat.
+                      solutions:
+                        icon: puzzle
+                        name: solutions
+                        kicker: Solutions
+                        header: Sell solutions and packages
+                        summary: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat.
+                  customization:
+                    icon: wrench
+                    name: customization
+                    kicker: Customization
+                    header: Get ready to get fitted
+                    summary: No business is alike, and your application needs to be adapted to your reality. This is not one size fits all proposition. Your needs are paramount.
+                  connections:
+                    icon:
+                    name: connections
+                    kicker: Business
+                    header: Leverage your business connections
+                    summary: Showcase your strength by highlighting all those that make success happen.
+                    children:
+                      customers:
+                        icon:
+                        name: customers
+                        kicker: Customers
+                        header: Highlight key relationships
+                        summary: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat.
+                      testimonials:
+                        icon:
+                        name: testimonials
+                        kicker: Testimonials
+                        header: Let others speak on your behalf
+                        summary: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat.
+                      partners:
+                        icon:
+                        name: partners
+                        kicker: Partners
+                        header: Showcase a deep bench
+                        summary: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat.
+                      affiliations:
+                        icon:
+                        name: affiliations
+                        kicker: Affiliations
+                        header: Strength through connections
+                        summary: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat.
+                      credentials:
+                        icon:
+                        name: credentials
+                        kicker: Credentials
+                        header: Trusted. And verified.
+                        summary: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat.
+                  expansion:
+                    icon:
+                    name: connections
+                    kicker: Business
+                    header: Expanding your markets
+                    summary: Manage multiple market segments and geographies
+                    children:
+                      segments:
+                        icon:
+                        name: segments
+                        kicker: Segments
+                        header: Establish customer relevance
+                        summary: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat.
+                      geography:
+                        icon:
+                        name: geography
+                        kicker: Geography
+                        header: Speak the language of your customer
+                        summary: Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo sunt amet fugiat.
+                  powerups:
+                    icon:
+                    name: powerups
+                    kicker: Level Up
+                    header: Need more power?
+                    summary: Activate more specialized modules when needed
+                    children:
+                      catalog:
+                        icon: book-open-text
+                        name: Catalog
+                        kicker: Catalog
+                        header: Build a full product catalog
+                        summary: If your product offering is more complex, you turn to the catalog module which provides and more detailed product information
+                      training:
+                        icon: presentation
+                        name: Training
+                        kicker: Training
+                        header: Offer training services
+                        summary: If you are running training classes as part of your business, you can manage calendar, locations, trainers, and attendance, even certification.
+                      store:
+                        icon: shopping-cart
+                        name: Store
+                        kicker: Store
+                        header: Start selling online
+                        summary: When you are ready to move from talking about your products online to selling them, you can activate the Store module and designate which products you want to start selling.
+                # powerups:
+                #   - catalog
+                #   - training
+                #   - store
               catalog:
                 icon: book-open-text
                 name: Catalog
