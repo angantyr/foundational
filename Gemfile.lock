@@ -20,7 +20,7 @@ PATH
       importmap-rails
       inline_svg
       pagy
-      rails (~> 8.0.0)
+      rails (>= 8.0, < 8.2)
       ransack
       simple_form
       simple_form-tailwind

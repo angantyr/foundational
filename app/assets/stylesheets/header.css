@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: center;
   inline-size: 100%;
-  max-inline-size: var(--container-2xl);
+  max-inline-size: var(--container-xl);
   margin-inline: auto;
   padding-inline: var(--size-6);
   padding-block: var(--size-6);
@@ -96,24 +96,28 @@
 }
 
 /* Animate menu items when menu opens */
-.mobile-menu-checkbox:checked ~ .mobile-menu__content .menu__item {
+.mobile-menu-checkbox:checked~.mobile-menu__content .menu__item {
   animation: slideUpFade 0.3s ease-out backwards;
 }
 
 /* Stagger the animation for each item */
-.mobile-menu-checkbox:checked ~ .mobile-menu__content .menu__item:nth-child(1) {
+.mobile-menu-checkbox:checked~.mobile-menu__content .menu__item:nth-child(1) {
   animation-delay: 0.05s;
 }
-.mobile-menu-checkbox:checked ~ .mobile-menu__content .menu__item:nth-child(2) {
+
+.mobile-menu-checkbox:checked~.mobile-menu__content .menu__item:nth-child(2) {
   animation-delay: 0.1s;
 }
-.mobile-menu-checkbox:checked ~ .mobile-menu__content .menu__item:nth-child(3) {
+
+.mobile-menu-checkbox:checked~.mobile-menu__content .menu__item:nth-child(3) {
   animation-delay: 0.15s;
 }
-.mobile-menu-checkbox:checked ~ .mobile-menu__content .menu__item:nth-child(4) {
+
+.mobile-menu-checkbox:checked~.mobile-menu__content .menu__item:nth-child(4) {
   animation-delay: 0.2s;
 }
-.mobile-menu-checkbox:checked ~ .mobile-menu__content .menu__item:nth-child(5) {
+
+.mobile-menu-checkbox:checked~.mobile-menu__content .menu__item:nth-child(5) {
   animation-delay: 0.25s;
 }
 
@@ -122,6 +126,7 @@
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -163,7 +168,8 @@
 .popover--mobile-menu {
   --popover-size: 100vw;
   position: fixed !important;
-  top: calc(var(--size-6) * 2 + 64px) !important; /* Header height */
+  top: calc(var(--size-6) * 2 + 64px) !important;
+  /* Header height */
   left: 0 !important;
   right: 0 !important;
   margin: 0;
@@ -200,6 +206,7 @@
       /* Hide native marker */
       summary {
         list-style: none;
+
         &::-webkit-details-marker {
           display: none;
         }
