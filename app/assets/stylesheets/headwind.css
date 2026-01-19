@@ -6,6 +6,37 @@
  */
 
 /****************************************************************
+* Directional Shadow Utilities
+* css-zero shadows go all around - these target specific sides
+*****************************************************************/
+
+/* Left and top shadows */
+.shadow-left-top-sm {
+  box-shadow: -2px 0 4px 0 rgb(0 0 0 / 0.1), 0 -2px 4px 0 rgb(0 0 0 / 0.1);
+}
+.shadow-left-top-md {
+  box-shadow: -4px 0 6px -1px rgb(0 0 0 / 0.1), 0 -4px 6px -1px rgb(0 0 0 / 0.1);
+}
+.shadow-left-top-lg {
+  box-shadow: -6px 0 10px -2px rgb(0 0 0 / 0.15), 0 -6px 10px -2px rgb(0 0 0 / 0.15);
+}
+
+/****************************************************************
+* Individual Border Radius Utilities
+* css-zero only provides .rounded-* for all corners
+* Sizes bumped up to be more noticeable (lg uses xl, etc.)
+*****************************************************************/
+
+.rounded-tl-none { border-start-start-radius: 0; }
+.rounded-tl-xs { border-start-start-radius: var(--rounded-sm); }   /* 4px */
+.rounded-tl-sm { border-start-start-radius: var(--rounded-md); }   /* 6px */
+.rounded-tl-md { border-start-start-radius: var(--rounded-lg); }   /* 8px */
+.rounded-tl-lg { border-start-start-radius: var(--rounded-xl); }   /* 12px */
+.rounded-tl-xl { border-start-start-radius: var(--rounded-2xl); }  /* 16px */
+.rounded-tl-2xl { border-start-start-radius: var(--rounded-3xl); } /* 24px */
+.rounded-tl-full { border-start-start-radius: var(--rounded-full); }
+
+/****************************************************************
 * Extended Padding Utilities (beyond css-zero's p-10)
 *****************************************************************/
 
@@ -60,6 +91,17 @@
 .bg-gray-800 { background-color: var(--gray-800); }
 .bg-gray-900 { background-color: var(--gray-900); }
 .bg-gray-950 { background-color: var(--gray-950); }
+
+/* Grayscale gradients (top to bottom) */
+.bg-gradient-gray-100-400 {
+  background-image: linear-gradient(to bottom, var(--gray-100), var(--gray-400));
+}
+.bg-gradient-gray-50-200 {
+  background-image: linear-gradient(to bottom, var(--gray-50), var(--gray-200));
+}
+.bg-gradient-gray-200-500 {
+  background-image: linear-gradient(to bottom, var(--gray-200), var(--gray-500));
+}
 
 /* Text grayscale utilities */
 .text-gray-50 { color: var(--gray-50); }

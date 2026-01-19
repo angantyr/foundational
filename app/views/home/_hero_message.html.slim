@@ -1,4 +1,4 @@
-.flex.flex-col.gap-4.bg-gray-300
+.flex.flex-col.gap-4
   .more.pb-4.flex.items-center.gap-4
     span.badge.badge-lg
       |What's new
@@ -10,5 +10,5 @@
     p The all-in-one platform that grows with your business from local to global. The foundation that powers innovation, rewards boldness, and allows you to dream big.
   .sign-up.pb-4
     .group.max-i-md
-      =text_field_tag "email", nil, placeholder: "Enter your email", class: "input"
-      =button_tag "Request updates", type: "button", class: "btn"
+      =text_field_tag "email", nil, placeholder: "Enter your email", class: "input text-lg"
+      =button_tag "Request updates", type: "button", class: "btn btn--primary text-lg"
