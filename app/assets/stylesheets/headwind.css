@@ -6,6 +6,75 @@
  */
 
 /****************************************************************
+* Extended Padding Utilities (beyond css-zero's p-10)
+*****************************************************************/
+
+/* All sides */
+.p-12 { padding: var(--size-12); }
+.p-16 { padding: var(--size-16); }
+.p-20 { padding: var(--size-20); }
+
+/* Block (vertical) */
+.pb-12 { padding-block: var(--size-12); }
+.pb-16 { padding-block: var(--size-16); }
+.pb-20 { padding-block: var(--size-20); }
+
+/* Block start (top) */
+.pbs-12 { padding-block-start: var(--size-12); }
+.pbs-16 { padding-block-start: var(--size-16); }
+.pbs-20 { padding-block-start: var(--size-20); }
+
+/* Block end (bottom) */
+.pbe-12 { padding-block-end: var(--size-12); }
+.pbe-16 { padding-block-end: var(--size-16); }
+.pbe-20 { padding-block-end: var(--size-20); }
+
+/* Inline (horizontal) */
+.pi-12 { padding-inline: var(--size-12); }
+.pi-16 { padding-inline: var(--size-16); }
+.pi-20 { padding-inline: var(--size-20); }
+
+/* Inline start (left) */
+.pis-12 { padding-inline-start: var(--size-12); }
+.pis-16 { padding-inline-start: var(--size-16); }
+.pis-20 { padding-inline-start: var(--size-20); }
+
+/* Inline end (right) */
+.pie-12 { padding-inline-end: var(--size-12); }
+.pie-16 { padding-inline-end: var(--size-16); }
+.pie-20 { padding-inline-end: var(--size-20); }
+
+/****************************************************************
+* Grayscale Colors (using css-zero color variables)
+*****************************************************************/
+
+/* Background grayscale utilities */
+.bg-gray-50 { background-color: var(--gray-50); }
+.bg-gray-100 { background-color: var(--gray-100); }
+.bg-gray-200 { background-color: var(--gray-200); }
+.bg-gray-300 { background-color: var(--gray-300); }
+.bg-gray-400 { background-color: var(--gray-400); }
+.bg-gray-500 { background-color: var(--gray-500); }
+.bg-gray-600 { background-color: var(--gray-600); }
+.bg-gray-700 { background-color: var(--gray-700); }
+.bg-gray-800 { background-color: var(--gray-800); }
+.bg-gray-900 { background-color: var(--gray-900); }
+.bg-gray-950 { background-color: var(--gray-950); }
+
+/* Text grayscale utilities */
+.text-gray-50 { color: var(--gray-50); }
+.text-gray-100 { color: var(--gray-100); }
+.text-gray-200 { color: var(--gray-200); }
+.text-gray-300 { color: var(--gray-300); }
+.text-gray-400 { color: var(--gray-400); }
+.text-gray-500 { color: var(--gray-500); }
+.text-gray-600 { color: var(--gray-600); }
+.text-gray-700 { color: var(--gray-700); }
+.text-gray-800 { color: var(--gray-800); }
+.text-gray-900 { color: var(--gray-900); }
+.text-gray-950 { color: var(--gray-950); }
+
+/****************************************************************
 * Layout & Spacing
 *****************************************************************/
 
@@ -19,6 +88,11 @@
   height: 100%;
 }
 
+/* Fixed height utilities for hero sections */
+.h-hero { height: 37.5rem; }  /* 600px */
+.h-hero-lg { height: 43.75rem; }  /* 700px */
+.h-hero-xl { height: 50rem; }  /* 800px */
+
 /* Width and height sizing utilities */
 .w-3 { width: var(--size-3); }
 .w-4 { width: var(--size-4); }
@@ -28,6 +102,16 @@
 .w-8 { width: var(--size-8); }
 .w-10 { width: var(--size-10); }
 .w-12 { width: var(--size-12); }
+
+/* Container-based width utilities */
+.w-half-container {
+  width: calc(var(--container-xl) / 2);  /* 640px */
+}
+
+/* Minimum width utilities based on container sizes */
+.min-w-half-container {
+  min-width: calc(var(--container-xl) / 2);  /* 640px */
+}
 
 /* Fractional width utilities */
 .w-1\/2 { width: 50%; }
@@ -46,6 +130,10 @@
 .h-12 { height: var(--size-12); }
 
 /* Max width utilities using container variables */
+.max-w-half-container {
+  max-width: calc(var(--container-xl) / 2);  /* 640px */
+}
+
 .max-w-7xl {
   max-width: var(--container-7xl);
 }
@@ -208,6 +296,18 @@
 
 .object-center {
   object-position: center;
+}
+
+.object-left {
+  object-position: left;
+}
+
+.object-top {
+  object-position: top;
+}
+
+.object-left-top {
+  object-position: left top;
 }
 
 /****************************************************************
@@ -375,5 +475,9 @@
 
   .lg\:w-2\/3 {
     width: 66.666667%;
+  }
+
+  .lg\:w-half-container {
+    width: calc(var(--container-xl) / 2);  /* 640px */
   }
 }

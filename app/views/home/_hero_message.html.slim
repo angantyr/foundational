@@ -1,0 +1,14 @@
+.flex.flex-col.gap-4.bg-gray-300
+  .more.pb-4.flex.items-center.gap-4
+    span.badge.badge-lg
+      |What's new
+    =render Design::Element::ButtonComponent.new(label: "Private AI assistance available", variant: :link, icon: "move-right", href: "#", icon_position: :right)
+  .heading
+    h1.font-title.text-5xl.tracking-tight.leading-none.lg:max-i-lg
+      |Build a better business online with confidence
+  .description.flex.flex-col.gap-4.text-lg.max-i-md
+    p The all-in-one platform that grows with your business from local to global. The foundation that powers innovation, rewards boldness, and allows you to dream big.
+  .sign-up.pb-4
+    .group.max-i-md
+      =text_field_tag "email", nil, placeholder: "Enter your email", class: "input"
+      =button_tag "Request updates", type: "button", class: "btn"

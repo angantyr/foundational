@@ -1,9 +1,5 @@
-/ =render "tailwind_hero"
 
-/ h2.text-center.py-8 CSS Zero Version
-
-=render "css_hero"
-
+=render "hero"
 
 / =render Design::Layout::HeroComponent.new( \
 /   prefix: "Coming Soon", \
@@ -12,19 +8,19 @@
 /   icon: nil \
 / )
 
-/ -@topnav_pages.each do |section_page|
-/   =render Design::Layout::SectionComponent.new( \
-/       header: section_page.header, \
-/       summary: section_page.summary, \
-/     ) do |section| 
-/     =section.with_body do
-/       =render Design::Layout::GridComponent.new(columns: 4, gap: 8) do |grid|
-/         -section_page.children.each do |child_page|
-/           =grid.with_item do
-/             =render Design::Element::CardComponent.new( \
-/                           header: child_page.header, \
-/                           summary: child_page.summary, \
-/                           icon: child_page.icon&.name, \
-/                           href: child_page.href, \
-/                           border: false \
-/                         )
+-@topnav_pages.each do |section_page|
+  =render Design::Layout::SectionComponent.new( \
+      header: section_page.header, \
+      summary: section_page.summary, \
+    ) do |section| 
+    =section.with_body do
+      =render Design::Layout::GridComponent.new(columns: 4, gap: 8) do |grid|
+        -section_page.children.each do |child_page|
+          =grid.with_item do
+            =render Design::Element::CardComponent.new( \
+                          header: child_page.header, \
+                          summary: child_page.summary, \
+                          icon: child_page.icon&.name, \
+                          href: child_page.href, \
+                          border: false \
+                        )

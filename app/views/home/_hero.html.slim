@@ -1,0 +1,19 @@
+.hero.bg-800
+  .lg:flex.gap-6.bg-gray-700
+    .left.bg-gray-600.lg:w-1/2.border.pbs-10.pbe-4.lg:flex.justify-end
+      .border.bg-gray-500.pis-10.pie-10.w-full.lg:w-half-container.flex.items-center
+        =render "hero_message"
+        / |left
+    .right.lg:w-1/2.border.bg-gray-600
+      .bg-gray-500.pbs-16.pis-10
+        =image_tag "/images/fpo/screen-sample-1.webp", width:"3440", height:"1200", class: "h-hero object-cover object-left-top"
+      / |right
+
+/ .hero.bg-white
+/   .lg:flex
+/     .left.lg:w-1/2.lg:flex.justify-end
+/       .m-4.border.max-w-half-container
+/         =render "hero_message"
+/         / |TEXT GOES HERE
+/     .right.lg:w-1/2.bg-white
+/       .visual.border.w-full.h-full
