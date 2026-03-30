@@ -1,7 +1,9 @@
-=render Design::Typography::PageHeaderComponent.new( \
-  prefix: @page.parent&.name, \
-  title: @page.header, \
-  abstract: @page.summary, \ 
+.container
+  =render Design::Layout::HeroComponent.new( \
+    prefix: @page.parent&.name, \
+    title: @page.header, \
+    abstract: @page.summary, \ 
+    icon: @page.icon, \ 
 )
 
 / offering
@@ -14,70 +16,73 @@
     summary: page.summary, \
   )
 
-.carousel-container
-  =render Design::Navigation::Carousel::WidgetComponent.new(pagination_position: :top) do |widget|
-    / Feature Cards as Pagination
-    -page.children.each_with_index do |feature, index|
-      -widget.with_pagination do
-        =render Design::Element::CardComponent.new( \
-          icon: feature.icon&.name, \
-          kicker: feature.kicker, \
-          header: feature.header, \
-          summary: feature.summary, \
-          tag: :button, \
-          wrapper_class: "feature-card", \
-          data: { carousel_target: "pagination", action: "carousel#goToSlide", index: index }, \
-          type: "button", \
-          "aria-label": "View #{feature.header}" \
-        )
+.container
+  .carousel-container
+    =render Design::Navigation::Carousel::WidgetComponent.new(pagination_position: :top) do |widget|
+      / Feature Cards as Pagination
+      -page.children.each_with_index do |feature, index|
+        -widget.with_pagination do
+          =render Design::Element::CardComponent.new( \
+            icon: feature.icon&.name, \
+            kicker: feature.kicker, \
+            header: feature.header, \
+            summary: feature.summary, \
+            tag: :button, \
+            wrapper_class: "feature-card", \
+            data: { carousel_target: "pagination", action: "carousel#goToSlide", index: index }, \
+            type: "button", \
+            "aria-label": "View #{feature.header}" \
+          )
 
 
-    / Slides
-    -page.children.each do |feature|
-      -widget.with_slide do
-        =image_tag feature.src, alt: "foo", class: "w-full rounded-md"
-        / =image_tag feature.preview.src, alt: feature.preview.caption, class: "w-full rounded-md"
+      / Slides
+      -page.children.each do |feature|
+        -widget.with_slide do
+          =image_tag feature.src, alt: "foo", class: "w-full rounded-md"
+          / =image_tag feature.preview.src, alt: feature.preview.caption, class: "w-full rounded-md"
 
-    / Navigation
-    -widget.with_navigation do
-      <button type="button" data-action="carousel#prev" class="carousel__nav carousel__nav--prev" aria-label="Previous slide"> ‹ </button>
-      <button type="button" data-action="carousel#next" class="carousel__nav carousel__nav--next" aria-label="Next slide"> › </button>
+      / Navigation
+      -widget.with_navigation do
+        <button type="button" data-action="carousel#prev" class="carousel__nav carousel__nav--prev" aria-label="Previous slide"> ‹ </button>
+        <button type="button" data-action="carousel#next" class="carousel__nav carousel__nav--next" aria-label="Next slide"> › </button>
 
 
-  / Mobile: Stacked cards
-  .mobile-stack
-    -page.children.each do |feature|
-      .mobile-feature
-        =render Design::Element::CardComponent.new( \
-          kicker: feature.kicker, \
-          header: feature.header, \
-          summary: feature.summary, \
-          icon: feature.icon&.name, \
-          wrapper_class: "mobile-feature__card" \
-        )
-        .mobile-feature__image-container
-          =image_tag feature.src, alt: "", class: "rounded-md"
+    / Mobile: Stacked cards
+    .mobile-stack
+      -page.children.each do |feature|
+        .mobile-feature
+          =render Design::Element::CardComponent.new( \
+            kicker: feature.kicker, \
+            header: feature.header, \
+            summary: feature.summary, \
+            icon: feature.icon&.name, \
+            wrapper_class: "mobile-feature__card" \
+          )
+          .mobile-feature__image-container
+            =image_tag feature.src, alt: "", class: "rounded-md"
 
 
 / customization (single page)
 -page = @page.children.second
 
-.py-12
-  =render Design::Element::CardComponent.new( \
-    icon: "bell", \
-    header: page.header, \
-    summary: page.summary, \
-    layout: :horizontal, \
-    border: true \
-  ) do |card|
-    -card.with_footer do
-      =render Design::Element::ButtonComponent.new( \
-        label: "Learn more", \
-        variant: :outline, \
-        icon: "move-right", \
-        icon_position: :right, \
-        href: page.href \
-      )
+
+.container
+  .py-12
+    =render Design::Element::CardComponent.new( \
+      icon: "bell", \
+      header: page.header, \
+      summary: page.summary, \
+      layout: :horizontal, \
+      border: true \
+    ) do |card|
+      -card.with_footer do
+        =render Design::Element::ButtonComponent.new( \
+          label: "Learn more", \
+          variant: :outline, \
+          icon: "move-right", \
+          icon_position: :right, \
+          href: page.href \
+        )
 
 
 
@@ -92,7 +97,7 @@
     summary: page.summary, \
   )
 
-.people-container
+.container
   =render Design::Layout::GridComponent.new(pattern: [2,3], gap: 6) do |grid|
     -page.children.each do |feature|
       -grid.with_item do 
@@ -116,7 +121,7 @@
     summary: page.summary, \
   )
 
-.people-container
+.container
   =render Design::Layout::GridComponent.new(columns: 2) do |grid|
     -page.children.each do |feature|
       -grid.with_item do 
@@ -139,7 +144,7 @@
     summary: page.summary, \
   )
 
-.people-container
+.container
   =render Design::Layout::GridComponent.new(columns: 3) do |grid|
     -page.children.each do |feature|
       -grid.with_item do 

@@ -1,91 +1,99 @@
 <%= render Design::Navigation::Menu::MegaComponent.new(trigger: :hover) do |menu| %>
-  <%= menu.with_brand do %>
-    <%= render Design::Navigation::Elements::BrandComponent.new(
+<%= menu.with_brand do %>
+<%= render Design::Navigation::Elements::BrandComponent.new(
       logo: "brandmark.svg",
       href: "/",
       size: 64,
       animate_on_hover: true
     ) %>
-  <% end %>
+<% end %>
 
-  <% @topnav_pages.each do |page| %>
-    <%= menu.with_nav_item do %>
-      <%= render Design::Navigation::Menu::Mega::ItemComponent.new(
+<% @topnav_pages.each do |page| %>
+<%= menu.with_nav_item do %>
+<%= render Design::Navigation::Menu::Mega::ItemComponent.new(
         label: page.name,
         popover_id: "#{page.permalink}-mega-popover",
         trigger_actions: "mouseenter->popover#debouncedShow mouseleave->popover#debouncedHide",
         active: @active_header == page.permalink
       ) do |mega| %>
-        <%= mega.with_links do %>
-          <div class="megamenu__grid">
-            <%= render Design::Layout::GridComponent.new(columns: 4, gap: 2) do |grid| %>
-              <% page.children.live.limit(8).each do |child| %>
-                <% grid.with_item do %>
-                  <%= link_to child.href, class: "megamenu__card #{'megamenu__card--active' if current_page&.id == child.id}" do %>
-                    <% if child.icon.present? %>
-                      <span style="width: 24px; height: 24px; display: inline-flex; align-items: center;" aria-hidden="true">
-                        <%= icon child.icon.name %>
-                      </span>
-                    <% end %>
-                    <h3 class="megamenu__title"><%= child.name %></h3>
-                    <% if child.summary.present? %>
-                      <p class="megamenu__description"><%= child.summary.to_plain_text %></p>
-                    <% end %>
-                  <% end %>
-                <% end %>
-              <% end %>
-            <% end %>
-          </div>
-        <% end %>
 
-        <%= mega.with_footer do %>
-          <div class="megamenu__footer">
-            <%= link_to page.href, class: "megamenu__footer-link" do %>
-              <span style="width: 16px; height: 16px; display: inline-flex; align-items: center;" aria-hidden="true">
-                <%= icon "layout-dashboard" %>
-              </span>
-              <span>View all <%= page.name.downcase %></span>
-              <span style="width: 16px; height: 16px; display: inline-flex; align-items: center;" aria-hidden="true">
-                <%= icon "move-right" %>
-              </span>
-            <% end %>
-          </div>
-        <% end %>
+<%= mega.with_header do %>
+<div class="megamenu__header">
+  <h2 class="megamenu__header-title"><%= page.header %></h2>
+  <p class="megamenu__header-summary"><%= page.summary %></p>
+</div>
+<% end %>
 
-        <%= mega.with_mobile_content do %>
-          <div class="megamenu-mobile-scroll">
-            <% page.children.live.each do |child| %>
-              <%= link_to child.href, class: "megamenu-mobile-card #{'megamenu-mobile-card--active' if current_page&.id == child.id}" do %>
-                <% if child.icon.present? %>
-                  <span style="width: 24px; height: 24px; display: inline-flex; align-items: center;" aria-hidden="true">
-                    <%= icon child.icon.name %>
-                  </span>
-                <% end %>
-                <h3 class="megamenu-mobile-card__title"><%= child.name %></h3>
-                <% if child.summary.present? %>
-                  <p class="megamenu-mobile-card__description"><%= truncate(child.summary.to_plain_text, length: 80) %></p>
-                <% end %>
-              <% end %>
-            <% end %>
-          </div>
-        <% end %>
-      <% end %>
-    <% end %>
+<%= mega.with_links do %>
+<div class="megamenu__grid">
+  <%= render Design::Layout::GridComponent.new(columns: 4, gap: 2) do |grid| %>
+  <% page.children.live.limit(8).each do |child| %>
+  <% grid.with_item do %>
+  <%= link_to child.href, class: "megamenu__card #{'megamenu__card--active' if current_page&.id == child.id}" do %>
+  <% if child.icon.present? %>
+  <span style="width: 24px; height: 24px; display: inline-flex; align-items: center;" aria-hidden="true">
+    <%= icon child.icon.name %>
+  </span>
   <% end %>
-
-  <%= menu.with_desktop_action do %>
-    <%= link_to "Sign In", "#", class: "btn btn--ghost btn--rounded show@md" %>
+  <h3 class="megamenu__title"><%= child.name %></h3>
+  <% if child.summary.present? %>
+  <p class="megamenu__description"><%= child.summary.to_plain_text %></p>
   <% end %>
-
-  <%= menu.with_desktop_action do %>
-    <%= link_to "Get Started", "#", class: "btn btn--primary btn--rounded" %>
   <% end %>
-
-  <%= menu.with_mobile_action do %>
-    <%= link_to "Contact Us", "#", class: "btn btn--outline" %>
   <% end %>
-
-  <%= menu.with_mobile_action do %>
-    <%= link_to "Sign In", "#", class: "btn btn--outline" %>
   <% end %>
+  <% end %>
+</div>
+<% end %>
+
+<%= mega.with_footer do %>
+<div class="megamenu__footer">
+  <%= link_to page.href, class: "megamenu__footer-link" do %>
+  <span style="width: 16px; height: 16px; display: inline-flex; align-items: center;" aria-hidden="true">
+    <%= icon "layout-dashboard" %>
+  </span>
+  <span>View all <%= page.name.downcase %></span>
+  <span style="width: 16px; height: 16px; display: inline-flex; align-items: center;" aria-hidden="true">
+    <%= icon "move-right" %>
+  </span>
+  <% end %>
+</div>
+<% end %>
+
+<%= mega.with_mobile_content do %>
+<div class="megamenu-mobile-scroll">
+  <% page.children.live.each do |child| %>
+  <%= link_to child.href, class: "megamenu-mobile-card #{'megamenu-mobile-card--active' if current_page&.id == child.id}" do %>
+  <% if child.icon.present? %>
+  <span style="width: 24px; height: 24px; display: inline-flex; align-items: center;" aria-hidden="true">
+    <%= icon child.icon.name %>
+  </span>
+  <% end %>
+  <h3 class="megamenu-mobile-card__title"><%= child.name %></h3>
+  <% if child.summary.present? %>
+  <p class="megamenu-mobile-card__description"><%= truncate(child.summary.to_plain_text, length: 80) %></p>
+  <% end %>
+  <% end %>
+  <% end %>
+</div>
+<% end %>
+<% end %>
+<% end %>
+<% end %>
+
+<%= menu.with_desktop_action do %>
+<%= link_to "Sign In", "#", class: "btn btn--ghost btn--rounded show@md" %>
+<% end %>
+
+<%= menu.with_desktop_action do %>
+<%= link_to "Get Started", "#", class: "btn btn--primary btn--rounded" %>
+<% end %>
+
+<%= menu.with_mobile_action do %>
+<%= link_to "Contact Us", "#", class: "btn btn--outline" %>
+<% end %>
+
+<%= menu.with_mobile_action do %>
+<%= link_to "Sign In", "#", class: "btn btn--outline" %>
+<% end %>
 <% end %>

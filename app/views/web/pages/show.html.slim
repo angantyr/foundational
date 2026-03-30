@@ -4,12 +4,12 @@
 / =render Web::Page::BodyComponent.new(page: @page)
 / =render Web::Page::BlockComponent.with_collection(@page.children, theme: 'light')
 
-
-=render Design::Typography::PageHeaderComponent.new( \
-  prefix: @page.parent&.name, \
-  title: @page.header, \
-  abstract: @page.summary, \ 
-)
+.container
+  =render Design::Typography::PageHeaderComponent.new( \
+    prefix: @page.parent&.name, \
+    title: @page.header, \
+    abstract: @page.summary, \ 
+  )
 
 -@page.children.each do |child_page|
 

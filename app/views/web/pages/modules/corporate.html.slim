@@ -1,8 +1,10 @@
-=render Design::Typography::PageHeaderComponent.new( \
-  prefix: @page.parent&.name, \
-  title: @page.header, \
-  abstract: @page.summary, \ 
-)
+.container
+  =render Design::Layout::HeroComponent.new( \
+    prefix: @page.parent&.name, \
+    title: @page.header, \
+    abstract: @page.summary, \ 
+    icon: @page.icon, \ 
+  )
 
 -page = @page.children.first
 
@@ -13,28 +15,29 @@
   )
 
 
-=render Design::Navigation::Tabs::WidgetComponent.new(variant: :responsive) do |widget|
-    / First loop: render all the buttons with header + summary
-    -page.children.each do |tab|
-      -widget.with_button do
-        <div style="text-align: left; white-space: normal; pointer-events: none;">
-          <div class="font-semibold">
-            =tab.header
+.container
+  =render Design::Navigation::Tabs::WidgetComponent.new(variant: :responsive) do |widget|
+      / First loop: render all the buttons with header + summary
+      -page.children.each do |tab|
+        -widget.with_button do
+          <div style="text-align: left; white-space: normal; pointer-events: none;">
+            <div class="font-semibold">
+              =tab.header
+            </div>
+            <div class="show@md text-sm text-subtle mbs-1">
+              =tab.summary
+            </div>
           </div>
-          <div class="show@md text-sm text-subtle mbs-1">
-            =tab.summary
+      
+      / Second loop: render all the panels with summary + image
+      -page.children.each do |tab|
+        -widget.with_panel do
+          <div>
+            <p class="hide@md text-base m-0 mbe-4">
+              =tab.summary
+            </p>
+            =image_tag tab.src, class: "w-full rounded-md"
           </div>
-        </div>
-    
-    / Second loop: render all the panels with summary + image
-    -page.children.each do |tab|
-      -widget.with_panel do
-        <div>
-          <p class="hide@md text-base m-0 mbe-4">
-            =tab.summary
-          </p>
-          =image_tag tab.src, class: "w-full rounded-md"
-        </div>
 
 
 -page = @page.children.second
@@ -46,49 +49,51 @@
   )
 
 
-.carousel-container
-  =render Design::Navigation::Carousel::WidgetComponent.new(pagination_position: :top) do |widget|
-    / Feature Cards as Pagination
-    -page.children.each_with_index do |feature, index|
-      -widget.with_pagination do
-        =render Design::Element::CardComponent.new( \
-          kicker: feature.kicker, \
-          header: feature.header, \
-          summary: feature.summary, \
-          icon: feature.icon&.name, \
-          tag: :button, \
-          wrapper_class: "feature-card", \
-          data: { carousel_target: "pagination", action: "carousel#goToSlide", index: index }, \
-          type: "button", \
-          "aria-label": "View #{feature.header}" \
-        )
+.container
+  / TODO: rename to carousel-wrapper?
+  .carousel-container
+    =render Design::Navigation::Carousel::WidgetComponent.new(pagination_position: :top) do |widget|
+      / Feature Cards as Pagination
+      -page.children.each_with_index do |feature, index|
+        -widget.with_pagination do
+          =render Design::Element::CardComponent.new( \
+            kicker: feature.kicker, \
+            header: feature.header, \
+            summary: feature.summary, \
+            icon: feature.icon&.name, \
+            tag: :button, \
+            wrapper_class: "feature-card", \
+            data: { carousel_target: "pagination", action: "carousel#goToSlide", index: index }, \
+            type: "button", \
+            "aria-label": "View #{feature.header}" \
+          )
 
 
-    / Slides
-    -page.children.each do |feature|
-      -widget.with_slide do
-        =image_tag feature.src, alt: "foo", class: "w-full rounded-md"
-        / =image_tag feature.preview.src, alt: feature.preview.caption, class: "w-full rounded-md"
+      / Slides
+      -page.children.each do |feature|
+        -widget.with_slide do
+          =image_tag feature.src, alt: "foo", class: "w-full rounded-md"
+          / =image_tag feature.preview.src, alt: feature.preview.caption, class: "w-full rounded-md"
 
-    / Navigation
-    -widget.with_navigation do
-      <button type="button" data-action="carousel#prev" class="carousel__nav carousel__nav--prev" aria-label="Previous slide"> ‹ </button>
-      <button type="button" data-action="carousel#next" class="carousel__nav carousel__nav--next" aria-label="Next slide"> › </button>
+      / Navigation
+      -widget.with_navigation do
+        <button type="button" data-action="carousel#prev" class="carousel__nav carousel__nav--prev" aria-label="Previous slide"> ‹ </button>
+        <button type="button" data-action="carousel#next" class="carousel__nav carousel__nav--next" aria-label="Next slide"> › </button>
 
 
-  / Mobile: Stacked cards
-  .mobile-stack
-    -page.children.each do |feature|
-      .mobile-feature
-        =render Design::Element::CardComponent.new( \
-          kicker: feature.kicker, \
-          header: feature.header, \
-          summary: feature.summary, \
-          icon: feature.icon&.name, \
-          wrapper_class: "mobile-feature__card" \
-        )
-        .mobile-feature__image-container
-          =image_tag feature.src, alt: "", class: "rounded-md"
+    / Mobile: Stacked cards
+    .mobile-stack
+      -page.children.each do |feature|
+        .mobile-feature
+          =render Design::Element::CardComponent.new( \
+            kicker: feature.kicker, \
+            header: feature.header, \
+            summary: feature.summary, \
+            icon: feature.icon&.name, \
+            wrapper_class: "mobile-feature__card" \
+          )
+          .mobile-feature__image-container
+            =image_tag feature.src, alt: "", class: "rounded-md"
 
 
 
@@ -101,7 +106,8 @@
     summary: page.summary, \
   )
 
-.people-container
+
+.container
   =render Design::Layout::GridComponent.new(pattern: [2,3], gap: 8) do |grid|
     -page.children.each do |feature|
       -grid.with_item do 
@@ -124,7 +130,7 @@
     summary: page.summary, \
   )
 
-.people-container
+.container
   =render Design::Layout::GridComponent.new(pattern: [2,3], gap: 8) do |grid|
     -page.children.each do |feature|
       -grid.with_item do 
