@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_02_28_000002) do
+ActiveRecord::Schema[8.0].define(version: 2026_03_18_000001) do
   create_table "managed_account_filters", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "name"
@@ -77,6 +77,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_02_28_000002) do
     t.datetime "updated_at", null: false
     t.boolean "hide_for_new_records", default: false
     t.boolean "disable_adding", default: false
+    t.string "display"
     t.index ["model_id"], name: "index_managed_configuration_fieldsets_on_model_id"
   end
 
@@ -118,6 +119,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_02_28_000002) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "plugin_id"
+    t.datetime "persisted_at"
     t.index ["parent_id"], name: "index_managed_configuration_namespaces_on_parent_id"
     t.index ["plugin_id"], name: "index_managed_configuration_namespaces_on_plugin_id"
   end
