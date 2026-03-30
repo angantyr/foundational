@@ -22,6 +22,7 @@ development:
     <<: *sqlite
     database: storage/development_search.sqlite3
     migrations_paths: db/search_migrate
+    schema_dump: false
 
 test:
   primary:
@@ -35,6 +36,7 @@ test:
     <<: *sqlite
     database: storage/test_search.sqlite3
     migrations_paths: db/search_migrate
+    schema_dump: false
 
 production:
   primary:
