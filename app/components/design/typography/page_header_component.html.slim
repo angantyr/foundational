@@ -1,13 +1,23 @@
--if @prefix
+-if prefix_slot?
+  =prefix_slot
+-elsif prefix
   .text-sm.font-bold.text-subtle.mbe-2.uppercase
-    =@prefix
+    =prefix
 
-.flex.items-baseline.mbe-4.gap
-  -if @icon
-    =icon "#{@icon}.svg", size: 64, alt: ""
-  h1.text-5xl.font-display.font-bold.m-0.text-primary
-    =@title
+.flex.items-center.mbe-4.gap
+  -if icon_slot?
+    =icon_slot
+  -elsif icon
+    =helpers.icon icon, class: icon_size_class, alt: ""
 
--if @abstract
-  .text-2xl.text-subtle.m-0
-    =@abstract
+  -if title_slot?
+    =title_slot
+  -elsif title
+    h1.text-5xl.font-display.font-bold.m-0.text-primary
+      =title
+
+-if abstract_slot?
+  =abstract_slot
+-elsif abstract
+  .text-2xl.text-subtle.m-0.max-w-md
+    =abstract

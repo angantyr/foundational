@@ -1,18 +1,19 @@
 # frozen_string_literal: true
 
 class Design::Typography::SubHeaderComponentPreview < ViewComponent::Preview
-  # @label With Header and Summary
-  def with_summary
-    render Design::Typography::SubHeaderComponent.new(
-      header: "Powerful Features",
-      summary: "All modules share a set of powerful features that keeps you moving"
-    )
-  end
+  # Centered section header with optional summary text below.
+  # Used to introduce content sections on a page.
+  #
+  # @label Interactive
+  # @param header text "Header text"
+  # @param summary textarea "Summary text (leave empty for header only)"
+  def interactive(header: "Powerful Features", summary: "All modules share a set of powerful features that keeps you moving")
+    # Only pass summary if it has content
+    summary_param = summary.present? ? summary : nil
 
-  # @label Header Only
-  def header_only
     render Design::Typography::SubHeaderComponent.new(
-      header: "Section Title"
+      header: header,
+      summary: summary_param
     )
   end
 end

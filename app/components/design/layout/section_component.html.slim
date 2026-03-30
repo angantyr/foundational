@@ -1,0 +1,10 @@
+section.pb-12
+  -if render_header?
+    .mbe-8
+      -if header?
+        =header
+      -else
+        =render Design::Typography::SubHeaderComponent.new(header: header_text, summary: summary)
+
+  -if body?
+    =body

@@ -3,6 +3,8 @@
 class Design::Layout::HeroComponent < ViewComponent::Base
   renders_one :header
 
+  attr_reader :title, :abstract, :prefix, :icon
+
   def initialize(title: nil, abstract: nil, prefix: nil, icon: nil)
     @title = title
     @abstract = abstract
@@ -11,6 +13,6 @@ class Design::Layout::HeroComponent < ViewComponent::Base
   end
 
   def render_header?
-    header? || @title.present?
+    header? || title.present?
   end
 end

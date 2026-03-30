@@ -1,0 +1,11 @@
+.pb-12.pi-8
+  -if render_header?
+    -if header?
+      =header
+    -else
+      =render Design::Typography::PageHeaderComponent.new( \
+        title: title, \
+        abstract: abstract, \
+        prefix: prefix, \
+        icon: icon \
+      )

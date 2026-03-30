@@ -3,6 +3,8 @@
 class Design::Layout::GridComponent < ViewComponent::Base
   renders_many :items
 
+  attr_reader :columns, :max_columns, :gap, :pattern
+
   def initialize(columns: nil, max_columns: 4, gap: 4, pattern: nil)
     @columns = columns  # Explicit column count (backwards compat)
     @max_columns = max_columns
@@ -11,7 +13,7 @@ class Design::Layout::GridComponent < ViewComponent::Base
   end
 
   def has_pattern?
-    @pattern.present?
+    pattern.present?
   end
 
   def batched_items
@@ -22,7 +24,7 @@ class Design::Layout::GridComponent < ViewComponent::Base
     pattern_index = 0
 
     until remaining.empty?
-      batch_size = @pattern[pattern_index % @pattern.length]
+      batch_size = pattern[pattern_index % pattern.length]
       batch_items = remaining.take(batch_size)
       batches << {
         items: batch_items,
@@ -37,18 +39,18 @@ class Design::Layout::GridComponent < ViewComponent::Base
 
   def calculated_columns(item_count = nil)
     # Explicit column count takes precedence
-    return @columns if @columns
+    return columns if columns
 
     # Smart: use item count, capped at max
     count = item_count || items.length
-    [count, @max_columns].min
+    [count, max_columns].min
   end
 
-  def grid_classes(columns = nil)
+  def grid_classes(cols = nil)
     # Use provided columns, or calculate based on items
-    col_count = columns || calculated_columns
+    col_count = cols || calculated_columns
 
-    classes = ["grid", "grid-cols-1", "gap-#{@gap}"]
+    classes = ["grid", "grid-cols-1", "gap-#{gap}"]
 
     # Smart responsive breakpoints based on column count
     case col_count
