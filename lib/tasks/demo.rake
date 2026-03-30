@@ -34,6 +34,7 @@ namespace :foundational do
       end
 
       puts "\nBuilding demo data..."
+      system("bin/rails design:rebuild")          || abort("Design rebuild failed")
       system("bin/rails foundational:demo:build") || abort("Demo build failed")
 
       puts "\n\nFoundational demo reset complete. Enjoy!\n\n"
@@ -55,6 +56,7 @@ namespace :foundational do
       # Run build in a fresh process — db:drop/create/migrate leave stale AR
       # connections that can't be reliably cleared in the current process.
       puts "\nBuilding demo data..."
+      system("bin/rails design:rebuild")          || abort("Design rebuild failed")
       system("bin/rails foundational:demo:build") || abort("Demo build failed")
 
       puts "\n\nFoundational demo rebuilt. Enjoy!\n\n"
@@ -63,6 +65,7 @@ namespace :foundational do
     desc "Build demo data (does not touch schema)"
     task :build do
       puts "\nBuilding demo...\n\n"
+      Rake::Task["design:rebuild"].invoke
       Rake::Task["foundational:web:rebuild"].invoke
       puts "\n\nFoundational demo built. Enjoy!\n\n"
     end
