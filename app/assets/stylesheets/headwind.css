@@ -144,15 +144,17 @@
 .w-8 { width: var(--size-8); }
 .w-10 { width: var(--size-10); }
 .w-12 { width: var(--size-12); }
+.w-16 { width: var(--size-16); }
+.w-20 { width: var(--size-20); }
 
 /* Container-based width utilities */
 .w-half-container {
-  width: calc(var(--container-xl) / 2);  /* 640px */
+  width: calc(var(--container-width) / 2);  /* 640px */
 }
 
 /* Minimum width utilities based on container sizes */
 .min-w-half-container {
-  min-width: calc(var(--container-xl) / 2);  /* 640px */
+  min-width: calc(var(--container-width) / 2);  /* 640px */
 }
 
 /* Fractional width utilities */
@@ -170,10 +172,24 @@
 .h-8 { height: var(--size-8); }
 .h-10 { height: var(--size-10); }
 .h-12 { height: var(--size-12); }
+.h-16 { height: var(--size-16); }
+.h-20 { height: var(--size-20); }
 
 /* Max width utilities using container variables */
+.max-w-sm {
+  max-width: var(--container-sm);  /* 640px */
+}
+
+.max-w-md {
+  max-width: var(--container-md);  /* 768px */
+}
+
+.max-w-lg {
+  max-width: var(--container-lg);  /* 1024px */
+}
+
 .max-w-half-container {
-  max-width: calc(var(--container-xl) / 2);  /* 640px */
+  max-width: calc(var(--container-width) / 2);  /* 640px */
 }
 
 .max-w-7xl {
@@ -520,6 +536,6 @@
   }
 
   .lg\:w-half-container {
-    width: calc(var(--container-xl) / 2);  /* 640px */
+    width: calc(var(--container-width) / 2);  /* 640px */
   }
 }

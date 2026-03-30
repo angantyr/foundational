@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: center;
   inline-size: 100%;
-  max-inline-size: var(--container-xl);
+  max-inline-size: var(--container-width);
   margin-inline: auto;
   padding-inline: var(--size-6);
   padding-block: var(--size-6);
