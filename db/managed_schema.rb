@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_11_18_213444) do
+ActiveRecord::Schema[8.0].define(version: 2026_02_28_000002) do
   create_table "managed_account_filters", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "name"
@@ -117,7 +117,22 @@ ActiveRecord::Schema[8.0].define(version: 2025_11_18_213444) do
     t.string "icon_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "plugin_id"
     t.index ["parent_id"], name: "index_managed_configuration_namespaces_on_parent_id"
+    t.index ["plugin_id"], name: "index_managed_configuration_namespaces_on_plugin_id"
+  end
+
+  create_table "managed_configuration_plugins", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "engine_class", null: false
+    t.string "label", null: false
+    t.string "description"
+    t.string "status", default: "pending_setup", null: false
+    t.datetime "installed_at"
+    t.datetime "configured_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_managed_configuration_plugins_on_name", unique: true
   end
 
   create_table "managed_configuration_properties", force: :cascade do |t|
@@ -184,6 +199,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_11_18_213444) do
   add_foreign_key "managed_configuration_fieldsets", "managed_configuration_models", column: "model_id"
   add_foreign_key "managed_configuration_models", "managed_configuration_namespaces", column: "namespace_id"
   add_foreign_key "managed_configuration_namespaces", "managed_configuration_namespaces", column: "parent_id", on_delete: :cascade
+  add_foreign_key "managed_configuration_namespaces", "managed_configuration_plugins", column: "plugin_id"
   add_foreign_key "managed_configuration_properties", "managed_configuration_models", column: "model_id"
   add_foreign_key "managed_configuration_search_fields", "managed_configuration_properties", column: "property_id"
   add_foreign_key "managed_configuration_search_fields", "managed_configuration_search_fieldsets", column: "fieldset_id"
